@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowUpRight, PlayCircle, BarChart, Rocket, FileText } from 'lucide-react';
 
 const CaseStudies = () => {
@@ -10,7 +11,7 @@ const CaseStudies = () => {
             problem: 'Older users struggled with navigation and finding content.',
             approach: 'Analysed pain points, redesigned onboarding and viewing flows.',
             impact: 'Clearer navigation, less confusion, 2nd place in Decathlon challenge.',
-            link: '[HOTSTAR_CASE_STUDY_URL]',
+            link: '/case-studies/hotstar-55-plus',
             pdfLink: '[HOTSTAR_PDF_URL]'
         },
         {
@@ -20,7 +21,7 @@ const CaseStudies = () => {
             problem: 'Founders had no clear view of onboarding performance or drop-offs.',
             approach: 'Implemented Mixpanel events, built funnels, and analysed user behaviour.',
             impact: 'Identified key drop-off screens and prioritised data-backed UX changes.',
-            link: '[DENNER_CASE_STUDY_URL]'
+            link: '/case-studies/denner-onboarding-analytics'
         },
         {
             title: 'Qport 0→1 Build',
@@ -29,7 +30,7 @@ const CaseStudies = () => {
             problem: 'Client PRD was long, unstructured, and unclear from a user perspective.',
             approach: 'Converted PRD into a roadmap, user journeys, specs, and release plan.',
             impact: 'Delivered v1 on time, with shared understanding across dev and business.',
-            link: '[QPORT_CASE_STUDY_URL]'
+            link: '/case-studies/qport-0-to-1'
         }
     ];
 
@@ -86,9 +87,9 @@ const CaseStudies = () => {
                         </div>
 
                         <div style={{ marginTop: '1.5rem', paddingTop: '1.25rem', borderTop: '1px solid var(--border-color)', display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                            <a href={study.link} style={{ fontSize: '0.85rem', fontWeight: '500', color: 'var(--accent-color)', display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
+                            <Link to={study.link} style={{ fontSize: '0.85rem', fontWeight: '500', color: 'var(--accent-lavender)', display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
                                 View case study <ArrowUpRight size={14} />
-                            </a>
+                            </Link>
                             {study.pdfLink && (
                                 <a href={study.pdfLink} style={{ fontSize: '0.85rem', fontWeight: '500', color: 'var(--text-tertiary)', display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
                                     View PDF <FileText size={14} />
