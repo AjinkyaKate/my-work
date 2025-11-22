@@ -57,7 +57,7 @@ const CaseStudies = () => {
                     <div key={index} className={`card animate-in delay-${(index + 1) * 100}`} style={{ padding: '2rem' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '1.5rem' }}>
                             <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                                <div style={{ width: '40px', height: '40px', borderRadius: '8px', background: '#F5F5F7', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-primary)' }}>
+                                <div style={{ width: '40px', height: '40px', borderRadius: '8px', background: 'rgba(197, 184, 229, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-lavender)', border: '1px solid rgba(197, 184, 229, 0.2)' }}>
                                     {study.icon}
                                 </div>
                                 <h3 style={{ fontSize: '1.1rem', margin: 0 }}>{study.title}</h3>
@@ -66,7 +66,7 @@ const CaseStudies = () => {
 
                         <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
                             {study.tags.map((tag, i) => (
-                                <span key={i} style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', background: '#F5F5F7', padding: '0.25rem 0.6rem', borderRadius: '6px', fontWeight: '500' }}>{tag}</span>
+                                <span key={i} style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', background: 'rgba(255, 255, 255, 0.05)', padding: '0.25rem 0.6rem', borderRadius: '6px', fontWeight: '500', border: '1px solid rgba(255, 255, 255, 0.08)' }}>{tag}</span>
                             ))}
                         </div>
 
