@@ -11,7 +11,7 @@ const CaseStudies = () => {
             problem: 'Older users struggled with navigation and finding content.',
             approach: 'Analysed pain points, redesigned onboarding and viewing flows.',
             impact: 'Clearer navigation, less confusion, 2nd place in Decathlon challenge.',
-            link: '/case-studies/hotstar-55-plus',
+            link: 'https://drive.google.com/file/d/1d02iy0TpTz6r0JhBQ5J7PKp5v5_AixgQ/view',
             pdfLink: '[HOTSTAR_PDF_URL]'
         },
         {
@@ -36,68 +36,95 @@ const CaseStudies = () => {
 
     return (
         <section className="section" id="case-studies" style={{ position: 'relative' }}>
-            {/* Subtle Background Blob */}
-            <div style={{
-                position: 'absolute',
-                bottom: '-10%',
-                right: '-20%',
-                width: '600px',
-                height: '600px',
-                background: 'var(--gradient-glow)',
-                filter: 'blur(100px)',
-                zIndex: -1,
-                opacity: 0.4
-            }} />
+            <div className="container">
+                <div className="animate-fade-up" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'end', marginBottom: '4rem' }}>
+                    <h2 style={{ margin: 0 }}>Case Studies</h2>
+                </div>
 
-            <div className="animate-in" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'end', marginBottom: '3rem' }}>
-                <h2 style={{ margin: 0 }}>Selected Case Studies</h2>
-            </div>
-
-            <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
-                {cases.map((study, index) => (
-                    <div key={index} className={`card animate-in delay-${(index + 1) * 100}`} style={{ padding: '2rem' }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '1.5rem' }}>
-                            <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                                <div style={{ width: '40px', height: '40px', borderRadius: '8px', background: 'rgba(197, 184, 229, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-lavender)', border: '1px solid rgba(197, 184, 229, 0.2)' }}>
-                                    {study.icon}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '4rem' }}>
+                    {cases.map((study, index) => (
+                        <div key={index} className={`card animate-fade-up delay-${(index + 1) * 100}`} style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '1.5rem' }}>
+                                <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                                    <div style={{
+                                        width: '48px',
+                                        height: '48px',
+                                        borderRadius: '12px',
+                                        background: 'var(--bg-secondary)',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        color: 'var(--text-primary)',
+                                        border: '1px solid var(--border-color)'
+                                    }}>
+                                        {study.icon}
+                                    </div>
+                                    <h3 style={{ fontSize: '1.25rem', margin: 0, fontFamily: 'var(--font-sans)', fontWeight: '600' }}>{study.title}</h3>
                                 </div>
-                                <h3 style={{ fontSize: '1.1rem', margin: 0 }}>{study.title}</h3>
                             </div>
-                        </div>
 
-                        <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
-                            {study.tags.map((tag, i) => (
-                                <span key={i} style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', background: 'rgba(255, 255, 255, 0.05)', padding: '0.25rem 0.6rem', borderRadius: '6px', fontWeight: '500', border: '1px solid rgba(255, 255, 255, 0.08)' }}>{tag}</span>
-                            ))}
-                        </div>
+                            <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
+                                {study.tags.map((tag, i) => (
+                                    <span key={i} style={{
+                                        fontSize: '0.8rem',
+                                        color: 'var(--text-secondary)',
+                                        background: 'var(--bg-secondary)',
+                                        padding: '0.35rem 0.75rem',
+                                        borderRadius: '999px',
+                                        fontWeight: '500',
+                                        border: '1px solid var(--border-color)'
+                                    }}>
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
 
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: 'auto' }}>
-                            <div>
-                                <span style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-tertiary)', display: 'block', marginBottom: '0.25rem' }}>Problem</span>
-                                <p style={{ fontSize: '0.9rem', margin: 0, color: 'var(--text-secondary)', lineHeight: '1.4' }}>{study.problem}</p>
-                            </div>
-                            <div>
-                                <span style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-tertiary)', display: 'block', marginBottom: '0.25rem' }}>Approach</span>
-                                <p style={{ fontSize: '0.9rem', margin: 0, color: 'var(--text-secondary)', lineHeight: '1.4' }}>{study.approach}</p>
-                            </div>
-                            <div>
-                                <span style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-tertiary)', display: 'block', marginBottom: '0.25rem' }}>Outcome</span>
-                                <p style={{ fontSize: '0.9rem', margin: 0, color: 'var(--text-primary)', fontWeight: '500', lineHeight: '1.4' }}>{study.impact}</p>
-                            </div>
-                        </div>
-
-                        <div style={{ marginTop: '1.5rem', paddingTop: '1.25rem', borderTop: '1px solid var(--border-color)', display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                            <Link to={study.link} style={{ fontSize: '0.85rem', fontWeight: '500', color: 'var(--accent-lavender)', display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
-                                View case study <ArrowUpRight size={14} />
-                            </Link>
-                            {study.pdfLink && (
-                                <a href={study.pdfLink} style={{ fontSize: '0.85rem', fontWeight: '500', color: 'var(--text-tertiary)', display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
-                                    View PDF <FileText size={14} />
-                                </a>
+                            {study.image && (
+                                <div style={{
+                                    width: '100%',
+                                    height: '200px',
+                                    background: '#111',
+                                    borderRadius: '8px',
+                                    marginBottom: '1.5rem',
+                                    overflow: 'hidden',
+                                    border: '1px solid var(--border-color)'
+                                }}>
+                                    <img
+                                        src={study.image}
+                                        alt={`${study.title} Case Study`}
+                                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                    />
+                                </div>
                             )}
+
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginTop: 'auto' }}>
+                                <div>
+                                    <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-tertiary)', display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>Problem</span>
+                                    <p style={{ fontSize: '1rem', margin: 0, color: 'var(--text-secondary)', lineHeight: '1.6' }}>{study.problem}</p>
+                                </div>
+                                <div>
+                                    <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-tertiary)', display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>Approach</span>
+                                    <p style={{ fontSize: '1rem', margin: 0, color: 'var(--text-secondary)', lineHeight: '1.6' }}>{study.approach}</p>
+                                </div>
+                                <div>
+                                    <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-tertiary)', display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>Outcome</span>
+                                    <p style={{ fontSize: '1rem', margin: 0, color: 'var(--text-primary)', fontWeight: '500', lineHeight: '1.6' }}>{study.impact}</p>
+                                </div>
+                            </div>
+
+                            <div style={{ marginTop: '2rem', paddingTop: '1.5rem', borderTop: '1px solid var(--border-color)', display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+                                <Link to={study.link} style={{ fontSize: '0.95rem', fontWeight: '600', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }} className="hover:text-primary">
+                                    View case study <ArrowUpRight size={16} />
+                                </Link>
+                                {study.pdfLink && (
+                                    <a href={study.pdfLink} style={{ fontSize: '0.95rem', fontWeight: '500', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }} className="hover:text-primary">
+                                        View PDF <FileText size={16} />
+                                    </a>
+                                )}
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
         </section>
     );

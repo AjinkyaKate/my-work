@@ -19,8 +19,8 @@ function HomePage() {
     <>
       <Hero />
       <MyStory />
-      <StartupExperience />
       <ProfessionalExperience />
+      <StartupExperience />
       <CaseStudies />
       <Skills />
       <Education />
@@ -30,6 +30,8 @@ function HomePage() {
   );
 }
 
+import BlogPost from './components/BlogPost';
+
 function App() {
   return (
     <Layout>
@@ -38,6 +40,7 @@ function App() {
         <Route path="/case-studies/hotstar-55-plus" element={<HotstarCaseStudy />} />
         <Route path="/case-studies/denner-onboarding-analytics" element={<DennerCaseStudy />} />
         <Route path="/case-studies/qport-0-to-1" element={<QportCaseStudy />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
       </Routes>
     </Layout>
   );
