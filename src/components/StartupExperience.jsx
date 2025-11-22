@@ -21,15 +21,15 @@ const StartupExperience = () => {
             <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '1.5rem' }}>
 
                 {/* Qport Card */}
-                <div className="card animate-in delay-100" style={{ background: 'rgba(255,255,255,0.8)', borderColor: 'rgba(100, 102, 133, 0.15)' }}>
+                <div className="card animate-in delay-100">
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '1.5rem' }}>
                         <a href="https://qport.quickdili.com" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', gap: '1rem', alignItems: 'center', textDecoration: 'none', color: 'inherit' }} title="Visit Qport">
-                            <div style={{ width: '40px', height: '40px', borderRadius: '8px', background: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-primary)', transition: 'background 0.2s', boxShadow: '0 1px 2px rgba(0,0,0,0.05)' }}>
+                            <div style={{ width: '40px', height: '40px', borderRadius: '8px', background: 'rgba(197, 184, 229, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-lavender)', transition: 'background 0.2s', border: '1px solid rgba(197, 184, 229, 0.2)' }}>
                                 <Rocket size={20} />
                             </div>
                             <div>
                                 <h3 style={{ fontSize: '1.25rem', marginBottom: '0.1rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-color)'} onMouseLeave={(e) => e.target.style.color = 'var(--text-primary)'}>Qport</h3>
-                                <span style={{ fontSize: '0.85rem', color: 'var(--accent-color)', fontWeight: '500' }}>Founding Product Manager (Part-time)</span>
+                                <span style={{ fontSize: '0.85rem', color: 'var(--accent-lavender)', fontWeight: '500' }}>Founding Product Manager (Part-time)</span>
                             </div>
                         </a>
                     </div>
@@ -47,10 +47,10 @@ const StartupExperience = () => {
                 </div>
 
                 {/* Denner Card */}
-                <div className="card animate-in delay-200" style={{ background: 'rgba(255,255,255,0.8)', borderColor: 'rgba(100, 102, 133, 0.15)' }}>
+                <div className="card animate-in delay-200">
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '1.5rem' }}>
                         <a href="[Denner official site URL placeholder]" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', gap: '1rem', alignItems: 'center', textDecoration: 'none', color: 'inherit' }} title="Visit Denner">
-                            <div style={{ width: '40px', height: '40px', borderRadius: '8px', background: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-primary)', transition: 'background 0.2s', boxShadow: '0 1px 2px rgba(0,0,0,0.05)' }}>
+                            <div style={{ width: '40px', height: '40px', borderRadius: '8px', background: 'rgba(184, 213, 197, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-sage)', transition: 'background 0.2s', border: '1px solid rgba(184, 213, 197, 0.2)' }}>
                                 <Home size={20} />
                             </div>
                             <div>

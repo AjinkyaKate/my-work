@@ -12,7 +12,7 @@ const ProfessionalExperience = () => {
                 {/* Company Header */}
                 <div style={{ padding: '2rem', borderBottom: '1px solid var(--border-color)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
                     <a href="https://www.dengage.com" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', gap: '1rem', alignItems: 'center', textDecoration: 'none', color: 'inherit' }}>
-                        <div style={{ width: '40px', height: '40px', borderRadius: '8px', background: '#F5F5F7', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-primary)' }}>
+                        <div style={{ width: '40px', height: '40px', borderRadius: '8px', background: 'rgba(197, 184, 229, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-lavender)', border: '1px solid rgba(197, 184, 229, 0.2)' }}>
                             <Building2 size={20} />
                         </div>
                         <div>
