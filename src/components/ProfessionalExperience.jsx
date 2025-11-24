@@ -45,9 +45,9 @@ const ProfessionalExperience = () => {
 
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
                             <div className="experience-content" style={{ borderRight: '1px solid var(--border-color)' }}>
-                                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1.5rem', alignItems: 'baseline' }}>
+                                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1.5rem', alignItems: 'baseline', flexWrap: 'wrap', gap: '0.5rem' }}>
                                     <h4 style={{ fontSize: '1.25rem', fontWeight: '700', fontFamily: 'var(--font-display)' }}>Product Owner</h4>
-                                    <span style={{ fontSize: '0.9rem', color: 'var(--text-tertiary)', fontWeight: '500' }}>Jan 2025 - Present</span>
+                                    <span style={{ fontSize: '0.9rem', color: 'var(--text-tertiary)', fontWeight: '500', whiteSpace: 'nowrap' }}>Jan 2025 - Present</span>
                                 </div>
                                 <ul style={{ paddingLeft: '0', listStyle: 'none', color: 'var(--text-secondary)', fontSize: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', lineHeight: '1.5' }}>
                                     <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: 'var(--text-primary)', marginTop: '0.2rem' }}>•</span>Own the Shopify coupon engine & integration slice of the product in a CSPO-style Scrum setup.</li>
@@ -58,9 +58,9 @@ const ProfessionalExperience = () => {
                                 </ul>
                             </div>
                             <div className="experience-content">
-                                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem', alignItems: 'baseline' }}>
+                                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem', alignItems: 'baseline', flexWrap: 'wrap', gap: '0.5rem' }}>
                                     <h4 style={{ fontSize: '1.25rem', fontWeight: '700', fontFamily: 'var(--font-display)' }}>Marketing & Support</h4>
-                                    <span style={{ fontSize: '0.9rem', color: 'var(--text-tertiary)', fontWeight: '500' }}>May 2022 - Dec 2024</span>
+                                    <span style={{ fontSize: '0.9rem', color: 'var(--text-tertiary)', fontWeight: '500', whiteSpace: 'nowrap' }}>May 2022 - Dec 2024</span>
                                 </div>
                                 <ul style={{ paddingLeft: '0', listStyle: 'none', color: 'var(--text-secondary)', fontSize: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', lineHeight: '1.5' }}>
                                     <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: 'var(--text-primary)', marginTop: '0.2rem' }}>•</span>Resolved customer issues across multiple regions, closing the loop between users and product.</li>

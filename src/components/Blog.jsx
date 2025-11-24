@@ -23,14 +23,14 @@ const Blog = () => {
     return (
         <section className="section" id="blog">
             <div className="container">
-                <div className="animate-fade-up" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'end', marginBottom: '4rem' }}>
+                <div className="animate-fade-up" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'end', marginBottom: '4rem', flexWrap: 'wrap', gap: '2rem' }}>
                     <div>
                         <h2 style={{ marginBottom: '1rem' }}>Writing</h2>
                         <p style={{ maxWidth: '600px', color: 'var(--text-secondary)' }}>
                             Thoughts on product management, strategy, and user psychology.
                         </p>
                     </div>
-                    <a href="#" className="btn btn-outline" style={{ fontSize: '0.9rem', padding: '0.6rem 1.2rem' }}>Read all posts</a>
+                    <a href="#" className="btn btn-outline" style={{ fontSize: '0.9rem', padding: '0.6rem 1.2rem', whiteSpace: 'nowrap' }}>Read all posts</a>
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>

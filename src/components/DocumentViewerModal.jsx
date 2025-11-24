@@ -39,16 +39,18 @@ const DocumentViewerModal = ({ isOpen, onClose, documentUrl, documentTitle = "Do
             onClick={handleOverlayClick}
         >
             {/* Header Controls */}
-            <div style={{
-                background: 'rgba(17, 17, 17, 0.8)',
-                backdropFilter: 'blur(24px)',
-                borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
-                padding: '1rem 2rem',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center'
-            }}>
-                <h3 style={{ margin: 0, fontSize: '1.125rem', fontWeight: 600, color: '#FFFFFF' }}>
+            <div
+                className="viewer-header"
+                style={{
+                    background: 'rgba(17, 17, 17, 0.8)',
+                    backdropFilter: 'blur(24px)',
+                    borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
+                    padding: '1rem 2rem',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center'
+                }}>
+                <h3 className="viewer-title" style={{ margin: 0, fontSize: '1.125rem', fontWeight: 600, color: '#FFFFFF' }}>
                     {documentTitle}
                 </h3>
 
@@ -71,9 +73,10 @@ const DocumentViewerModal = ({ isOpen, onClose, documentUrl, documentTitle = "Do
                             transition: 'all 0.2s'
                         }}
                         className="viewer-btn"
+                        title="Open in New Tab"
                     >
                         <ExternalLink size={18} />
-                        Open in New Tab
+                        <span className="viewer-btn-text">Open in New Tab</span>
                     </button>
 
                     {/* Download Button */}
@@ -94,9 +97,10 @@ const DocumentViewerModal = ({ isOpen, onClose, documentUrl, documentTitle = "Do
                             transition: 'all 0.2s'
                         }}
                         className="viewer-btn"
+                        title="Download"
                     >
                         <Download size={18} />
-                        Download
+                        <span className="viewer-btn-text">Download</span>
                     </button>
 
                     <div style={{ width: '1px', height: '24px', background: 'rgba(255, 255, 255, 0.1)', margin: '0 0.5rem' }} />
@@ -114,6 +118,7 @@ const DocumentViewerModal = ({ isOpen, onClose, documentUrl, documentTitle = "Do
                             transition: 'all 0.2s'
                         }}
                         className="viewer-btn"
+                        title="Close"
                     >
                         <X size={20} />
                     </button>
@@ -131,7 +136,7 @@ const DocumentViewerModal = ({ isOpen, onClose, documentUrl, documentTitle = "Do
                 backgroundColor: '#050505'
             }}>
                 <iframe
-                    src={documentUrl}
+                    src={`${documentUrl}#view=FitH`}
                     style={{
                         width: '100%',
                         height: '100%',
@@ -161,6 +166,24 @@ const DocumentViewerModal = ({ isOpen, onClose, documentUrl, documentTitle = "Do
 
                 .viewer-btn:active:not(:disabled) {
                     transform: translateY(0);
+                }
+
+                @media (max-width: 768px) {
+                    .viewer-header {
+                        padding: 0.75rem 1rem !important;
+                    }
+                    
+                    .viewer-btn-text {
+                        display: none;
+                    }
+
+                    .viewer-title {
+                        font-size: 1rem !important;
+                        max-width: 60%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
                 }
             `}</style>
         </div>

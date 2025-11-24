@@ -25,7 +25,9 @@ const Hero = () => {
                         </h2>
                         <h1 className="text-gradient" style={{
                             marginBottom: '1.5rem',
-                            letterSpacing: '-0.04em'
+                            letterSpacing: '-0.04em',
+                            fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
+                            lineHeight: '1.1'
                         }}>
                             Product Owner / Product Manager
                         </h1>
