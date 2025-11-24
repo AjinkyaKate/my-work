@@ -44,28 +44,28 @@ const ProfessionalExperience = () => {
                         </div>
 
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
-                            <div style={{ padding: '2.5rem', borderRight: '1px solid var(--border-color)' }}>
+                            <div className="experience-content" style={{ borderRight: '1px solid var(--border-color)' }}>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1.5rem', alignItems: 'baseline' }}>
-                                    <h4 style={{ fontSize: '1.25rem', fontWeight: '700', fontFamily: 'var(--font-display)' }}>(Team Red)</h4>
+                                    <h4 style={{ fontSize: '1.25rem', fontWeight: '700', fontFamily: 'var(--font-display)' }}>Product Owner</h4>
                                     <span style={{ fontSize: '0.9rem', color: 'var(--text-tertiary)', fontWeight: '500' }}>Jan 2025 - Present</span>
                                 </div>
-                                <ul style={{ paddingLeft: '0', listStyle: 'none', color: 'var(--text-secondary)', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', lineHeight: '1.6' }}>
-                                    <li style={{ display: 'flex', gap: '0.75rem' }}><span style={{ color: 'var(--text-primary)', marginTop: '0.4rem' }}>•</span>Own the Shopify coupon engine & integration slice of the product in a CSPO-style Scrum setup.</li>
-                                    <li style={{ display: 'flex', gap: '0.75rem' }}><span style={{ color: 'var(--text-primary)', marginTop: '0.4rem' }}>•</span>Manage backlog, write user stories, and align Sprint Goals with product goals.</li>
-                                    <li style={{ display: 'flex', gap: '0.75rem' }}><span style={{ color: 'var(--text-primary)', marginTop: '0.4rem' }}>•</span>Lead sprint planning, daily scrums, and reviews with a 2-dev team, using Jira as the single source of truth.</li>
-                                    <li style={{ display: 'flex', gap: '0.75rem' }}><span style={{ color: 'var(--text-primary)', marginTop: '0.4rem' }}>•</span>Work closely with the Turkey-based team (UI/backend) to define clear APIs and handoffs.</li>
-                                    <li style={{ display: 'flex', gap: '0.75rem' }}><span style={{ color: 'var(--text-primary)', marginTop: '0.4rem' }}>•</span>Partner with Sales/CS to turn customer requests into structured product problems and experiments.</li>
+                                <ul style={{ paddingLeft: '0', listStyle: 'none', color: 'var(--text-secondary)', fontSize: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', lineHeight: '1.5' }}>
+                                    <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: 'var(--text-primary)', marginTop: '0.2rem' }}>•</span>Own the Shopify coupon engine & integration slice of the product in a CSPO-style Scrum setup.</li>
+                                    <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: 'var(--text-primary)', marginTop: '0.2rem' }}>•</span>Manage backlog, write user stories, and align Sprint Goals with product goals.</li>
+                                    <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: 'var(--text-primary)', marginTop: '0.2rem' }}>•</span>Lead sprint planning, daily scrums, and reviews with a 2-dev team, using Jira as the single source of truth.</li>
+                                    <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: 'var(--text-primary)', marginTop: '0.2rem' }}>•</span>Work closely with the Turkey-based team (UI/backend) to define clear APIs and handoffs.</li>
+                                    <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: 'var(--text-primary)', marginTop: '0.2rem' }}>•</span>Partner with Sales/CS to turn customer requests into structured product problems and experiments.</li>
                                 </ul>
                             </div>
-                            <div style={{ padding: '2.5rem' }}>
-                                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1.5rem', alignItems: 'baseline' }}>
+                            <div className="experience-content">
+                                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem', alignItems: 'baseline' }}>
                                     <h4 style={{ fontSize: '1.25rem', fontWeight: '700', fontFamily: 'var(--font-display)' }}>Marketing & Support</h4>
                                     <span style={{ fontSize: '0.9rem', color: 'var(--text-tertiary)', fontWeight: '500' }}>May 2022 - Dec 2024</span>
                                 </div>
-                                <ul style={{ paddingLeft: '0', listStyle: 'none', color: 'var(--text-secondary)', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', lineHeight: '1.6' }}>
-                                    <li style={{ display: 'flex', gap: '0.75rem' }}><span style={{ color: 'var(--text-primary)', marginTop: '0.4rem' }}>•</span>Resolved customer issues across multiple regions, closing the loop between users and product.</li>
-                                    <li style={{ display: 'flex', gap: '0.75rem' }}><span style={{ color: 'var(--text-primary)', marginTop: '0.4rem' }}>•</span>Supported product discovery with real-world user feedback and usage patterns.</li>
-                                    <li style={{ display: 'flex', gap: '0.75rem' }}><span style={{ color: 'var(--text-primary)', marginTop: '0.4rem' }}>•</span>Created marketing journeys and campaigns, building empathy for both marketer and end-user.</li>
+                                <ul style={{ paddingLeft: '0', listStyle: 'none', color: 'var(--text-secondary)', fontSize: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', lineHeight: '1.5' }}>
+                                    <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: 'var(--text-primary)', marginTop: '0.2rem' }}>•</span>Resolved customer issues across multiple regions, closing the loop between users and product.</li>
+                                    <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: 'var(--text-primary)', marginTop: '0.2rem' }}>•</span>Supported product discovery with real-world user feedback and usage patterns.</li>
+                                    <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: 'var(--text-primary)', marginTop: '0.2rem' }}>•</span>Created marketing journeys and campaigns, building empathy for both marketer and end-user.</li>
                                 </ul>
                             </div>
                         </div>

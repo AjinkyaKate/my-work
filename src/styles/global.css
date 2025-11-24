@@ -447,10 +447,48 @@ a {
   }
 
   :root {
-    --spacing-xl: 5rem;
+    --spacing-xl: 3rem;
   }
 
   h1 {
     font-size: 3rem;
+  }
+
+  .card {
+    padding: 1.5rem !important;
+  }
+
+  .mobile-only {
+    display: block !important;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .case-study-grid {
+    gap: 2rem !important;
+  }
+
+  .contact-panel {
+    padding: 3rem 1.5rem !important;
+  }
+
+  .experience-content {
+    padding: 1.5rem !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-only {
+    display: none !important;
+  }
+
+  .desktop-only {
+    display: block !important;
+  }
+
+  .experience-content {
+    padding: 2.5rem;
   }
 }

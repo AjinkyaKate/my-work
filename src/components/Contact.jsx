@@ -16,8 +16,7 @@ const Contact = () => {
             }} />
 
             <div className="container">
-                <div className="glass-panel animate-fade-up" style={{
-                    padding: '6rem 2rem',
+                <div className="glass-panel animate-fade-up contact-panel" style={{
                     textAlign: 'center',
                     borderRadius: 'var(--radius-lg)',
                     maxWidth: '800px',

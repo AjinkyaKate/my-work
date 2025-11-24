@@ -27,7 +27,7 @@ const Hero = () => {
                             marginBottom: '1.5rem',
                             letterSpacing: '-0.04em'
                         }}>
-                            Product Owner & CSPO®
+                            Product Owner / Product Manager
                         </h1>
                         <p style={{
                             fontSize: '1.5rem',

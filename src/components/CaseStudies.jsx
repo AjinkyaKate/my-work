@@ -44,9 +44,9 @@ const CaseStudies = () => {
                     <h2 style={{ margin: 0 }}>Case Studies</h2>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '4rem' }}>
+                <div className="case-study-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
                     {cases.map((study, index) => (
-                        <div key={index} className={`card animate-fade-up delay-${(index + 1) * 100}`} style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column' }}>
+                        <div key={index} className={`card animate-fade-up delay-${(index + 1) * 100}`} style={{ display: 'flex', flexDirection: 'column' }}>
                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '1.5rem' }}>
                                 <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
                                     <div style={{
@@ -100,27 +100,27 @@ const CaseStudies = () => {
                                 </div>
                             )}
 
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginTop: 'auto' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                                 {study.role && (
-                                    <div style={{ marginBottom: '0.5rem' }}>
+                                    <div style={{ marginBottom: '0.25rem' }}>
                                         <p style={{ fontSize: '0.9rem', margin: 0, color: 'var(--text-primary)', fontWeight: '500', fontStyle: 'italic' }}>{study.role}</p>
                                     </div>
                                 )}
                                 <div>
-                                    <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-tertiary)', display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>Problem</span>
-                                    <p style={{ fontSize: '1rem', margin: 0, color: 'var(--text-secondary)', lineHeight: '1.6' }}>{study.problem}</p>
+                                    <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-tertiary)', display: 'block', marginBottom: '0.25rem', fontWeight: '600' }}>Problem</span>
+                                    <p style={{ fontSize: '1rem', margin: 0, color: 'var(--text-secondary)', lineHeight: '1.5' }}>{study.problem}</p>
                                 </div>
                                 <div>
-                                    <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-tertiary)', display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>Approach</span>
-                                    <p style={{ fontSize: '1rem', margin: 0, color: 'var(--text-secondary)', lineHeight: '1.6' }}>{study.approach}</p>
+                                    <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-tertiary)', display: 'block', marginBottom: '0.25rem', fontWeight: '600' }}>Approach</span>
+                                    <p style={{ fontSize: '1rem', margin: 0, color: 'var(--text-secondary)', lineHeight: '1.5' }}>{study.approach}</p>
                                 </div>
                                 <div>
-                                    <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-tertiary)', display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>Outcome</span>
-                                    <p style={{ fontSize: '1rem', margin: 0, color: 'var(--text-primary)', fontWeight: '500', lineHeight: '1.6' }}>{study.impact}</p>
+                                    <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-tertiary)', display: 'block', marginBottom: '0.25rem', fontWeight: '600' }}>Outcome</span>
+                                    <p style={{ fontSize: '1rem', margin: 0, color: 'var(--text-primary)', fontWeight: '500', lineHeight: '1.5' }}>{study.impact}</p>
                                 </div>
                             </div>
 
-                            <div style={{ marginTop: '2rem', paddingTop: '1.5rem', borderTop: '1px solid var(--border-color)', display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+                            <div style={{ marginTop: 'auto', paddingTop: '1.5rem', borderTop: '1px solid var(--border-color)', display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
                                 <Link to={study.link} style={{ fontSize: '0.95rem', fontWeight: '600', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }} className="hover:text-primary">
                                     View case study <ArrowUpRight size={16} />
                                 </Link>
