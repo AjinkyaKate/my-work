@@ -8,6 +8,7 @@ const CaseStudies = () => {
             title: 'Hotstar UX for 55+ Users',
             icon: <PlayCircle size={20} />,
             tags: ['UX Research', 'Prototyping'],
+            role: 'My role: UX researcher & interaction designer.',
             problem: 'Older users struggled with navigation and finding content.',
             approach: 'Analysed pain points, redesigned onboarding and viewing flows.',
             impact: 'Clearer navigation, less confusion, 2nd place in Decathlon challenge.',
@@ -18,6 +19,7 @@ const CaseStudies = () => {
             title: 'Denner Analytics Setup',
             icon: <BarChart size={20} />,
             tags: ['Data Analytics', 'Mixpanel'],
+            role: 'My role: analytics implementation & insight partner.',
             problem: 'Founders had no clear view of onboarding performance or drop-offs.',
             approach: 'Implemented Mixpanel events, built funnels, and analysed user behaviour.',
             impact: 'Identified key drop-off screens and prioritised data-backed UX changes.',
@@ -27,6 +29,7 @@ const CaseStudies = () => {
             title: 'Qport 0→1 Build',
             icon: <Rocket size={20} />,
             tags: ['Product Management', '0 to 1'],
+            role: 'My role: 0→1 Product Manager / Product Owner.',
             problem: 'Client PRD was long, unstructured, and unclear from a user perspective.',
             approach: 'Converted PRD into a roadmap, user journeys, specs, and release plan.',
             impact: 'Delivered v1 on time, with shared understanding across dev and business.',
@@ -41,7 +44,7 @@ const CaseStudies = () => {
                     <h2 style={{ margin: 0 }}>Case Studies</h2>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '4rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '4rem' }}>
                     {cases.map((study, index) => (
                         <div key={index} className={`card animate-fade-up delay-${(index + 1) * 100}`} style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column' }}>
                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '1.5rem' }}>
@@ -98,6 +101,11 @@ const CaseStudies = () => {
                             )}
 
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginTop: 'auto' }}>
+                                {study.role && (
+                                    <div style={{ marginBottom: '0.5rem' }}>
+                                        <p style={{ fontSize: '0.9rem', margin: 0, color: 'var(--text-primary)', fontWeight: '500', fontStyle: 'italic' }}>{study.role}</p>
+                                    </div>
+                                )}
                                 <div>
                                     <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-tertiary)', display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>Problem</span>
                                     <p style={{ fontSize: '1rem', margin: 0, color: 'var(--text-secondary)', lineHeight: '1.6' }}>{study.problem}</p>

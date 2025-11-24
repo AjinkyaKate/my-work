@@ -8,11 +8,8 @@ const Hero = () => {
 
     return (
         <>
-            <section className="section" style={{
+            <section className="section flex-center" style={{
                 minHeight: '100vh',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
                 textAlign: 'center',
                 paddingTop: '0'
             }}>
@@ -26,14 +23,11 @@ const Hero = () => {
                         }}>
                             Hello, I'm Ajinkya
                         </h2>
-                        <h1 style={{
+                        <h1 className="text-gradient" style={{
                             marginBottom: '1.5rem',
-                            background: 'linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 100%)',
-                            WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent',
                             letterSpacing: '-0.04em'
                         }}>
-                            Product Manager
+                            Product Owner & CSPO®
                         </h1>
                         <p style={{
                             fontSize: '1.5rem',
@@ -44,11 +38,10 @@ const Hero = () => {
                             marginRight: 'auto',
                             lineHeight: '1.4'
                         }}>
-                            Building digital products with clarity and purpose.
-                            Specialized in 0-1 launches and growth.
+                            I build B2B products from 0→1 and then grow them – combining user empathy, data, and structured experiments.
                         </p>
 
-                        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+                        <div className="flex-center" style={{ gap: '1rem' }}>
                             <button
                                 onClick={() => setIsViewerOpen(true)}
                                 className="btn btn-primary"

@@ -26,77 +26,75 @@ const Skills = () => {
                 </div>
 
                 <div className="bento-grid">
-                    {/* Tech Stack */}
+                    {/* Product Skills */}
                     <div className="bento-card animate-fade-up delay-100">
                         <div className="card-header">
                             <div className="icon-wrapper" style={{ background: 'rgba(59, 130, 246, 0.1)', color: '#3B82F6' }}>
-                                <Layout size={24} />
-                            </div>
-                            <h3>Tech Stack</h3>
-                        </div>
-                        <div className="tech-grid">
-                            {[
-                                { name: 'Jira', icon: <Layout size={16} /> },
-                                { name: 'Figma', icon: <Figma size={16} /> },
-                                { name: 'Slack', icon: <Slack size={16} /> },
-                                { name: 'Notion', icon: <Database size={16} /> },
-                                { name: 'Confluence', icon: <Database size={16} /> },
-                                { name: 'Postman', icon: <Globe size={16} /> }
-                            ].map((tech) => (
-                                <div key={tech.name} className="tech-item">
-                                    {tech.icon}
-                                    <span>{tech.name}</span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Methods & Certs */}
-                    <div className="bento-card animate-fade-up delay-200">
-                        <div className="card-header">
-                            <div className="icon-wrapper" style={{ background: 'rgba(16, 185, 129, 0.1)', color: '#10B981' }}>
                                 <Zap size={24} />
                             </div>
-                            <h3>Methods</h3>
+                            <h3>Product Skills</h3>
                         </div>
                         <ul className="feature-list">
-                            <li><CheckCircle2 size={18} className="text-primary" /> Agile Methodologies</li>
-                            <li><CheckCircle2 size={18} className="text-primary" /> Design Thinking</li>
-                            <li><CheckCircle2 size={18} className="text-primary" /> User Research & Persona Building</li>
+                            <li><CheckCircle2 size={18} className="text-primary" /> Agile / Scrum (CSPO®)</li>
+                            <li><CheckCircle2 size={18} className="text-primary" /> Backlog Management</li>
+                            <li><CheckCircle2 size={18} className="text-primary" /> User Story Writing</li>
                             <li><CheckCircle2 size={18} className="text-primary" /> Stakeholder Management</li>
-                            <li><CheckCircle2 size={18} className="text-primary" /> Product Strategy</li>
+                            <li><CheckCircle2 size={18} className="text-primary" /> Product Discovery</li>
                         </ul>
                     </div>
 
-                    {/* Analytics */}
+                    {/* Research & UX */}
+                    <div className="bento-card animate-fade-up delay-200">
+                        <div className="card-header">
+                            <div className="icon-wrapper" style={{ background: 'rgba(16, 185, 129, 0.1)', color: '#10B981' }}>
+                                <Users size={24} />
+                            </div>
+                            <h3>Research & UX</h3>
+                        </div>
+                        <ul className="feature-list">
+                            <li><CheckCircle2 size={18} className="text-primary" /> User Research & Interviews</li>
+                            <li><CheckCircle2 size={18} className="text-primary" /> Persona Building & JTBD</li>
+                            <li><CheckCircle2 size={18} className="text-primary" /> UX Flows & Wireframes</li>
+                            <li><CheckCircle2 size={18} className="text-primary" /> Usability Testing</li>
+                        </ul>
+                    </div>
+
+                    {/* Data & Analytics */}
                     <div className="bento-card animate-fade-up delay-300">
                         <div className="card-header">
                             <div className="icon-wrapper" style={{ background: 'rgba(245, 158, 11, 0.1)', color: '#F59E0B' }}>
                                 <BarChart2 size={24} />
                             </div>
-                            <h3>Analytics</h3>
+                            <h3>Data & Analytics</h3>
                         </div>
                         <div className="pill-container">
-                            {['Mixpanel', 'Google Analytics', 'Amplitude', 'SQL', 'Metabase', 'Tableau'].map((tool) => (
+                            {['Mixpanel', 'Google Analytics', 'Amplitude', 'Funnels', 'Cohort Analysis', 'Retention', 'SQL Basics', 'Metabase', 'Tableau'].map((tool) => (
                                 <span key={tool} className="pill">{tool}</span>
                             ))}
                         </div>
                     </div>
 
-                    {/* Soft Skills */}
-                    <div className="bento-card animate-fade-up delay-100" style={{ gridColumn: 'span 2' }}>
+                    {/* Tools & Platforms */}
+                    <div className="bento-card animate-fade-up delay-100">
                         <div className="card-header">
                             <div className="icon-wrapper" style={{ background: 'rgba(139, 92, 246, 0.1)', color: '#8B5CF6' }}>
-                                <Users size={24} />
+                                <Layout size={24} />
                             </div>
-                            <h3>Leadership</h3>
+                            <h3>Tools & Platforms</h3>
                         </div>
-                        <p style={{ marginBottom: '1.5rem', fontSize: '1.1rem' }}>
-                            Driving cross-functional collaboration and empowering teams to deliver their best work.
-                        </p>
-                        <div className="pill-container">
-                            {['Team Building', 'Mentorship', 'Conflict Resolution', 'Strategic Communication', 'Public Speaking'].map((skill) => (
-                                <span key={skill} className="pill">{skill}</span>
+                        <div className="tech-grid">
+                            {[
+                                { name: 'Jira', icon: <Layout size={16} /> },
+                                { name: 'Confluence', icon: <Database size={16} /> },
+                                { name: 'Notion', icon: <Database size={16} /> },
+                                { name: 'Slack', icon: <Slack size={16} /> },
+                                { name: 'Postman', icon: <Globe size={16} /> },
+                                { name: 'Figma', icon: <Figma size={16} /> }
+                            ].map((tech) => (
+                                <div key={tech.name} className="tech-item">
+                                    {tech.icon}
+                                    <span>{tech.name}</span>
+                                </div>
                             ))}
                         </div>
                     </div>
@@ -114,14 +112,31 @@ const Skills = () => {
                     border-radius: var(--radius-lg);
                     background: var(--surface-color);
                     border: 1px solid var(--border-color);
-                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
                     display: flex;
                     flex-direction: column;
+                    position: relative;
+                    overflow: hidden;
                 }
                 .bento-card:hover {
                     transform: translateY(-4px);
                     box-shadow: var(--shadow-md);
                     border-color: var(--border-hover);
+                }
+                .bento-card::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                    pointer-events: none;
+                }
+                .bento-card:hover::before {
+                    opacity: 1;
                 }
                 .card-header {
                     display: flex;
@@ -156,10 +171,13 @@ const Skills = () => {
                     border-radius: var(--radius-md);
                     font-size: 0.9rem;
                     font-weight: 500;
-                    transition: background 0.2s;
+                    transition: all 0.2s ease;
+                    border: 1px solid transparent;
                 }
                 .tech-item:hover {
-                    background: var(--bg-primary);
+                    background: var(--surface-elevated);
+                    border-color: var(--border-hover);
+                    transform: translateY(-2px);
                 }
                 .feature-list {
                     list-style: none;
@@ -192,6 +210,11 @@ const Skills = () => {
                     border-radius: 999px;
                     border: 1px solid var(--border-color);
                     font-weight: 500;
+                    transition: all 0.2s ease;
+                }
+                .pill:hover {
+                    border-color: var(--text-secondary);
+                    background: var(--surface-elevated);
                 }
                 @media (min-width: 768px) {
                     .bento-grid {

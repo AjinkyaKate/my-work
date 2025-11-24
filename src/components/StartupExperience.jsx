@@ -13,32 +13,29 @@ const StartupExperience = () => {
                     </p>
                 </div>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
+                <div className="flex-col" style={{ gap: '6rem' }}>
 
                     {/* Qport Experience */}
                     <div className="animate-fade-up delay-100" style={{
                         display: 'grid',
                         gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                        gap: '3rem',
+                        gap: '4rem',
                         alignItems: 'start'
                     }}>
                         <div style={{ maxWidth: '500px' }}>
-                            <div style={{
-                                display: 'flex',
-                                alignItems: 'center',
+                            <div className="flex-center" style={{
+                                justifyContent: 'flex-start',
                                 gap: '1rem',
                                 marginBottom: '1.5rem'
                             }}>
-                                <div style={{
-                                    width: '48px',
-                                    height: '48px',
-                                    borderRadius: '12px',
+                                <div className="flex-center" style={{
+                                    width: '56px',
+                                    height: '56px',
+                                    borderRadius: '16px',
                                     background: '#fff',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
                                     border: '1px solid var(--border-color)',
-                                    overflow: 'hidden'
+                                    overflow: 'hidden',
+                                    boxShadow: 'var(--shadow-sm)'
                                 }}>
                                     <img
                                         src={qportLogo}
@@ -46,7 +43,10 @@ const StartupExperience = () => {
                                         style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                                     />
                                 </div>
-                                <h3 style={{ fontSize: '1.75rem', margin: 0 }}>Qport</h3>
+                                <div>
+                                    <h3 style={{ fontSize: '1.75rem', margin: 0, lineHeight: 1 }}>Qport</h3>
+                                    <span style={{ fontSize: '0.9rem', color: 'var(--text-tertiary)' }}>Product Manager • 0-1 Build</span>
+                                </div>
                             </div>
                             <p style={{
                                 fontSize: '1.1rem',
@@ -54,75 +54,66 @@ const StartupExperience = () => {
                                 color: 'var(--text-secondary)',
                                 marginBottom: '1.5rem'
                             }}>
-                                At Qport, I stepped into a chaotic 0-to-1 environment where the logistics supply chain was fragmented and manual. My role wasn't just about writing tickets; it was about <strong>decoding the business logic</strong> of freight forwarding and translating it into a digital product.
+                                At Qport, I entered a fragmented, manual logistics environment. My job was to turn a long, unstructured PRD into a usable product.
                             </p>
                             <p style={{
                                 fontSize: '1.1rem',
                                 lineHeight: '1.7',
                                 color: 'var(--text-secondary)'
                             }}>
-                                I led the development of the MVP, bridging the gap between non-technical stakeholders and the engineering team. By defining clear user journeys and prioritizing high-impact features, we successfully launched a platform that streamlined operations and reduced manual errors significantly.
+                                I translated a document-heavy PRD into user journeys, feature specs, and a phased roadmap. I bridged communication between non-technical stakeholders and engineering, and prioritised features based on operational impact and feasibility.
                             </p>
                         </div>
 
                         <div className="glass-panel" style={{
-                            padding: '2rem',
+                            padding: '2.5rem',
                             borderRadius: 'var(--radius-lg)',
-                            border: '1px solid var(--border-color)',
-                            background: 'var(--surface-elevated)'
+                            border: '1px solid var(--glass-border)',
+                            background: 'rgba(22, 22, 22, 0.6)'
                         }}>
-                            <h4 style={{ marginBottom: '1.5rem', fontSize: '1.2rem' }}>Key Impact</h4>
+                            <h4 style={{ marginBottom: '1.5rem', fontSize: '1.1rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-tertiary)' }}>Key Impact</h4>
                             <ul style={{
                                 listStyle: 'none',
                                 padding: 0,
                                 display: 'flex',
                                 flexDirection: 'column',
-                                gap: '1rem'
+                                gap: '1.25rem'
                             }}>
                                 <li style={{ display: 'flex', gap: '1rem', alignItems: 'start' }}>
-                                    <div style={{
+                                    <div className="flex-center" style={{
                                         minWidth: '24px',
                                         height: '24px',
                                         borderRadius: '50%',
                                         background: 'rgba(16, 185, 129, 0.1)',
                                         color: '#10B981',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
                                         fontSize: '0.8rem',
                                         marginTop: '2px'
                                     }}>✓</div>
-                                    <span style={{ color: 'var(--text-secondary)' }}>Launched MVP in 3 months, enabling first digital bookings.</span>
+                                    <span style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>Launched the MVP in ~3 months, enabling the first digital bookings.</span>
                                 </li>
                                 <li style={{ display: 'flex', gap: '1rem', alignItems: 'start' }}>
-                                    <div style={{
+                                    <div className="flex-center" style={{
                                         minWidth: '24px',
                                         height: '24px',
                                         borderRadius: '50%',
                                         background: 'rgba(16, 185, 129, 0.1)',
                                         color: '#10B981',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
                                         fontSize: '0.8rem',
                                         marginTop: '2px'
                                     }}>✓</div>
-                                    <span style={{ color: 'var(--text-secondary)' }}>Reduced operational turnaround time by 40% through automation.</span>
+                                    <span style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>Reduced operational turnaround time by ~40% through workflow automation.</span>
                                 </li>
                                 <li style={{ display: 'flex', gap: '1rem', alignItems: 'start' }}>
-                                    <div style={{
+                                    <div className="flex-center" style={{
                                         minWidth: '24px',
                                         height: '24px',
                                         borderRadius: '50%',
                                         background: 'rgba(16, 185, 129, 0.1)',
                                         color: '#10B981',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
                                         fontSize: '0.8rem',
                                         marginTop: '2px'
                                     }}>✓</div>
-                                    <span style={{ color: 'var(--text-secondary)' }}>Established the first product roadmap and agile processes.</span>
+                                    <span style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>Set up the initial agile rhythm (sprints, backlog, ceremonies) for the product team.</span>
                                 </li>
                             </ul>
                         </div>
@@ -132,26 +123,23 @@ const StartupExperience = () => {
                     <div className="animate-fade-up delay-200" style={{
                         display: 'grid',
                         gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                        gap: '3rem',
+                        gap: '4rem',
                         alignItems: 'start'
                     }}>
                         <div style={{ maxWidth: '500px' }}>
-                            <div style={{
-                                display: 'flex',
-                                alignItems: 'center',
+                            <div className="flex-center" style={{
+                                justifyContent: 'flex-start',
                                 gap: '1rem',
                                 marginBottom: '1.5rem'
                             }}>
-                                <div style={{
-                                    width: '48px',
-                                    height: '48px',
-                                    borderRadius: '12px',
+                                <div className="flex-center" style={{
+                                    width: '56px',
+                                    height: '56px',
+                                    borderRadius: '16px',
                                     background: '#fff',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
                                     border: '1px solid var(--border-color)',
-                                    overflow: 'hidden'
+                                    overflow: 'hidden',
+                                    boxShadow: 'var(--shadow-sm)'
                                 }}>
                                     <img
                                         src="https://media.licdn.com/dms/image/v2/D4D0BAQH5yyMCUma4UA/company-logo_200_200/B4DZlNGTztGsAI-/0/1757935126497/denner_india_logo?e=2147483647&v=beta&t=b4b4zS4G8GKS5q0HqB_TplId3mA5KqhOavi0QIjGT0I"
@@ -159,7 +147,10 @@ const StartupExperience = () => {
                                         style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                                     />
                                 </div>
-                                <h3 style={{ fontSize: '1.75rem', margin: 0 }}>Denner</h3>
+                                <div>
+                                    <h3 style={{ fontSize: '1.75rem', margin: 0, lineHeight: 1 }}>Denner</h3>
+                                    <span style={{ fontSize: '0.9rem', color: 'var(--text-tertiary)' }}>Analytics Consultant • Growth</span>
+                                </div>
                             </div>
                             <p style={{
                                 fontSize: '1.1rem',
@@ -167,75 +158,66 @@ const StartupExperience = () => {
                                 color: 'var(--text-secondary)',
                                 marginBottom: '1.5rem'
                             }}>
-                                At Denner, I worked as an Analytics Consultant to help the founding team understand their user behavior. The challenge was moving from "gut feeling" to data-driven decision making in a fast-paced retail startup environment.
+                                At Denner, my role was to move the founding team from gut-feel to data-driven decisions.
                             </p>
                             <p style={{
                                 fontSize: '1.1rem',
                                 lineHeight: '1.7',
                                 color: 'var(--text-secondary)'
                             }}>
-                                I implemented Mixpanel and set up the initial tracking infrastructure. By analyzing user drop-off points in the onboarding flow, I provided actionable insights that led to immediate UX improvements and higher conversion rates.
+                                I implemented Mixpanel and defined an event schema for onboarding, search, and booking flows. I built funnels to identify drop-off points and friction areas, and partnered with founders to prioritise UX improvements based on real user behaviour.
                             </p>
                         </div>
 
                         <div className="glass-panel" style={{
-                            padding: '2rem',
+                            padding: '2.5rem',
                             borderRadius: 'var(--radius-lg)',
-                            border: '1px solid var(--border-color)',
-                            background: 'var(--surface-elevated)'
+                            border: '1px solid var(--glass-border)',
+                            background: 'rgba(22, 22, 22, 0.6)'
                         }}>
-                            <h4 style={{ marginBottom: '1.5rem', fontSize: '1.2rem' }}>Key Impact</h4>
+                            <h4 style={{ marginBottom: '1.5rem', fontSize: '1.1rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-tertiary)' }}>Key Impact</h4>
                             <ul style={{
                                 listStyle: 'none',
                                 padding: 0,
                                 display: 'flex',
                                 flexDirection: 'column',
-                                gap: '1rem'
+                                gap: '1.25rem'
                             }}>
                                 <li style={{ display: 'flex', gap: '1rem', alignItems: 'start' }}>
-                                    <div style={{
+                                    <div className="flex-center" style={{
                                         minWidth: '24px',
                                         height: '24px',
                                         borderRadius: '50%',
                                         background: 'rgba(249, 115, 22, 0.1)',
                                         color: '#F97316',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
                                         fontSize: '0.8rem',
                                         marginTop: '2px'
                                     }}>✓</div>
-                                    <span style={{ color: 'var(--text-secondary)' }}>Implemented Mixpanel to track user onboarding and retention.</span>
+                                    <span style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>Implemented Mixpanel to track user onboarding and retention.</span>
                                 </li>
                                 <li style={{ display: 'flex', gap: '1rem', alignItems: 'start' }}>
-                                    <div style={{
+                                    <div className="flex-center" style={{
                                         minWidth: '24px',
                                         height: '24px',
                                         borderRadius: '50%',
                                         background: 'rgba(249, 115, 22, 0.1)',
                                         color: '#F97316',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
                                         fontSize: '0.8rem',
                                         marginTop: '2px'
                                     }}>✓</div>
-                                    <span style={{ color: 'var(--text-secondary)' }}>Analyzed drop-off points to recommend high-impact UX improvements.</span>
+                                    <span style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>Identified key drop-off screens and recommended specific changes.</span>
                                 </li>
                                 <li style={{ display: 'flex', gap: '1rem', alignItems: 'start' }}>
-                                    <div style={{
+                                    <div className="flex-center" style={{
                                         minWidth: '24px',
                                         height: '24px',
                                         borderRadius: '50%',
                                         background: 'rgba(249, 115, 22, 0.1)',
                                         color: '#F97316',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
                                         fontSize: '0.8rem',
                                         marginTop: '2px'
                                     }}>✓</div>
-                                    <span style={{ color: 'var(--text-secondary)' }}>Established data culture for the founding team.</span>
+                                    <span style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>Helped instil an early data culture in the team.</span>
                                 </li>
                             </ul>
                         </div>
