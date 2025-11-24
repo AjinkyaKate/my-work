@@ -4,7 +4,7 @@ import { Linkedin, Mail, Twitter } from 'lucide-react';
 const Footer = () => {
     return (
         <footer style={{
-            padding: '4rem 0',
+            padding: '2rem 0',
             background: 'var(--bg-secondary)',
             borderTop: '1px solid var(--border-color)'
         }}>
@@ -13,7 +13,8 @@ const Footer = () => {
                     <p style={{
                         fontSize: '1rem',
                         color: 'var(--text-secondary)',
-                        fontWeight: '500'
+                        fontWeight: '500',
+                        textAlign: 'center'
                     }}>
                         Building digital products with clarity and purpose.
                     </p>
@@ -21,8 +22,8 @@ const Footer = () => {
 
 
                 <div style={{
-                    marginTop: '3rem',
-                    paddingTop: '2rem',
+                    marginTop: '1.5rem',
+                    paddingTop: '1.5rem',
                     borderTop: '1px solid var(--border-color)',
                     display: 'flex',
                     justifyContent: 'center',
