@@ -30,7 +30,15 @@ const Blog = () => {
                             Thoughts on product management, strategy, and user psychology.
                         </p>
                     </div>
-                    <a href="#" className="btn btn-outline" style={{ fontSize: '0.9rem', padding: '0.6rem 1.2rem', whiteSpace: 'nowrap' }}>Read all posts</a>
+                    <a
+                        href="https://medium.com/@Ajinkya_Kate"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn btn-outline"
+                        style={{ fontSize: '0.9rem', padding: '0.6rem 1.2rem', whiteSpace: 'nowrap' }}
+                    >
+                        Read more on Medium
+                    </a>
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>

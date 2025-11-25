@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Briefcase, User, Mail, ArrowRight } from 'lucide-react';
+import { Home, Briefcase, User, Mail, Menu, X } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > 20);
+            setScrolled(window.scrollY > 10);
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
@@ -19,128 +20,121 @@ const Navbar = () => {
         { name: 'Home', href: '/', icon: <Home size={20} /> },
         { name: 'Work', href: '/#case-studies', icon: <Briefcase size={20} /> },
         { name: 'Story', href: '/#my-story', icon: <User size={20} /> },
-        { name: 'Contact', href: 'mailto:ajinkyakate2001@gmail.com', icon: <Mail size={20} /> }
     ];
 
     return (
         <>
-            {/* Top Navbar (Desktop & Mobile Logo/Theme) */}
-            <nav className={`navbar-glass ${scrolled ? 'scrolled' : ''}`}>
-                <div className="container" style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    padding: 0,
-                    maxWidth: '100%'
-                }}>
-                    {/* Logo - Gen Z / Quirky Style */}
+            <nav style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                right: 0,
+                zIndex: 1000,
+                padding: '0.75rem 0',
+                transition: 'all 0.3s ease',
+                background: scrolled ? 'rgba(255, 255, 255, 0.95)' : 'transparent',
+                backdropFilter: scrolled ? 'blur(10px)' : 'none',
+                borderBottom: scrolled ? '1px solid var(--border-primary)' : '1px solid transparent',
+            }}>
+                <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <Link to="/" style={{
                         fontFamily: 'var(--font-sans)',
-                        fontWeight: '700',
-                        fontSize: '1.5rem',
+                        fontWeight: '500',
+                        fontSize: '1.35rem',
                         color: 'var(--text-primary)',
-                        letterSpacing: '-0.03em',
-                        textDecoration: 'none',
-                        position: 'relative',
-                        zIndex: 1002,
                         display: 'flex',
                         alignItems: 'center',
-                        gap: '0.25rem'
+                        gap: '0.5rem',
+                        letterSpacing: '-0.03em'
                     }}>
-                        ajinkya<span style={{ color: 'var(--accent-color)', fontSize: '1.2rem' }}>✦</span>
+                        ajinkya
                     </Link>
 
                     {/* Desktop Nav */}
-                    <div className="desktop-nav" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-                        <div style={{
-                            display: 'flex',
-                            gap: '0.25rem',
-                            background: scrolled ? 'var(--bg-secondary)' : 'transparent',
-                            padding: '0.25rem',
-                            borderRadius: '999px',
-                            transition: 'background 0.3s ease'
-                        }}>
-                            {navLinks.filter(l => l.name !== 'Contact' && l.name !== 'Home').map((link) => (
+                    <div className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }}>
+                        <div style={{ display: 'flex', gap: '2rem' }}>
+                            {navLinks.map((link) => (
                                 <a
                                     key={link.name}
                                     href={link.href}
-                                    className="nav-link"
                                     style={{
-                                        fontSize: '0.9rem',
-                                        fontWeight: '500',
+                                        fontSize: '0.95rem',
                                         color: 'var(--text-secondary)',
-                                        textDecoration: 'none',
-                                        padding: '0.5rem 1rem',
-                                        borderRadius: '999px',
-                                        transition: 'all 0.2s ease',
-                                        position: 'relative'
+                                        transition: 'color 0.2s ease',
+                                        fontWeight: '500'
                                     }}
-                                    onMouseEnter={(e) => {
-                                        e.target.style.color = 'var(--text-primary)';
-                                        e.target.style.background = 'var(--surface-color)';
-                                        e.target.style.boxShadow = 'var(--shadow-sm)';
-                                    }}
-                                    onMouseLeave={(e) => {
-                                        e.target.style.color = 'var(--text-secondary)';
-                                        e.target.style.background = 'transparent';
-                                        e.target.style.boxShadow = 'none';
-                                    }}
+                                    onMouseEnter={(e) => e.target.style.color = 'var(--text-primary)'}
+                                    onMouseLeave={(e) => e.target.style.color = 'var(--text-secondary)'}
                                 >
                                     {link.name}
                                 </a>
                             ))}
                         </div>
 
-                        <div style={{ width: '1px', height: '24px', background: 'var(--border-color)', margin: '0 0.5rem' }}></div>
-
-                        <ThemeToggle />
-
-                        <a href="mailto:ajinkyakate2001@gmail.com" className="btn btn-primary" style={{
-                            marginLeft: '0.5rem',
-                            padding: '0.6rem 1.2rem',
-                            fontSize: '0.9rem',
-                            borderRadius: '999px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '0.5rem'
-                        }}>
-                            Get in touch <ArrowRight size={14} />
-                        </a>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                            <ThemeToggle />
+                            <a href="mailto:ajinkyakate2001@gmail.com" className="btn btn-primary" style={{ padding: '0.6rem 1.2rem', fontSize: '0.9rem' }}>
+                                Contact
+                            </a>
+                        </div>
                     </div>
 
-                    {/* Mobile Top Right (Theme Toggle Only) */}
-                    <div className="mobile-toggle" style={{ display: 'none' }}> {/* Hidden via CSS on desktop, visible on mobile via global.css media query if needed, but we want it visible on mobile */}
-                        {/* Actually, we want ThemeToggle visible on mobile top right. 
-                            In global.css: .desktop-nav { display: none } on mobile.
-                            We need a container for mobile top right elements.
-                         */}
-                        <div style={{ display: 'flex', alignItems: 'center' }}>
-                            <ThemeToggle />
-                        </div>
+                    {/* Mobile Toggle */}
+                    <div className="mobile-toggle" style={{ display: 'none' }}>
+                        <button
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                            style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-primary)' }}
+                        >
+                            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                        </button>
                     </div>
                 </div>
             </nav>
 
-            {/* Mobile Bottom Nav */}
-            <div className="mobile-bottom-nav">
-                {navLinks.map((link) => (
-                    <a
-                        key={link.name}
-                        href={link.href}
-                        className="mobile-nav-item"
-                        style={{ textDecoration: 'none' }}
-                    >
-                        {link.icon}
-                        <span>{link.name}</span>
-                    </a>
-                ))}
-            </div>
+            {/* Mobile Menu Overlay */}
+            {mobileMenuOpen && (
+                <div style={{
+                    position: 'fixed',
+                    top: '60px',
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    background: 'var(--bg-primary)',
+                    zIndex: 999,
+                    padding: '2rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '2rem'
+                }}>
+                    {navLinks.map((link) => (
+                        <a
+                            key={link.name}
+                            href={link.href}
+                            onClick={() => setMobileMenuOpen(false)}
+                            style={{
+                                fontSize: '1.5rem',
+                                fontWeight: '500',
+                                color: 'var(--text-primary)',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '1rem'
+                            }}
+                        >
+                            {link.icon}
+                            {link.name}
+                        </a>
+                    ))}
+                    <div style={{ marginTop: 'auto', display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                        <ThemeToggle />
+                        <span style={{ color: 'var(--text-secondary)' }}>Switch Theme</span>
+                    </div>
+                </div>
+            )}
 
             <style>{`
                 @media (max-width: 768px) {
-                    .mobile-toggle {
-                        display: flex !important;
-                    }
+                    .desktop-nav { display: none !important; }
+                    .mobile-toggle { display: block !important; }
                 }
             `}</style>
         </>

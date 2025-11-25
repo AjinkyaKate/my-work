@@ -9,7 +9,6 @@ import CaseStudies from './components/CaseStudies';
 import Skills from './components/Skills';
 import Education from './components/Education';
 import Blog from './components/Blog';
-import Contact from './components/Contact';
 import HotstarCaseStudy from './pages/HotstarCaseStudy';
 import DennerCaseStudy from './pages/DennerCaseStudy';
 import QportCaseStudy from './pages/QportCaseStudy';
@@ -25,7 +24,6 @@ function HomePage() {
       <Skills />
       <Education />
       <Blog />
-      <Contact />
     </>
   );
 }

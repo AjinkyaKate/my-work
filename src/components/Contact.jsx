@@ -29,7 +29,7 @@ const Contact = () => {
                     </p>
 
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                        <a href="mailto:ajinkyakate@gmail.com" className="btn btn-primary" style={{ animation: 'pulse 2s infinite', minWidth: '140px' }}>
+                        <a href="mailto:ajinkyakate2001@gmail.com" className="btn btn-primary" style={{ animation: 'pulse 2s infinite', minWidth: '140px' }}>
                             <Mail size={20} style={{ marginRight: '0.5rem' }} />
                             Email Me
                         </a>

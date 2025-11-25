@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-    Code,
     Layout,
     Database,
     BarChart2,
@@ -8,92 +7,100 @@ import {
     Zap,
     CheckCircle2,
     Globe,
-    MessageSquare,
     Figma,
     Slack,
-    Trello
+    Cpu,
+    Search,
+    Terminal
 } from 'lucide-react';
 
 const Skills = () => {
     return (
         <section className="section" id="skills">
             <div className="container">
-                <div className="animate-fade-up" style={{ marginBottom: '4rem', textAlign: 'center' }}>
-                    <h2 style={{ marginBottom: '1rem' }}>Skills & Expertise</h2>
-                    <p style={{ maxWidth: '600px', margin: '0 auto' }}>
+                <div className="animate-fade-up" style={{ marginBottom: '4rem' }}>
+                    <h2 style={{ marginBottom: '0.5rem' }}>Skills & Expertise</h2>
+                    <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)' }}>
                         A comprehensive toolkit for building and scaling digital products.
                     </p>
                 </div>
 
                 <div className="bento-grid">
-                    {/* Product Skills */}
-                    <div className="bento-card animate-fade-up delay-100">
+                    {/* Product Strategy & Management */}
+                    <div className="bento-card animate-fade-up delay-100" style={{ gridColumn: 'span 2' }}>
                         <div className="card-header">
-                            <div className="icon-wrapper" style={{ background: 'rgba(59, 130, 246, 0.1)', color: '#3B82F6' }}>
-                                <Zap size={24} />
+                            <div className="icon-badge indigo">
+                                <Zap size={20} />
                             </div>
-                            <h3>Product Skills</h3>
+                            <h3>Product Strategy</h3>
                         </div>
-                        <ul className="feature-list">
-                            <li><CheckCircle2 size={18} className="text-primary" /> Agile / Scrum (CSPO®)</li>
-                            <li><CheckCircle2 size={18} className="text-primary" /> Backlog Management</li>
-                            <li><CheckCircle2 size={18} className="text-primary" /> User Story Writing</li>
-                            <li><CheckCircle2 size={18} className="text-primary" /> Stakeholder Management</li>
-                            <li><CheckCircle2 size={18} className="text-primary" /> Product Discovery</li>
-                        </ul>
+                        <div className="checklist-grid">
+                            {[
+                                'Agile / Scrum (CSPO®)',
+                                'Product Discovery',
+                                'Roadmap Planning',
+                                'Stakeholder Management',
+                                'User Story Mapping',
+                                'GTM Strategy'
+                            ].map((item, i) => (
+                                <div key={i} className="checklist-item">
+                                    <CheckCircle2 size={16} className="check-icon text-emerald" />
+                                    <span>{item}</span>
+                                </div>
+                            ))}
+                        </div>
                     </div>
 
                     {/* Research & UX */}
                     <div className="bento-card animate-fade-up delay-200">
                         <div className="card-header">
-                            <div className="icon-wrapper" style={{ background: 'rgba(16, 185, 129, 0.1)', color: '#10B981' }}>
-                                <Users size={24} />
+                            <div className="icon-badge emerald">
+                                <Users size={20} />
                             </div>
                             <h3>Research & UX</h3>
                         </div>
-                        <ul className="feature-list">
-                            <li><CheckCircle2 size={18} className="text-primary" /> User Research & Interviews</li>
-                            <li><CheckCircle2 size={18} className="text-primary" /> Persona Building & JTBD</li>
-                            <li><CheckCircle2 size={18} className="text-primary" /> UX Flows & Wireframes</li>
-                            <li><CheckCircle2 size={18} className="text-primary" /> Usability Testing</li>
-                        </ul>
+                        <div className="tags-container">
+                            {['User Interviews', 'Persona Building', 'Wireframing', 'Usability Testing', 'JTBD Framework'].map((tag, i) => (
+                                <span key={i} className="skill-tag">{tag}</span>
+                            ))}
+                        </div>
                     </div>
 
                     {/* Data & Analytics */}
                     <div className="bento-card animate-fade-up delay-300">
                         <div className="card-header">
-                            <div className="icon-wrapper" style={{ background: 'rgba(245, 158, 11, 0.1)', color: '#F59E0B' }}>
-                                <BarChart2 size={24} />
+                            <div className="icon-badge orange">
+                                <BarChart2 size={20} />
                             </div>
                             <h3>Data & Analytics</h3>
                         </div>
-                        <div className="pill-container">
-                            {['Mixpanel', 'Google Analytics', 'Amplitude', 'Funnels', 'Cohort Analysis', 'Retention', 'SQL Basics', 'Metabase', 'Tableau'].map((tool) => (
-                                <span key={tool} className="pill">{tool}</span>
+                        <div className="tags-container">
+                            {['Mixpanel', 'Google Analytics', 'Amplitude', 'SQL Basics', 'Cohort Analysis', 'Funnel Optimization'].map((tag, i) => (
+                                <span key={i} className="skill-tag">{tag}</span>
                             ))}
                         </div>
                     </div>
 
-                    {/* Tools & Platforms */}
-                    <div className="bento-card animate-fade-up delay-100">
+                    {/* Technical & Tools */}
+                    <div className="bento-card animate-fade-up delay-400" style={{ gridColumn: 'span 2' }}>
                         <div className="card-header">
-                            <div className="icon-wrapper" style={{ background: 'rgba(139, 92, 246, 0.1)', color: '#8B5CF6' }}>
-                                <Layout size={24} />
+                            <div className="icon-badge purple">
+                                <Terminal size={20} />
                             </div>
-                            <h3>Tools & Platforms</h3>
+                            <h3>Tools & Stack</h3>
                         </div>
-                        <div className="tech-grid">
+                        <div className="tools-grid">
                             {[
-                                { name: 'Jira', icon: <Layout size={16} /> },
-                                { name: 'Confluence', icon: <Database size={16} /> },
-                                { name: 'Notion', icon: <Database size={16} /> },
-                                { name: 'Slack', icon: <Slack size={16} /> },
-                                { name: 'Postman', icon: <Globe size={16} /> },
-                                { name: 'Figma', icon: <Figma size={16} /> }
-                            ].map((tech) => (
-                                <div key={tech.name} className="tech-item">
-                                    {tech.icon}
-                                    <span>{tech.name}</span>
+                                { name: 'Jira', icon: <Layout size={18} /> },
+                                { name: 'Notion', icon: <Database size={18} /> },
+                                { name: 'Figma', icon: <Figma size={18} /> },
+                                { name: 'Slack', icon: <Slack size={18} /> },
+                                { name: 'Postman', icon: <Globe size={18} /> },
+                                { name: 'Linear', icon: <Cpu size={18} /> }
+                            ].map((tool, i) => (
+                                <div key={i} className="tool-item">
+                                    <div className="tool-icon">{tool.icon}</div>
+                                    <span>{tool.name}</span>
                                 </div>
                             ))}
                         </div>
@@ -104,122 +111,140 @@ const Skills = () => {
             <style jsx>{`
                 .bento-grid {
                     display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                    grid-template-columns: 1fr;
                     gap: 1.5rem;
                 }
+
+                @media (min-width: 768px) {
+                    .bento-grid {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+                }
+
                 .bento-card {
-                    padding: 1.5rem;
-                    border-radius: var(--radius-lg);
-                    background: var(--surface-color);
-                    border: 1px solid var(--border-color);
-                    transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+                    background: var(--bg-secondary);
+                    border: 1px solid var(--border-primary);
+                    border-radius: var(--radius-md);
+                    padding: 2rem;
                     display: flex;
                     flex-direction: column;
-                    position: relative;
-                    overflow: hidden;
+                    transition: var(--transition);
                 }
+
                 .bento-card:hover {
+                    border-color: var(--primary-indigo);
                     transform: translateY(-4px);
                     box-shadow: var(--shadow-md);
-                    border-color: var(--border-hover);
                 }
-                .bento-card::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
-                    opacity: 0;
-                    transition: opacity 0.3s ease;
-                    pointer-events: none;
-                }
-                .bento-card:hover::before {
-                    opacity: 1;
-                }
+
                 .card-header {
                     display: flex;
                     align-items: center;
                     gap: 1rem;
                     margin-bottom: 1.5rem;
                 }
+
                 .card-header h3 {
                     font-size: 1.25rem;
+                    font-weight: 600;
                     margin: 0;
+                    color: var(--text-primary);
                 }
-                .icon-wrapper {
-                    width: 48px;
-                    height: 48px;
-                    border-radius: 12px;
+
+                .icon-badge {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 10px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                 }
-                .tech-grid {
+
+                .icon-badge.indigo { background: rgba(79, 70, 229, 0.1); color: var(--primary-indigo); }
+                .icon-badge.emerald { background: rgba(16, 185, 129, 0.1); color: var(--secondary-emerald); }
+                .icon-badge.orange { background: rgba(252, 173, 112, 0.1); color: #FCAD70; }
+                .icon-badge.purple { background: rgba(197, 138, 249, 0.1); color: #C58AF9; }
+
+                /* Checklist Grid */
+                .checklist-grid {
                     display: grid;
-                    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                    grid-template-columns: 1fr;
                     gap: 1rem;
                 }
-                .tech-item {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 0.5rem;
-                    padding: 1rem;
-                    background: var(--bg-secondary);
-                    border-radius: var(--radius-md);
-                    font-size: 0.9rem;
-                    font-weight: 500;
-                    transition: all 0.2s ease;
-                    border: 1px solid transparent;
+                @media (min-width: 640px) {
+                    .checklist-grid {
+                        grid-template-columns: 1fr 1fr;
+                    }
                 }
-                .tech-item:hover {
-                    background: var(--surface-elevated);
-                    border-color: var(--border-hover);
-                    transform: translateY(-2px);
-                }
-                .feature-list {
-                    list-style: none;
-                    padding: 0;
-                    margin: 0;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1rem;
-                }
-                .feature-list li {
+
+                .checklist-item {
                     display: flex;
                     align-items: center;
                     gap: 0.75rem;
-                    font-size: 1rem;
                     color: var(--text-secondary);
+                    font-size: 0.95rem;
                 }
-                .text-primary {
-                    color: var(--text-primary);
+
+                .check-icon {
+                    color: var(--secondary-emerald);
+                    flex-shrink: 0;
                 }
-                .pill-container {
+
+                /* Tags */
+                .tags-container {
                     display: flex;
                     flex-wrap: wrap;
                     gap: 0.75rem;
                 }
-                .pill {
+
+                .skill-tag {
                     font-size: 0.85rem;
-                    padding: 0.5rem 1rem;
-                    background: var(--bg-secondary);
-                    color: var(--text-primary);
+                    padding: 0.4rem 1rem;
+                    background: var(--bg-tertiary);
+                    color: var(--text-secondary);
                     border-radius: 999px;
-                    border: 1px solid var(--border-color);
                     font-weight: 500;
-                    transition: all 0.2s ease;
+                    transition: var(--transition);
                 }
-                .pill:hover {
-                    border-color: var(--text-secondary);
-                    background: var(--surface-elevated);
+
+                .skill-tag:hover {
+                    color: var(--text-primary);
+                    background: var(--border-primary);
                 }
-                @media (min-width: 768px) {
-                    .bento-grid {
-                        grid-template-columns: repeat(3, 1fr);
-                    }
+
+                /* Tools Grid */
+                .tools-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                    gap: 1rem;
+                }
+
+                .tool-item {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 0.75rem;
+                    padding: 1rem;
+                    background: var(--bg-tertiary);
+                    border-radius: 12px;
+                    transition: var(--transition);
+                    border: 1px solid transparent;
+                }
+
+                .tool-item:hover {
+                    background: var(--bg-secondary);
+                    border-color: var(--primary-indigo);
+                    transform: translateY(-2px);
+                }
+
+                .tool-icon {
+                    color: var(--text-primary);
+                }
+
+                .tool-item span {
+                    font-size: 0.85rem;
+                    color: var(--text-secondary);
+                    font-weight: 500;
                 }
             `}</style>
         </section>

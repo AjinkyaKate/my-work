@@ -5,8 +5,8 @@
 To use the document viewer feature, you need to add your resume PDF:
 
 1. **Place your resume file** in the `/public` folder
-2. **Name it**: `resume.pdf`
-3. **Path should be**: `/Users/a917751/Desktop/MyWork/public/resume.pdf`
+2. **Name it**: `Ajinkya_Kate_Resume.pdf`
+3. **Path should be**: `/Users/a917751/Desktop/MyWork/public/Ajinkya_Kate_Resume.pdf`
 
 ## Current Status
 
