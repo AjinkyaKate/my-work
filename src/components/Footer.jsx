@@ -24,10 +24,10 @@ const Footer = () => {
             { name: 'Writing', href: '/#blog' }
         ],
         Connect: [
-            { name: 'LinkedIn', href: 'https://linkedin.com/in/ajinkyakate', external: true },
+            { name: 'LinkedIn', href: 'https://www.linkedin.com/in/ajinkya-kate/', external: true },
             { name: 'Twitter', href: 'https://x.com/Ajinkya_Kate_', external: true },
             { name: 'Medium', href: 'https://medium.com/@Ajinkya_Kate', external: true },
-            { name: 'Email', href: 'mailto:ajinkyakate2001@gmail.com' }
+            { name: 'Email', href: 'mailto:ajinkyakate2001@gmail.com?subject=Product%20Opportunity%20%2F%20Collaboration&body=Hi%20Ajinkya%2C%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect%20regarding...' }
         ]
     };
 
@@ -46,13 +46,13 @@ const Footer = () => {
                             Product Manager building 0→1 solutions for real-world problems.
                         </p>
                         <div className="social-icons">
-                            <a href="https://linkedin.com/in/ajinkyakate" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn">
+                            <a href="https://www.linkedin.com/in/ajinkya-kate/" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn">
                                 <Linkedin size={20} />
                             </a>
                             <a href="https://x.com/Ajinkya_Kate_" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Twitter">
                                 <Twitter size={20} />
                             </a>
-                            <a href="mailto:ajinkyakate2001@gmail.com" className="social-icon" aria-label="Email">
+                            <a href="mailto:ajinkyakate2001@gmail.com?subject=Product%20Opportunity%20%2F%20Collaboration&body=Hi%20Ajinkya%2C%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect%20regarding..." className="social-icon" aria-label="Email">
                                 <Mail size={20} />
                             </a>
                         </div>
@@ -95,7 +95,7 @@ const Footer = () => {
                         <p className="cta-text">
                             Open to product roles and collaborations.
                         </p>
-                        <a href="mailto:ajinkyakate2001@gmail.com" className="footer-cta-btn">
+                        <a href="mailto:ajinkyakate2001@gmail.com?subject=Product%20Opportunity%20%2F%20Collaboration&body=Hi%20Ajinkya%2C%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect%20regarding..." className="footer-cta-btn">
                             <Mail size={16} />
                             <span>Get in Touch</span>
                         </a>

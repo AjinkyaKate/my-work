@@ -36,7 +36,7 @@ const Hero = () => {
                                     <FileText size={20} style={{ marginRight: '0.5rem' }} />
                                     View Resume
                                 </button>
-                                <a href="https://linkedin.com/in/ajinkyakate" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.8rem 1.6rem', fontSize: '1rem' }}>
+                                <a href="https://www.linkedin.com/in/ajinkya-kate/" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.8rem 1.6rem', fontSize: '1rem' }}>
                                     <Linkedin size={20} />
                                 </a>
                             </div>

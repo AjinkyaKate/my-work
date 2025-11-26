@@ -51,6 +51,9 @@ const Blog = () => {
                             to={post.link}
                             className={`blog-card ${post.featured ? 'featured' : ''} animate-fade-up delay-${(index + 1) * 100}`}
                         >
+                            <div className="blog-bg-glow"></div>
+                            <div className="gradient-border"></div>
+
                             {post.featured && (
                                 <div className="featured-badge">
                                     <Sparkles size={14} />
@@ -58,18 +61,13 @@ const Blog = () => {
                                 </div>
                             )}
 
-                            <div className="card-gradient"></div>
-
                             <div className="card-content">
                                 <div className="card-meta">
-                                    <div className="category-tag">
-                                        <Tag size={12} />
-                                        <span>{post.category}</span>
-                                    </div>
-                                    <div className="read-time">
+                                    <span className="meta-tag category">{post.category}</span>
+                                    <span className="meta-tag time">
                                         <Clock size={12} />
-                                        <span>{post.readTime}</span>
-                                    </div>
+                                        {post.readTime}
+                                    </span>
                                 </div>
 
                                 <h4>{post.title}</h4>
@@ -143,50 +141,70 @@ const Blog = () => {
 
                 .blog-grid {
                     display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+                    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
                     gap: 2rem;
                 }
 
                 .blog-card {
                     position: relative;
-                    display: block;
+                    display: flex;
+                    flex-direction: column;
                     background: var(--bg-secondary);
-                    border-radius: var(--radius-lg);
+                    border-radius: 24px;
                     padding: 2.5rem;
                     text-decoration: none;
                     color: inherit;
                     border: 1px solid var(--border-primary);
                     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                    box-shadow: var(--shadow-md);
                     overflow: hidden;
+                    z-index: 1;
+                    height: 100%;
                 }
 
                 .blog-card.featured {
-                    grid-column: span 1;
                     background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(79, 70, 229, 0.05) 100%);
                 }
 
                 .blog-card:hover {
                     transform: translateY(-8px);
-                    box-shadow: var(--shadow-xl);
-                    border-color: var(--accent-primary);
+                    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+                    border-color: transparent;
                 }
 
-                .blog-card:hover .card-gradient {
-                    opacity: 1;
-                }
-
-                /* Gradient Overlay */
-                .card-gradient {
+                .blog-bg-glow {
                     position: absolute;
                     top: 0;
-                    left: 0;
                     right: 0;
-                    height: 100%;
-                    background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(16, 185, 129, 0.1));
+                    width: 250px;
+                    height: 250px;
+                    background: radial-gradient(circle at top right, var(--accent-primary), transparent 70%);
                     opacity: 0;
                     transition: opacity 0.4s ease;
                     pointer-events: none;
+                    filter: blur(50px);
+                    z-index: -1;
+                }
+
+                .blog-card:hover .blog-bg-glow {
+                    opacity: 0.1;
+                }
+
+                .gradient-border {
+                    position: absolute;
+                    inset: 0;
+                    border-radius: 24px;
+                    padding: 1px;
+                    background: linear-gradient(135deg, var(--accent-primary), var(--secondary-emerald));
+                    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                    -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+                    opacity: 0;
+                    transition: opacity 0.4s ease;
+                    pointer-events: none;
+                }
+
+                .blog-card:hover .gradient-border {
+                    opacity: 1;
                 }
 
                 /* Featured Badge */
@@ -197,7 +215,7 @@ const Blog = () => {
                     display: flex;
                     align-items: center;
                     gap: 0.4rem;
-                    padding: 0.5rem 0.875rem;
+                    padding: 0.4rem 0.8rem;
                     background: var(--accent-primary);
                     color: white;
                     font-size: 0.75rem;
@@ -212,40 +230,54 @@ const Blog = () => {
                 .card-content {
                     position: relative;
                     z-index: 1;
+                    display: flex;
+                    flex-direction: column;
+                    flex-grow: 1;
                 }
 
                 .card-meta {
                     display: flex;
-                    gap: 1rem;
+                    flex-wrap: wrap;
+                    gap: 0.5rem;
                     margin-bottom: 1.5rem;
                 }
 
-                .category-tag,
-                .read-time {
+                .meta-tag {
                     display: flex;
                     align-items: center;
                     gap: 0.35rem;
-                    font-size: 0.8rem;
-                    color: var(--text-tertiary);
-                    padding: 0.4rem 0.75rem;
-                    background: rgba(255, 255, 255, 0.05);
-                    border-radius: 6px;
+                    font-size: 0.75rem;
+                    padding: 0.25rem 0.75rem;
+                    border-radius: 100px;
+                    background: var(--bg-tertiary);
+                    color: var(--text-secondary);
                     border: 1px solid var(--border-primary);
-                    font-weight: 500;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    letter-spacing: 0.05em;
+                    transition: all 0.3s ease;
                 }
 
-                .category-tag {
+                .blog-card:hover .meta-tag {
+                    background: rgba(255, 255, 255, 0.05);
+                    color: var(--text-primary);
+                    border-color: rgba(255, 255, 255, 0.1);
+                }
+
+                .meta-tag.category {
                     color: var(--accent-primary);
-                    border-color: rgba(79, 70, 229, 0.3);
+                    background: rgba(79, 70, 229, 0.1);
+                    border-color: rgba(79, 70, 229, 0.2);
                 }
 
                 .card-content h4 {
                     font-size: 1.5rem;
                     margin: 0 0 1rem 0;
-                    line-height: 1.4;
-                    font-weight: 600;
+                    line-height: 1.3;
+                    font-weight: 700;
                     color: var(--text-primary);
                     transition: color 0.3s ease;
+                    letter-spacing: -0.02em;
                 }
 
                 .blog-card:hover h4 {
@@ -257,6 +289,7 @@ const Blog = () => {
                     line-height: 1.6;
                     color: var(--text-secondary);
                     margin: 0 0 2rem 0;
+                    flex-grow: 1;
                 }
 
                 .card-footer {
@@ -265,6 +298,7 @@ const Blog = () => {
                     align-items: center;
                     padding-top: 1.5rem;
                     border-top: 1px solid var(--border-primary);
+                    margin-top: auto;
                 }
 
                 .date {
@@ -278,17 +312,18 @@ const Blog = () => {
                     align-items: center;
                     gap: 0.5rem;
                     font-size: 0.9rem;
-                    color: var(--accent-primary);
+                    color: var(--text-primary);
                     font-weight: 600;
                     transition: all 0.3s ease;
                 }
 
                 .blog-card:hover .read-more {
+                    color: var(--accent-primary);
                     gap: 0.75rem;
                 }
 
                 .arrow-icon {
-                    transition: transform 0.3s ease;
+                    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 }
 
                 .blog-card:hover .arrow-icon {

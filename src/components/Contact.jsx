@@ -26,12 +26,12 @@ const Contact = () => {
                     </p>
 
                     <div className="actions">
-                        <a href="mailto:ajinkyakate2001@gmail.com" className="btn btn-primary pulse-btn">
+                        <a href="mailto:ajinkyakate2001@gmail.com?subject=Product%20Opportunity%20%2F%20Collaboration&body=Hi%20Ajinkya%2C%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect%20regarding..." className="btn btn-primary pulse-btn">
                             <Mail size={20} />
                             <span>Email Me</span>
                             <div className="btn-shine"></div>
                         </a>
-                        <a href="https://linkedin.com/in/ajinkyakate" target="_blank" rel="noopener noreferrer" className="btn btn-outline social-btn">
+                        <a href="https://www.linkedin.com/in/ajinkya-kate/" target="_blank" rel="noopener noreferrer" className="btn btn-outline social-btn">
                             <Linkedin size={20} />
                             <span>LinkedIn</span>
                         </a>

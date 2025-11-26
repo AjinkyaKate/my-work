@@ -13,113 +13,84 @@ const StartupExperience = () => {
                     </p>
                 </div>
 
-                <div className="timeline-container">
-                    {/* Timeline Connector */}
-                    <div className="timeline-line"></div>
-
+                <div className="startup-grid">
                     {/* Qport Card */}
-                    <div className="experience-card animate-fade-up delay-100" data-index="01">
-                        <div className="card-number">01</div>
-                        <div className="gradient-border"></div>
-                        <div className="card-header">
-                            <div className="brand-row">
-                                <div className="logo-wrapper">
-                                    <img src={qportLogo} alt="Qport" />
-                                </div>
-                                <div className="brand-info">
+                    <div className="experience-card animate-fade-up delay-100">
+                        <div className="card-header-compact">
+                            <div className="logo-wrapper-compact">
+                                <img src={qportLogo} alt="Qport" />
+                            </div>
+                            <div className="brand-info-compact">
+                                <div className="brand-top">
                                     <h3>Qport</h3>
-                                    <span className="role-text">Product Manager • 0-1 Build</span>
+                                    <div className="recent-badge-compact">
+                                        <Sparkles size={10} />
+                                        <span>Recent</span>
+                                    </div>
                                 </div>
-                                <a href="#" className="arrow-link" aria-label="Visit Qport">
-                                    <ArrowUpRight size={20} />
-                                </a>
+                                <span className="role-text-compact">Product Manager • 0-1 Build</span>
+                            </div>
+                            <a href="#" className="arrow-link-compact" aria-label="Visit Qport">
+                                <ArrowUpRight size={18} />
+                            </a>
+                        </div>
+
+                        <div className="card-body-compact">
+                            <p className="mission-text-compact">
+                                Turn a fragmented, manual logistics environment into a seamless digital product.
+                            </p>
+                            <div className="impact-tags">
+                                <span>Launched MVP in ~3mo</span>
+                                <span>-40% Turnaround Time</span>
+                                <span>Agile Processes</span>
                             </div>
                         </div>
 
-                        <div className="card-body">
-                            <div className="section-block">
-                                <span className="label">MISSION</span>
-                                <p className="mission-text">
-                                    Turn a fragmented, manual logistics environment into a seamless digital product.
-                                </p>
+                        <div className="card-footer-compact">
+                            <div className="meta-item-compact">
+                                <Calendar size={14} />
+                                <span>Aug 2025 - Present</span>
                             </div>
-
-                            <div className="section-block">
-                                <span className="label">KEY IMPACT</span>
-                                <ul className="impact-list">
-                                    <li>Launched MVP in ~3 months</li>
-                                    <li>Reduced turnaround time by ~40%</li>
-                                    <li>Established Agile processes</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div className="card-footer">
-                            <div className="meta-item">
-                                <Calendar size={16} />
-                                <span>2021 - 2023</span>
-                            </div>
-                            <div className="meta-item">
-                                <Users size={16} />
+                            <div className="meta-item-compact">
+                                <Users size={14} />
                                 <span>10-50 Employees</span>
                             </div>
                         </div>
                     </div>
 
-                    {/* Timeline Marker */}
-                    <div className="timeline-marker">
-                        <div className="marker-dot"></div>
-                        <span className="marker-label">2021 - 2023</span>
-                    </div>
-
                     {/* Denner Card */}
-                    <div className="experience-card recent-badge animate-fade-up delay-200" data-index="02">
-                        <div className="card-number">02</div>
-                        <div className="gradient-border"></div>
-                        <div className="recent-indicator">
-                            <Sparkles size={14} />
-                            <span>Recent</span>
-                        </div>
-                        <div className="card-header">
-                            <div className="brand-row">
-                                <div className="logo-wrapper">
-                                    <img src="https://media.licdn.com/dms/image/v2/D4D0BAQH5yyMCUma4UA/company-logo_200_200/B4DZlNGTztGsAI-/0/1757935126497/denner_india_logo?e=2147483647&v=beta&t=b4b4zS4G8GKS5q0HqB_TplId3mA5KqhOavi0QIjGT0I" alt="Denner" />
-                                </div>
-                                <div className="brand-info">
-                                    <h3>Denner</h3>
-                                    <span className="role-text">Analytics Consultant • Growth</span>
-                                </div>
-                                <a href="#" className="arrow-link" aria-label="Visit Denner">
-                                    <ArrowUpRight size={20} />
-                                </a>
+                    <div className="experience-card animate-fade-up delay-200">
+                        <div className="card-header-compact">
+                            <div className="logo-wrapper-compact">
+                                <img src="https://media.licdn.com/dms/image/v2/D4D0BAQH5yyMCUma4UA/company-logo_200_200/B4DZlNGTztGsAI-/0/1757935126497/denner_india_logo?e=2147483647&v=beta&t=b4b4zS4G8GKS5q0HqB_TplId3mA5KqhOavi0QIjGT0I" alt="Denner" />
                             </div>
+                            <div className="brand-info-compact">
+                                <h3>Denner</h3>
+                                <span className="role-text-compact">Analytics Consultant • Growth</span>
+                            </div>
+                            <a href="http://denner.in" target="_blank" rel="noopener noreferrer" className="arrow-link-compact" aria-label="Visit Denner">
+                                <ArrowUpRight size={18} />
+                            </a>
                         </div>
 
-                        <div className="card-body">
-                            <div className="section-block">
-                                <span className="label">MISSION</span>
-                                <p className="mission-text">
-                                    Move the founding team from gut-feel to data-driven decisions.
-                                </p>
-                            </div>
-
-                            <div className="section-block">
-                                <span className="label">KEY IMPACT</span>
-                                <ul className="impact-list">
-                                    <li>Implemented Mixpanel tracking</li>
-                                    <li>Identified key drop-off screens</li>
-                                    <li>Instilled early data culture</li>
-                                </ul>
+                        <div className="card-body-compact">
+                            <p className="mission-text-compact">
+                                Move the founding team from gut-feel to data-driven decisions.
+                            </p>
+                            <div className="impact-tags">
+                                <span>Mixpanel Tracking</span>
+                                <span>Drop-off Analysis</span>
+                                <span>Data Culture</span>
                             </div>
                         </div>
 
-                        <div className="card-footer">
-                            <div className="meta-item">
-                                <Calendar size={16} />
-                                <span>2020 - 2021</span>
+                        <div className="card-footer-compact">
+                            <div className="meta-item-compact">
+                                <Calendar size={14} />
+                                <span>Mar 2024 - Dec 2024</span>
                             </div>
-                            <div className="meta-item">
-                                <TrendingUp size={16} />
+                            <div className="meta-item-compact">
+                                <TrendingUp size={14} />
                                 <span>Growth Stage</span>
                             </div>
                         </div>
@@ -150,366 +121,158 @@ const StartupExperience = () => {
                     margin-right: auto;
                 }
 
-                .timeline-container {
-                    position: relative;
-                    max-width: 800px;
-                    margin: 0 auto;
+                .startup-grid {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: 1.5rem;
                 }
 
-                /* Timeline Line */
-                .timeline-line {
-                    position: absolute;
-                    left: 50%;
-                    top: 0;
-                    bottom: 0;
-                    width: 2px;
-                    background: linear-gradient(
-                        to bottom,
-                        transparent,
-                        var(--accent-primary) 20%,
-                        var(--accent-primary) 80%,
-                        transparent
-                    );
-                    transform: translateX(-50%);
-                    z-index: 0;
-                }
-
-                /* Timeline Marker */
-                .timeline-marker {
-                    position: relative;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    margin: 2rem 0;
-                    z-index: 1;
-                }
-
-                .marker-dot {
-                    width: 16px;
-                    height: 16px;
-                    background: var(--accent-primary);
-                    border-radius: 50%;
-                    border: 3px solid var(--bg-primary);
-                    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.2);
-                    animation: pulse-dot 2s infinite;
-                }
-
-                .marker-label {
-                    position: absolute;
-                    left: calc(50% + 30px);
-                    font-size: 0.85rem;
-                    color: var(--text-tertiary);
-                    font-weight: 500;
-                    background: var(--bg-primary);
-                    padding: 0.25rem 0.75rem;
-                    border-radius: 100px;
-                    border: 1px solid var(--border-primary);
-                    white-space: nowrap;
-                }
-
-                @keyframes pulse-dot {
-                    0%, 100% {
-                        transform: scale(1);
-                        box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.2);
-                    }
-                    50% {
-                        transform: scale(1.1);
-                        box-shadow: 0 0 0 8px rgba(79, 70, 229, 0.1);
+                @media (min-width: 768px) {
+                    .startup-grid {
+                        grid-template-columns: repeat(2, 1fr);
                     }
                 }
 
                 .experience-card {
-                    position: relative;
                     background: var(--bg-secondary);
-                    border-radius: 24px;
-                    padding: 3rem;
+                    border-radius: 20px;
+                    padding: 2rem;
                     border: 1px solid var(--border-primary);
                     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
                     display: flex;
                     flex-direction: column;
-                    margin-bottom: 3rem;
-                    z-index: 1;
-                    overflow: hidden;
+                    height: 100%;
                 }
 
                 .experience-card:hover {
-                    transform: translateY(-8px);
-                    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
-                    border-color: transparent;
+                    transform: translateY(-6px);
+                    box-shadow: var(--shadow-lg);
+                    border-color: var(--accent-primary);
                 }
 
-                .experience-card:hover .gradient-border {
-                    opacity: 1;
-                }
-
-                /* Gradient Border Effect */
-                .gradient-border {
-                    position: absolute;
-                    inset: 0;
-                    border-radius: 24px;
-                    padding: 1px;
-                    background: linear-gradient(135deg, var(--accent-primary), var(--secondary-emerald));
-                    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-                    -webkit-mask-composite: xor;
-                    mask-composite: exclude;
-                    opacity: 0;
-                    transition: opacity 0.4s ease;
-                    pointer-events: none;
-                }
-
-                /* Card Number Badge */
-                .card-number {
-                    position: absolute;
-                    top: -12px;
-                    left: 3rem;
-                    width: 48px;
-                    height: 48px;
-                    background: var(--bg-primary);
-                    border: 2px solid var(--accent-primary);
-                    border-radius: 50%;
+                .card-header-compact {
                     display: flex;
                     align-items: center;
-                    justify-content: center;
-                    font-weight: 700;
-                    font-size: 1.1rem;
-                    color: var(--accent-primary);
-                    z-index: 2;
-                    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+                    gap: 1rem;
+                    margin-bottom: 1.5rem;
                 }
 
-                /* Recent Indicator */
-                .recent-indicator {
-                    position: absolute;
-                    top: 2rem;
-                    right: 2rem;
-                    display: flex;
-                    align-items: center;
-                    gap: 0.5rem;
-                    padding: 0.5rem 1rem;
-                    background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(16, 185, 129, 0.1));
-                    border: 1px solid var(--accent-primary);
-                    border-radius: 100px;
-                    font-size: 0.85rem;
-                    font-weight: 600;
-                    color: var(--accent-primary);
-                    animation: pulse-glow 2s infinite;
-                }
-
-                .recent-indicator svg {
-                    animation: sparkle 1.5s infinite;
-                }
-
-                @keyframes pulse-glow {
-                    0%, 100% {
-                        box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
-                    }
-                    50% {
-                        box-shadow: 0 0 20px rgba(79, 70, 229, 0.5);
-                    }
-                }
-
-                @keyframes sparkle {
-                    0%, 100% { transform: rotate(0deg) scale(1); }
-                    25% { transform: rotate(-10deg) scale(1.1); }
-                    75% { transform: rotate(10deg) scale(1.1); }
-                }
-
-                /* Header */
-                .card-header {
-                    margin-bottom: 2.5rem;
-                }
-
-                .brand-row {
-                    display: flex;
-                    align-items: center;
-                    gap: 1.25rem;
-                }
-
-                .logo-wrapper {
-                    width: 64px;
-                    height: 64px;
+                .logo-wrapper-compact {
+                    width: 56px;
+                    height: 56px;
                     background: #fff;
-                    border-radius: 16px;
+                    border-radius: 12px;
                     padding: 4px;
                     flex-shrink: 0;
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                    transition: transform 0.3s ease;
+                    box-shadow: var(--shadow-sm);
                 }
 
-                .experience-card:hover .logo-wrapper {
-                    transform: scale(1.05);
-                }
-
-                .logo-wrapper img {
+                .logo-wrapper-compact img {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
-                    border-radius: 12px;
+                    border-radius: 8px;
                 }
 
-                .brand-info {
+                .brand-info-compact {
                     flex-grow: 1;
                 }
 
-                .brand-info h3 {
-                    font-size: 1.75rem;
+                .brand-top {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    margin-bottom: 0.25rem;
+                }
+
+                .brand-info-compact h3 {
+                    font-size: 1.25rem;
                     font-weight: 700;
                     color: var(--text-primary);
-                    margin: 0 0 0.25rem 0;
+                    margin: 0;
                     letter-spacing: -0.01em;
                 }
 
-                .role-text {
-                    font-size: 0.95rem;
+                .recent-badge-compact {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.25rem;
+                    padding: 0.2rem 0.5rem;
+                    background: rgba(79, 70, 229, 0.1);
+                    border: 1px solid var(--accent-primary);
+                    border-radius: 100px;
+                    font-size: 0.7rem;
+                    font-weight: 600;
+                    color: var(--accent-primary);
+                }
+
+                .role-text-compact {
+                    font-size: 0.9rem;
                     color: #22d3ee;
                     font-weight: 500;
                 }
 
-                .arrow-link {
+                .arrow-link-compact {
                     color: var(--text-tertiary);
                     transition: all 0.3s ease;
                     padding: 0.5rem;
                     border-radius: 50%;
                 }
 
-                .experience-card:hover .arrow-link {
+                .experience-card:hover .arrow-link-compact {
                     color: var(--accent-primary);
                     background: rgba(79, 70, 229, 0.1);
-                    transform: translate(2px, -2px);
                 }
 
-                /* Body */
-                .card-body {
+                .card-body-compact {
                     flex-grow: 1;
                     display: flex;
                     flex-direction: column;
-                    gap: 2.5rem;
-                    margin-bottom: 3rem;
+                    gap: 1.5rem;
+                    margin-bottom: 2rem;
                 }
 
-                .section-block {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 0.75rem;
-                }
-
-                .label {
-                    font-size: 0.75rem;
-                    text-transform: uppercase;
-                    letter-spacing: 0.1em;
-                    color: var(--accent-primary);
-                    font-weight: 600;
-                    display: flex;
-                    align-items: center;
-                    gap: 0.5rem;
-                }
-
-                .label::before {
-                    content: '';
-                    width: 24px;
-                    height: 2px;
-                    background: var(--accent-primary);
-                }
-
-                .mission-text {
-                    font-size: 1.1rem;
+                .mission-text-compact {
+                    font-size: 1rem;
                     line-height: 1.6;
                     color: var(--text-secondary);
                     margin: 0;
                 }
 
-                .impact-list {
-                    list-style: none;
-                    padding: 0;
-                    margin: 0;
+                .impact-tags {
                     display: flex;
-                    flex-direction: column;
-                    gap: 0.75rem;
+                    flex-wrap: wrap;
+                    gap: 0.5rem;
                 }
 
-                .impact-list li {
-                    position: relative;
-                    padding-left: 1.5rem;
+                .impact-tags span {
+                    font-size: 0.85rem;
                     color: var(--text-secondary);
-                    font-size: 1rem;
-                    line-height: 1.5;
-                    transition: color 0.3s ease;
+                    background: var(--bg-tertiary);
+                    padding: 0.4rem 0.8rem;
+                    border-radius: 8px;
+                    border: 1px solid var(--border-primary);
                 }
 
-                .experience-card:hover .impact-list li {
-                    color: var(--text-primary);
-                }
-
-                .impact-list li::before {
-                    content: '→';
-                    position: absolute;
-                    left: 0;
-                    color: var(--accent-primary);
-                    font-size: 1.2rem;
-                    font-weight: 700;
-                    line-height: 1.5;
-                }
-
-                /* Footer */
-                .card-footer {
+                .card-footer-compact {
                     padding-top: 1.5rem;
                     border-top: 1px solid var(--border-primary);
                     display: flex;
-                    gap: 2rem;
+                    justify-content: space-between;
                     color: var(--text-tertiary);
-                    font-size: 0.9rem;
+                    font-size: 0.85rem;
                     font-weight: 500;
                 }
 
-                .meta-item {
+                .meta-item-compact {
                     display: flex;
                     align-items: center;
-                    gap: 0.5rem;
-                    transition: color 0.3s ease;
+                    gap: 0.4rem;
                 }
 
-                .experience-card:hover .meta-item {
-                    color: var(--text-secondary);
-                }
-
-                @media(max-width: 968px) {
-                    .timeline-line {
-                        left: 24px;
-                    }
-
-                    .timeline-marker {
-                        justify-content: flex-start;
-                        padding-left: 16px;
-                    }
-
-                    .marker-label {
-                        left: 50px;
-                    }
-
-                    .header-content {
-                        text-align: left;
-                        margin-bottom: 4rem;
-                    }
-                    
-                    .section-subtitle {
-                        text-align: left;
-                        margin-left: 0;
-                    }
-
-                    .experience-card {
-                        padding: 2rem;
-                        margin-left: 40px;
-                    }
-
-                    .card-number {
-                        left: -54px;
-                    }
-
-                    .recent-indicator {
-                        top: 1rem;
-                        right: 1rem;
-                        padding: 0.4rem 0.8rem;
-                        font-size: 0.75rem;
+                @media(max-width: 768px) {
+                    .startup-grid {
+                        grid-template-columns: 1fr;
                     }
                 }
             `}</style>

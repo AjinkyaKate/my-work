@@ -5,35 +5,31 @@ const Skills = () => {
     const skillGroups = [
         {
             title: 'Product Strategy',
-            icon: <Zap size={24} />,
+            icon: <Zap size={22} />,
             description: 'Turning ambiguity into clear, actionable roadmaps.',
             skills: ['Agile / Scrum (CSPO®)', 'Product Discovery', 'Roadmap Planning', 'Stakeholder Management', 'GTM Strategy'],
-            color: 'var(--primary-indigo)',
-            colSpan: 'span 2'
+            color: 'var(--primary-indigo)'
         },
         {
             title: 'Research & UX',
-            icon: <Users size={24} />,
+            icon: <Users size={22} />,
             description: 'Deeply understanding user needs and behaviors.',
             skills: ['User Interviews', 'Persona Building', 'Wireframing', 'Usability Testing', 'JTBD Framework'],
-            color: 'var(--secondary-emerald)',
-            colSpan: 'span 1'
+            color: 'var(--secondary-emerald)'
         },
         {
             title: 'Data & Analytics',
-            icon: <BarChart2 size={24} />,
+            icon: <BarChart2 size={22} />,
             description: 'Making informed decisions with quantitative insights.',
             skills: ['Mixpanel', 'Google Analytics', 'Amplitude', 'SQL Basics', 'Cohort Analysis'],
-            color: '#F28B82',
-            colSpan: 'span 1'
+            color: '#F28B82'
         },
         {
             title: 'Tools & Stack',
-            icon: <Terminal size={24} />,
+            icon: <Terminal size={22} />,
             description: 'The technical toolkit for modern product delivery.',
             skills: ['Jira', 'Notion', 'Figma', 'Slack', 'Postman', 'Linear'],
-            color: '#C58AF9',
-            colSpan: 'span 2'
+            color: '#C58AF9'
         }
     ];
 
@@ -49,7 +45,7 @@ const Skills = () => {
                     {skillGroups.map((group, index) => (
                         <div
                             key={index}
-                            className={`skill-card animate-fade-up delay-${(index + 1) * 100} ${group.colSpan === 'span 2' ? 'col-span-2' : ''}`}
+                            className={`skill-card animate-fade-up delay-${(index + 1) * 100}`}
                             style={{ '--accent-color': group.color }}
                         >
                             <div className="card-bg-glow"></div>
@@ -93,46 +89,41 @@ const Skills = () => {
                 .skills-grid {
                     display: grid;
                     grid-template-columns: 1fr;
-                    gap: 1rem; /* Further reduced for compact layout */
+                    gap: 1rem;
                 }
 
-                @media (min-width: 968px) {
+                @media (min-width: 768px) {
                     .skills-grid {
-                        grid-template-columns: repeat(3, 1fr);
-                    }
-                    
-                    .col-span-2 {
-                        grid-column: span 2;
+                        grid-template-columns: repeat(2, 1fr);
                     }
                 }
 
                 .skill-card {
                     position: relative;
-                    background: var(--bg-secondary); /* Consistent background */
+                    background: var(--bg-secondary);
                     border: 1px solid var(--border-primary);
-                    border-radius: var(--radius-lg); /* 32px */
+                    border-radius: 20px;
                     overflow: hidden;
                     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                    /* Removed backdrop-filter as we are using solid bg for consistency with Hero/Startup */
                 }
 
                 .skill-card:hover {
-                    transform: translateY(-6px); /* Consistent hover lift */
+                    transform: translateY(-4px);
                     border-color: var(--accent-color);
-                    box-shadow: var(--shadow-xl); /* Deeper shadow */
+                    box-shadow: var(--shadow-lg);
                 }
 
                 .card-bg-glow {
                     position: absolute;
                     top: 0;
                     right: 0;
-                    width: 200px;
-                    height: 200px;
+                    width: 150px;
+                    height: 150px;
                     background: radial-gradient(circle at top right, var(--accent-color), transparent 70%);
                     opacity: 0;
                     transition: opacity 0.4s ease;
                     pointer-events: none;
-                    filter: blur(40px);
+                    filter: blur(30px);
                 }
 
                 .skill-card:hover .card-bg-glow {
@@ -141,7 +132,7 @@ const Skills = () => {
 
                 .card-content {
                     position: relative;
-                    padding: 2.5rem; /* Increased padding */
+                    padding: 1.75rem;
                     z-index: 1;
                     height: 100%;
                     display: flex;
@@ -151,14 +142,14 @@ const Skills = () => {
                 .card-header {
                     display: flex;
                     align-items: center;
-                    gap: 1rem;
-                    margin-bottom: 1.5rem;
+                    gap: 0.75rem;
+                    margin-bottom: 1rem;
                 }
 
                 .icon-box {
-                    width: 56px; /* Slightly larger */
-                    height: 56px;
-                    border-radius: 16px; /* Larger radius */
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 12px;
                     background: var(--bg-tertiary);
                     display: flex;
                     align-items: center;
@@ -175,7 +166,7 @@ const Skills = () => {
                 }
 
                 .group-title {
-                    font-size: 1.5rem; /* Larger title */
+                    font-size: 1.25rem;
                     font-weight: 700;
                     color: var(--text-primary);
                     margin: 0;
@@ -183,22 +174,22 @@ const Skills = () => {
                 }
 
                 .group-description {
-                    font-size: 1rem;
+                    font-size: 0.95rem;
                     color: var(--text-secondary);
-                    margin-bottom: 2.5rem;
-                    line-height: 1.6;
+                    margin-bottom: 1.5rem;
+                    line-height: 1.5;
                     flex-grow: 1;
                 }
 
                 .skills-list {
                     display: flex;
                     flex-wrap: wrap;
-                    gap: 0.75rem;
+                    gap: 0.5rem;
                 }
 
                 .skill-pill {
-                    font-size: 0.9rem;
-                    padding: 0.6rem 1.2rem;
+                    font-size: 0.85rem;
+                    padding: 0.4rem 1rem;
                     border-radius: 100px;
                     background: var(--bg-tertiary);
                     color: var(--text-secondary);
@@ -214,16 +205,12 @@ const Skills = () => {
 
                 .skill-pill:hover {
                     border-color: var(--accent-color);
-                    transform: translateY(-2px);
+                    transform: translateY(-1px);
                 }
 
                 @media (max-width: 768px) {
-                    .skills-grid {
-                        grid-template-columns: 1fr;
-                    }
-                    
                     .skill-card {
-                        padding: 2rem;
+                        padding: 1.5rem;
                     }
                 }
             `}</style>
