@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, Quote, BookOpen, Calendar, ArrowUpRight } from 'lucide-react';
+import { Sparkles, Quote, BookOpen, Calendar, ArrowUpRight, Zap } from 'lucide-react';
 
 const MyStory = () => {
     return (
@@ -14,8 +14,11 @@ const MyStory = () => {
 
                             {/* AI Summary Box */}
                             <div className="ai-summary-box">
+                                <div className="gradient-accent"></div>
                                 <div className="summary-header">
-                                    <Sparkles size={16} className="text-accent" />
+                                    <div className="sparkle-icon">
+                                        <Sparkles size={18} />
+                                    </div>
                                     <span>Journey Summary</span>
                                 </div>
                                 <p>
@@ -23,17 +26,30 @@ const MyStory = () => {
                                 </p>
                             </div>
 
+                            {/* Decorative Divider */}
+                            <div className="section-divider">
+                                <div className="divider-line"></div>
+                                <Zap size={16} className="divider-icon" />
+                                <div className="divider-line"></div>
+                            </div>
+
                             <div className="narrative-content">
-                                <p>
-                                    In 2024–25, I moved into Product. I took on a <strong>0→1 Product Owner role</strong> for <span className="highlight">Qport</span>, helping a logistics startup shape an MVP from a messy PRD. At D·engage, I’ve since stepped into a Scrum Product Owner role (CSPO®), working with cross-functional teams.
+                                <p className="drop-cap">
+                                    In 2024–25, I moved into Product. I took on a <strong>0→1 Product Owner role</strong> for <span className="highlight">Qport</span>, helping a logistics startup shape an MVP from a messy PRD. At D·engage, I've since stepped into a Scrum Product Owner role (CSPO®), working with cross-functional teams.
                                 </p>
                             </div>
 
+                            {/* Enhanced Quote Box */}
                             <div className="quote-box">
-                                <Quote size={48} className="quote-icon-large" />
+                                <div className="quote-backdrop"></div>
+                                <Quote size={64} className="quote-icon-large" />
                                 <p>
                                     "I use AI tools daily – to explore ideas faster, structure requirements, and iterate on documents – but the core is always the same: ship things that solve real problems."
                                 </p>
+                                <div className="quote-attribution">
+                                    <div className="attribution-line"></div>
+                                    <span>My productivity philosophy</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -45,9 +61,13 @@ const MyStory = () => {
                             <span>Timeline Sources</span>
                         </div>
 
+                        {/* Timeline Line */}
+                        <div className="timeline-line-vertical"></div>
+
                         <div className="source-cards">
                             {/* Card 1 */}
                             <div className="source-card">
+                                <div className="timeline-dot"></div>
                                 <div className="card-meta">
                                     <span className="source-number">01</span>
                                     <span className="source-date">Aug 2025 - Present</span>
@@ -62,6 +82,7 @@ const MyStory = () => {
 
                             {/* Card 2 */}
                             <div className="source-card">
+                                <div className="timeline-dot"></div>
                                 <div className="card-meta">
                                     <span className="source-number">02</span>
                                     <span className="source-date">Jan 2025 - Present</span>
@@ -76,6 +97,7 @@ const MyStory = () => {
 
                             {/* Card 3 */}
                             <div className="source-card">
+                                <div className="timeline-dot"></div>
                                 <div className="card-meta">
                                     <span className="source-number">03</span>
                                     <span className="source-date">2024</span>
@@ -108,18 +130,40 @@ const MyStory = () => {
                 }
 
                 .narrative-column h2 {
-                    /* Inherit global h2 styles */
                     color: var(--text-primary);
                     margin-bottom: 3rem;
+                    position: relative;
                 }
 
+                .narrative-column h2::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -1rem;
+                    left: 0;
+                    width: 60px;
+                    height: 3px;
+                    background: linear-gradient(90deg, var(--accent-primary), transparent);
+                }
+
+                /* Enhanced AI Summary Box */
                 .ai-summary-box {
+                    position: relative;
                     background: var(--bg-secondary);
                     border: 1px solid var(--border-primary);
-                    border-radius: var(--radius-lg); /* 24px -> 32px standard */
+                    border-radius: var(--radius-lg);
                     padding: 2.5rem;
                     margin-bottom: 3rem;
-                    box-shadow: var(--shadow-md);
+                    box-shadow: var(--shadow-lg);
+                    overflow: hidden;
+                }
+
+                .gradient-accent {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    height: 4px;
+                    background: linear-gradient(90deg, var(--accent-primary), var(--secondary-emerald));
                 }
 
                 .summary-header {
@@ -133,18 +177,45 @@ const MyStory = () => {
                     margin-bottom: 1.5rem;
                 }
 
-                .text-accent {
-                    color: var(--primary-indigo);
+                .sparkle-icon {
+                    width: 32px;
+                    height: 32px;
+                    background: rgba(79, 70, 229, 0.1);
+                    border-radius: 8px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--accent-primary);
                 }
 
                 .ai-summary-box p {
                     margin: 0;
-                    font-size: 1.25rem;
+                    font-size: 1.3rem;
                     color: var(--text-primary);
                     font-weight: 500;
                     line-height: 1.6;
                 }
 
+                /* Decorative Divider */
+                .section-divider {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    margin: 3rem 0;
+                }
+
+                .divider-line {
+                    flex: 1;
+                    height: 1px;
+                    background: linear-gradient(90deg, var(--border-primary), transparent);
+                }
+
+                .divider-icon {
+                    color: var(--accent-primary);
+                    opacity: 0.5;
+                }
+
+                /* Drop Cap */
                 .narrative-content {
                     display: flex;
                     flex-direction: column;
@@ -155,37 +226,80 @@ const MyStory = () => {
                     margin-bottom: 3rem;
                 }
 
-                .highlight {
-                    color: var(--text-primary);
-                    background: rgba(255, 255, 255, 0.05);
-                    padding: 0 0.25rem;
-                    border-radius: 4px;
+                .drop-cap::first-letter {
+                    float: left;
+                    font-size: 4rem;
+                    line-height: 1;
+                    font-weight: 700;
+                    margin: 0 0.1em 0 0;
+                    color: var(--accent-primary);
                 }
 
+                .highlight {
+                    color: var(--text-primary);
+                    background: rgba(79, 70, 229, 0.1);
+                    padding: 0.1rem 0.4rem;
+                    border-radius: 4px;
+                    font-weight: 600;
+                }
+
+                /* Enhanced Quote Box */
                 .quote-box {
+                    position: relative;
                     background: var(--bg-secondary);
                     border: 1px solid var(--border-primary);
                     border-radius: var(--radius-lg);
-                    padding: 3rem 2.5rem;
-                    position: relative;
-                    box-shadow: var(--shadow-md);
-                    border-left: 4px solid var(--secondary-emerald); /* Accent line */
+                    padding: 3.5rem 3rem;
+                    box-shadow: var(--shadow-xl);
+                    border-left: 4px solid var(--secondary-emerald);
+                    overflow: hidden;
+                }
+
+                .quote-backdrop {
+                    position: absolute;
+                    top: -50%;
+                    right: -20%;
+                    width: 400px;
+                    height: 400px;
+                    background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+                    pointer-events: none;
                 }
 
                 .quote-icon-large {
-                    color: var(--text-tertiary);
+                    color: var(--secondary-emerald);
                     margin-bottom: 1.5rem;
                     display: block;
-                    opacity: 0.5;
+                    opacity: 0.3;
                 }
 
                 .quote-box p {
-                    margin: 0;
-                    font-size: 1.2rem;
+                    margin: 0 0 2rem 0;
+                    font-size: 1.3rem;
                     font-style: italic;
                     color: var(--text-primary);
                     line-height: 1.7;
                     font-weight: 400;
+                    position: relative;
+                }
+
+                .quote-attribution {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                }
+
+                .attribution-line {
+                    width: 40px;
+                    height: 2px;
+                    background: var(--secondary-emerald);
+                }
+
+                .quote-attribution span {
+                    font-size: 0.9rem;
+                    color: var(--text-tertiary);
+                    font-style: normal;
+                    text-transform: uppercase;
+                    letter-spacing: 0.05em;
                 }
 
                 /* Reference Rail */
@@ -205,49 +319,93 @@ const MyStory = () => {
                     letter-spacing: 0.05em;
                     color: var(--text-tertiary);
                     margin-bottom: 2rem;
+                    font-weight: 600;
+                }
+
+                /* Timeline Line for Rail */
+                .timeline-line-vertical {
+                    position: absolute;
+                    left: 0;
+                    top: 4rem;
+                    bottom: 0;
+                    width: 2px;
+                    background: linear-gradient(to bottom, var(--accent-primary), transparent);
+                    opacity: 0.3;
                 }
 
                 .source-cards {
                     display: flex;
                     flex-direction: column;
                     gap: 1.5rem;
+                    position: relative;
                 }
 
                 .source-card {
+                    position: relative;
                     background: var(--bg-secondary);
                     border: 1px solid var(--border-primary);
                     border-radius: var(--radius-md);
-                    padding: 1.25rem;
-                    transition: transform 0.2s ease, border-color 0.2s ease;
-                    cursor: default;
+                    padding: 1.5rem;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
                 }
 
                 .source-card:hover {
-                    transform: translateX(4px);
-                    border-color: var(--primary-indigo);
+                    transform: translateX(8px);
+                    border-color: var(--accent-primary);
+                    box-shadow: var(--shadow-md);
+                }
+
+                /* Timeline Dots */
+                .timeline-dot {
+                    position: absolute;
+                    left: -3.55rem;
+                    top: 1.75rem;
+                    width: 12px;
+                    height: 12px;
+                    background: var(--accent-primary);
+                    border-radius: 50%;
+                    border: 3px solid var(--bg-primary);
+                    z-index: 2;
+                    transition: all 0.3s ease;
+                }
+
+                .source-card:hover .timeline-dot {
+                    transform: scale(1.3);
+                    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.2);
                 }
 
                 .card-meta {
                     display: flex;
                     justify-content: space-between;
+                    align-items: center;
                     font-size: 0.75rem;
                     color: var(--text-tertiary);
-                    margin-bottom: 0.5rem;
+                    margin-bottom: 0.75rem;
                 }
 
                 .source-number {
                     font-family: monospace;
-                    opacity: 0.7;
+                    font-weight: 700;
+                    color: var(--accent-primary);
+                    background: rgba(79, 70, 229, 0.1);
+                    padding: 0.2rem 0.5rem;
+                    border-radius: 4px;
+                }
+
+                .source-date {
+                    font-weight: 500;
                 }
 
                 .source-card h4 {
-                    font-size: 1rem;
-                    margin: 0 0 0.25rem 0;
+                    font-size: 1.1rem;
+                    margin: 0 0 0.5rem 0;
                     color: var(--text-primary);
+                    font-weight: 600;
                 }
 
                 .source-context {
-                    font-size: 0.85rem;
+                    font-size: 0.9rem;
                     color: var(--text-secondary);
                     margin: 0 0 1rem 0;
                 }
@@ -255,11 +413,12 @@ const MyStory = () => {
                 .card-link {
                     display: flex;
                     align-items: center;
-                    gap: 0.25rem;
-                    font-size: 0.75rem;
-                    color: var(--primary-indigo);
+                    gap: 0.35rem;
+                    font-size: 0.8rem;
+                    color: var(--accent-primary);
                     opacity: 0;
-                    transition: opacity 0.2s ease;
+                    transition: opacity 0.3s ease;
+                    font-weight: 500;
                 }
 
                 .source-card:hover .card-link {
@@ -272,17 +431,28 @@ const MyStory = () => {
                         gap: 4rem;
                     }
 
+                    .drop-cap::first-letter {
+                        font-size: 3rem;
+                    }
+
                     .reference-rail {
                         position: static;
                         border-left: none;
-                        padding-left: 0;
+                        padding-left: 2rem;
                         border-top: 1px solid var(--border-primary);
                         padding-top: 3rem;
                     }
 
+                    .timeline-line-vertical {
+                        left: 0;
+                    }
+
+                    .timeline-dot {
+                        left: -2.55rem;
+                    }
+
                     .source-cards {
-                        display: grid;
-                        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                        padding-left: 1rem;
                     }
                 }
             `}</style>
