@@ -45,7 +45,7 @@ const Skills = () => {
                     {skillGroups.map((group, index) => (
                         <div
                             key={index}
-                            className={`skill-card animate-fade-up delay-${(index + 1) * 100}`}
+                            className={`skill-card mobile-scroll-item animate-fade-up delay-${(index + 1) * 100}`}
                             style={{ '--accent-color': group.color }}
                         >
                             <div className="card-bg-glow"></div>
@@ -89,7 +89,25 @@ const Skills = () => {
                 .skills-grid {
                     display: grid;
                     grid-template-columns: 1fr;
-                    gap: 1rem;
+                    gap: 1.5rem;
+                }
+
+                @media (max-width: 768px) {
+                    .skills-grid {
+                        display: flex;
+                        overflow-x: auto;
+                        scroll-snap-type: x mandatory;
+                        gap: 1rem;
+                        padding-bottom: 1.5rem;
+                        margin-right: -1.5rem;
+                        padding-right: 1.5rem;
+                        -webkit-overflow-scrolling: touch;
+                        scrollbar-width: none;
+                    }
+
+                    .skills-grid::-webkit-scrollbar {
+                        display: none;
+                    }
                 }
 
                 @media (min-width: 768px) {
@@ -211,6 +229,9 @@ const Skills = () => {
                 @media (max-width: 768px) {
                     .skill-card {
                         padding: 1.5rem;
+                        flex: 0 0 85vw;
+                        width: 85vw;
+                        scroll-snap-align: start;
                     }
                 }
             `}</style>

@@ -49,7 +49,7 @@ const Blog = () => {
                         <Link
                             key={index}
                             to={post.link}
-                            className={`blog-card ${post.featured ? 'featured' : ''} animate-fade-up delay-${(index + 1) * 100}`}
+                            className={`blog-card mobile-scroll-item ${post.featured ? 'featured' : ''} animate-fade-up delay-${(index + 1) * 100}`}
                         >
                             <div className="blog-bg-glow"></div>
                             <div className="gradient-border"></div>
@@ -143,6 +143,25 @@ const Blog = () => {
                     display: grid;
                     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
                     gap: 2rem;
+                }
+
+                @media (max-width: 768px) {
+                    .blog-grid {
+                        display: flex;
+                        overflow-x: auto;
+                        scroll-snap-type: x mandatory;
+                        gap: 1rem;
+                        padding-bottom: 1.5rem;
+                        margin-right: -1.5rem;
+                        padding-right: 1.5rem;
+                        -webkit-overflow-scrolling: touch;
+                        scrollbar-width: none;
+                        grid-template-columns: none; /* Override grid */
+                    }
+
+                    .blog-grid::-webkit-scrollbar {
+                        display: none;
+                    }
                 }
 
                 .blog-card {
@@ -336,10 +355,6 @@ const Blog = () => {
                         align-items: flex-start;
                     }
 
-                    .blog-grid {
-                        grid-template-columns: 1fr;
-                    }
-
                     .blog-card {
                         padding: 2rem;
                     }
@@ -347,6 +362,16 @@ const Blog = () => {
                     .featured-badge {
                         top: 1rem;
                         right: 1rem;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .blog-card {
+                        flex: 0 0 85vw;
+                        width: 85vw;
+                        scroll-snap-align: start;
+                        height: auto; /* Allow height to adjust */
+                        min-height: 100%;
                     }
                 }
             `}</style>

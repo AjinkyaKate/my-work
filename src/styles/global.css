@@ -278,3 +278,34 @@ a {
   display: flex;
   flex-direction: column;
 }
+
+/* Mobile Horizontal Scroll Utilities */
+@media (max-width: 768px) {
+  .mobile-scroll-container {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    gap: 1rem !important;
+    padding-bottom: 1.5rem !important;
+    /* Space for scrollbar/shadow */
+    margin-right: -1.5rem !important;
+    /* Counteract container padding */
+    padding-right: 1.5rem !important;
+    /* Add padding to end */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .mobile-scroll-container::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+  }
+
+  .mobile-scroll-item {
+    flex: 0 0 85vw !important;
+    /* Show part of next card */
+    width: 85vw !important;
+    scroll-snap-align: start;
+  }
+}

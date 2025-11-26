@@ -124,7 +124,25 @@ const StartupExperience = () => {
                 .startup-grid {
                     display: grid;
                     grid-template-columns: 1fr;
-                    gap: 1.5rem;
+                    gap: 2rem;
+                }
+
+                @media (max-width: 768px) {
+                    .startup-grid {
+                        display: flex;
+                        overflow-x: auto;
+                        scroll-snap-type: x mandatory;
+                        gap: 1rem;
+                        padding-bottom: 1.5rem;
+                        margin-right: -1.5rem;
+                        padding-right: 1.5rem;
+                        -webkit-overflow-scrolling: touch;
+                        scrollbar-width: none;
+                    }
+
+                    .startup-grid::-webkit-scrollbar {
+                        display: none;
+                    }
                 }
 
                 @media (min-width: 768px) {
@@ -148,6 +166,28 @@ const StartupExperience = () => {
                     transform: translateY(-6px);
                     box-shadow: var(--shadow-lg);
                     border-color: var(--accent-primary);
+                }
+
+                @media (max-width: 768px) {
+                    .experience-card {
+                        padding: 1.5rem;
+                        flex: 0 0 85vw;
+                        width: 85vw;
+                        scroll-snap-align: start;
+                    }
+                    
+                    .card-header-compact {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 1rem;
+                    }
+                    
+                    .recent-badge-compact {
+                        position: relative;
+                        top: 0;
+                        right: 0;
+                        align-self: flex-start;
+                    }
                 }
 
                 .card-header-compact {

@@ -40,7 +40,7 @@ const CaseStudies = () => {
                         <Link
                             to={study.link}
                             key={index}
-                            className={`case-item animate-fade-up delay-${(index + 1) * 100}`}
+                            className={`case-item mobile-scroll-item animate-fade-up delay-${(index + 1) * 100}`}
                         >
                             <div className="case-bg-glow"></div>
                             <div className="gradient-border"></div>
@@ -77,6 +77,24 @@ const CaseStudies = () => {
                     grid-template-columns: 1fr;
                     gap: 1.5rem;
                     border-top: none;
+                }
+
+                @media (max-width: 768px) {
+                    .case-list {
+                        display: flex;
+                        overflow-x: auto;
+                        scroll-snap-type: x mandatory;
+                        gap: 1rem;
+                        padding-bottom: 1.5rem;
+                        margin-right: -1.5rem;
+                        padding-right: 1.5rem;
+                        -webkit-overflow-scrolling: touch;
+                        scrollbar-width: none;
+                    }
+                    
+                    .case-list::-webkit-scrollbar {
+                        display: none;
+                    }
                 }
 
                 @media (min-width: 968px) {
@@ -230,6 +248,9 @@ const CaseStudies = () => {
                 @media (max-width: 768px) {
                     .case-item {
                         padding: 1.5rem;
+                        flex: 0 0 85vw;
+                        width: 85vw;
+                        scroll-snap-align: start;
                     }
 
                     .case-title {
