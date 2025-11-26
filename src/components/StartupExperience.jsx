@@ -130,18 +130,8 @@ const StartupExperience = () => {
                 @media (max-width: 768px) {
                     .startup-grid {
                         display: flex;
-                        overflow-x: auto;
-                        scroll-snap-type: x mandatory;
-                        gap: 1rem;
-                        padding-bottom: 1.5rem;
-                        margin-right: -1.5rem;
-                        padding-right: 1.5rem;
-                        -webkit-overflow-scrolling: touch;
-                        scrollbar-width: none;
-                    }
-
-                    .startup-grid::-webkit-scrollbar {
-                        display: none;
+                        flex-direction: column;
+                        gap: 2rem;
                     }
                 }
 
@@ -171,9 +161,7 @@ const StartupExperience = () => {
                 @media (max-width: 768px) {
                     .experience-card {
                         padding: 1.5rem;
-                        flex: 0 0 85vw;
-                        width: 85vw;
-                        scroll-snap-align: start;
+                        width: 100%;
                     }
                     
                     .card-header-compact {

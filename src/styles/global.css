@@ -279,33 +279,25 @@ a {
   flex-direction: column;
 }
 
-/* Mobile Horizontal Scroll Utilities */
+/* Mobile Vertical Stack Utilities */
 @media (max-width: 768px) {
   .mobile-scroll-container {
     display: flex !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory;
-    gap: 1rem !important;
-    padding-bottom: 1.5rem !important;
-    /* Space for scrollbar/shadow */
-    margin-right: -1.5rem !important;
-    /* Counteract container padding */
-    padding-right: 1.5rem !important;
-    /* Add padding to end */
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    /* Firefox */
+    flex-direction: column !important;
+    gap: 2rem !important;
+    padding-bottom: 0 !important;
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+    overflow-x: visible !important;
   }
 
   .mobile-scroll-container::-webkit-scrollbar {
     display: none;
-    /* Chrome/Safari */
   }
 
   .mobile-scroll-item {
-    flex: 0 0 85vw !important;
-    /* Show part of next card */
-    width: 85vw !important;
-    scroll-snap-align: start;
+    flex: 1 1 auto !important;
+    width: 100% !important;
+    scroll-snap-align: none;
   }
 }

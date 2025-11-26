@@ -148,19 +148,9 @@ const Blog = () => {
                 @media (max-width: 768px) {
                     .blog-grid {
                         display: flex;
-                        overflow-x: auto;
-                        scroll-snap-type: x mandatory;
-                        gap: 1rem;
-                        padding-bottom: 1.5rem;
-                        margin-right: -1.5rem;
-                        padding-right: 1.5rem;
-                        -webkit-overflow-scrolling: touch;
-                        scrollbar-width: none;
-                        grid-template-columns: none; /* Override grid */
-                    }
-
-                    .blog-grid::-webkit-scrollbar {
-                        display: none;
+                        flex-direction: column;
+                        gap: 1.5rem;
+                        grid-template-columns: none;
                     }
                 }
 
@@ -367,9 +357,8 @@ const Blog = () => {
 
                 @media (max-width: 768px) {
                     .blog-card {
-                        flex: 0 0 85vw;
-                        width: 85vw;
-                        scroll-snap-align: start;
+                        width: 100%;
+                        scroll-snap-align: none;
                         height: auto; /* Allow height to adjust */
                         min-height: 100%;
                     }

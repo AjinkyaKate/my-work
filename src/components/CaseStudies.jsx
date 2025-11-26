@@ -82,18 +82,8 @@ const CaseStudies = () => {
                 @media (max-width: 768px) {
                     .case-list {
                         display: flex;
-                        overflow-x: auto;
-                        scroll-snap-type: x mandatory;
-                        gap: 1rem;
-                        padding-bottom: 1.5rem;
-                        margin-right: -1.5rem;
-                        padding-right: 1.5rem;
-                        -webkit-overflow-scrolling: touch;
-                        scrollbar-width: none;
-                    }
-                    
-                    .case-list::-webkit-scrollbar {
-                        display: none;
+                        flex-direction: column;
+                        gap: 1.5rem;
                     }
                 }
 
@@ -248,9 +238,7 @@ const CaseStudies = () => {
                 @media (max-width: 768px) {
                     .case-item {
                         padding: 1.5rem;
-                        flex: 0 0 85vw;
-                        width: 85vw;
-                        scroll-snap-align: start;
+                        width: 100%;
                     }
 
                     .case-title {

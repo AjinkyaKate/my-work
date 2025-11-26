@@ -95,18 +95,8 @@ const Skills = () => {
                 @media (max-width: 768px) {
                     .skills-grid {
                         display: flex;
-                        overflow-x: auto;
-                        scroll-snap-type: x mandatory;
-                        gap: 1rem;
-                        padding-bottom: 1.5rem;
-                        margin-right: -1.5rem;
-                        padding-right: 1.5rem;
-                        -webkit-overflow-scrolling: touch;
-                        scrollbar-width: none;
-                    }
-
-                    .skills-grid::-webkit-scrollbar {
-                        display: none;
+                        flex-direction: column;
+                        gap: 1.5rem;
                     }
                 }
 
@@ -229,9 +219,7 @@ const Skills = () => {
                 @media (max-width: 768px) {
                     .skill-card {
                         padding: 1.5rem;
-                        flex: 0 0 85vw;
-                        width: 85vw;
-                        scroll-snap-align: start;
+                        width: 100%;
                     }
                 }
             `}</style>
