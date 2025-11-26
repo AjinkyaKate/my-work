@@ -14,7 +14,7 @@ const Education = () => {
             description: 'Advanced training in Scrum framework, backlog refinement, and maximizing product value.',
             icon: <Award size={24} />,
             status: 'Verified',
-            color: '#F59E0B',
+            color: 'var(--secondary-emerald)',
             hasCertificate: true
         },
         {
@@ -108,22 +108,21 @@ const Education = () => {
                 }
 
                 .section-header h2 {
-                    font-size: 2rem;
-                    font-weight: 500;
+                    /* Inherits global h2 styles */
                     color: var(--text-primary);
-                    margin-bottom: 0.5rem;
-                    letter-spacing: -0.02em;
+                    margin-bottom: 1rem;
                 }
 
                 .section-header p {
                     font-size: 1.1rem;
                     color: var(--text-secondary);
+                    max-width: 500px;
                 }
 
                 .credential-grid {
                     display: grid;
                     grid-template-columns: 1fr;
-                    gap: 1.5rem;
+                    gap: 2rem; /* Increased gap */
                 }
 
                 @media (min-width: 968px) {
@@ -134,22 +133,19 @@ const Education = () => {
 
                 .credential-card {
                     position: relative;
-                    background: rgba(255, 255, 255, 0.03);
-                    border: 1px solid rgba(255, 255, 255, 0.05);
-                    border-radius: 24px;
+                    background: var(--bg-secondary);
+                    border: 1px solid var(--border-primary);
+                    border-radius: var(--radius-lg); /* 32px */
                     overflow: hidden;
                     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                    backdrop-filter: blur(10px);
-                    -webkit-backdrop-filter: blur(10px);
                     display: flex;
                     flex-direction: column;
                 }
 
                 .credential-card:hover {
-                    transform: translateY(-4px);
+                    transform: translateY(-6px);
                     border-color: var(--accent-color);
-                    background: rgba(255, 255, 255, 0.05);
-                    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+                    box-shadow: var(--shadow-xl);
                 }
 
                 .card-bg-glow {
@@ -171,7 +167,7 @@ const Education = () => {
 
                 .card-content {
                     position: relative;
-                    padding: 2rem;
+                    padding: 2.5rem; /* Increased padding */
                     z-index: 1;
                     height: 100%;
                     display: flex;
@@ -186,40 +182,44 @@ const Education = () => {
                 }
 
                 .icon-box {
-                    width: 48px;
-                    height: 48px;
-                    border-radius: 12px;
-                    background: rgba(255, 255, 255, 0.05);
+                    width: 56px;
+                    height: 56px;
+                    border-radius: 16px;
+                    background: var(--bg-tertiary);
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     color: var(--text-primary);
                     transition: all 0.3s ease;
+                    border: 1px solid var(--border-primary);
                 }
 
                 .credential-card:hover .icon-box {
                     background: var(--accent-color);
                     color: #fff;
+                    border-color: var(--accent-color);
                 }
 
                 .status-badge {
                     display: flex;
                     align-items: center;
-                    gap: 0.25rem;
-                    font-size: 0.75rem;
+                    gap: 0.35rem;
+                    font-size: 0.8rem;
                     font-weight: 600;
-                    padding: 0.25rem 0.75rem;
+                    padding: 0.4rem 0.8rem;
                     border-radius: 100px;
-                    background: rgba(255, 255, 255, 0.05);
+                    background: var(--bg-tertiary);
                     color: var(--text-secondary);
                     text-transform: uppercase;
                     letter-spacing: 0.05em;
-                    border: 1px solid transparent;
+                    border: 1px solid var(--border-primary);
+                    transition: all 0.3s ease;
                 }
 
                 .credential-card:hover .status-badge {
                     border-color: var(--accent-color);
                     color: var(--text-primary);
+                    background: rgba(255, 255, 255, 0.05);
                 }
 
                 .card-main {
@@ -227,38 +227,40 @@ const Education = () => {
                 }
 
                 .credential-title {
-                    font-size: 1.25rem;
-                    font-weight: 600;
+                    font-size: 1.5rem;
+                    font-weight: 700;
                     color: var(--text-primary);
-                    margin: 0 0 0.25rem 0;
-                    line-height: 1.4;
+                    margin: 0 0 0.5rem 0;
+                    line-height: 1.3;
+                    letter-spacing: -0.01em;
                 }
 
                 .institution {
-                    font-size: 1rem;
+                    font-size: 1.1rem;
                     color: var(--text-secondary);
-                    margin-bottom: 1rem;
+                    margin-bottom: 1.5rem;
+                    font-weight: 500;
                 }
 
                 .meta-info {
                     display: flex;
-                    gap: 1rem;
-                    margin-bottom: 1.5rem;
-                    font-size: 0.85rem;
+                    gap: 1.25rem;
+                    margin-bottom: 2rem;
+                    font-size: 0.9rem;
                     color: var(--text-tertiary);
                 }
 
                 .meta-info span {
                     display: flex;
                     align-items: center;
-                    gap: 0.35rem;
+                    gap: 0.5rem;
                 }
 
                 .description {
-                    font-size: 0.95rem;
+                    font-size: 1rem;
                     line-height: 1.6;
                     color: var(--text-secondary);
-                    margin-bottom: 1.5rem;
+                    margin-bottom: 2rem;
                 }
 
                 .card-footer {
@@ -271,7 +273,7 @@ const Education = () => {
                     display: flex;
                     align-items: center;
                     gap: 0.5rem;
-                    font-size: 0.9rem;
+                    font-size: 0.95rem;
                     font-weight: 500;
                     color: var(--text-primary);
                     background: transparent;
@@ -285,6 +287,7 @@ const Education = () => {
                 .btn-credential:hover {
                     opacity: 1;
                     color: var(--accent-color);
+                    transform: translateX(4px);
                 }
             `}</style>
         </section>

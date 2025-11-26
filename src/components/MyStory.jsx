@@ -10,7 +10,7 @@ const MyStory = () => {
                     {/* Left: Narrative Column */}
                     <div className="narrative-column">
                         <div className="animate-fade-up">
-                            <h2 style={{ marginBottom: '3rem', fontSize: '2.5rem' }}>My Story</h2>
+                            <h2 className="section-title">My Story</h2>
 
                             {/* AI Summary Box */}
                             <div className="ai-summary-box">
@@ -107,13 +107,19 @@ const MyStory = () => {
                     position: relative;
                 }
 
+                .narrative-column h2 {
+                    /* Inherit global h2 styles */
+                    color: var(--text-primary);
+                    margin-bottom: 3rem;
+                }
+
                 .ai-summary-box {
-                    background: #2D3748; /* Darker slate/grey */
-                    border: 1px solid rgba(255, 255, 255, 0.1);
-                    border-radius: 24px;
+                    background: var(--bg-secondary);
+                    border: 1px solid var(--border-primary);
+                    border-radius: var(--radius-lg); /* 24px -> 32px standard */
                     padding: 2.5rem;
                     margin-bottom: 3rem;
-                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+                    box-shadow: var(--shadow-md);
                 }
 
                 .summary-header {
@@ -123,7 +129,7 @@ const MyStory = () => {
                     font-size: 0.85rem;
                     text-transform: uppercase;
                     letter-spacing: 0.1em;
-                    color: rgba(255, 255, 255, 0.6);
+                    color: var(--text-tertiary);
                     margin-bottom: 1.5rem;
                 }
 
@@ -134,7 +140,7 @@ const MyStory = () => {
                 .ai-summary-box p {
                     margin: 0;
                     font-size: 1.25rem;
-                    color: #FFFFFF;
+                    color: var(--text-primary);
                     font-weight: 500;
                     line-height: 1.6;
                 }
@@ -157,26 +163,27 @@ const MyStory = () => {
                 }
 
                 .quote-box {
-                    background: #2D3748; /* Darker slate/grey */
-                    border: 1px solid rgba(255, 255, 255, 0.1);
-                    border-radius: 24px;
+                    background: var(--bg-secondary);
+                    border: 1px solid var(--border-primary);
+                    border-radius: var(--radius-lg);
                     padding: 3rem 2.5rem;
                     position: relative;
-                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+                    box-shadow: var(--shadow-md);
                     border-left: 4px solid var(--secondary-emerald); /* Accent line */
                 }
 
                 .quote-icon-large {
-                    color: rgba(255, 255, 255, 0.1);
+                    color: var(--text-tertiary);
                     margin-bottom: 1.5rem;
                     display: block;
+                    opacity: 0.5;
                 }
 
                 .quote-box p {
                     margin: 0;
                     font-size: 1.2rem;
                     font-style: italic;
-                    color: #FFFFFF;
+                    color: var(--text-primary);
                     line-height: 1.7;
                     font-weight: 400;
                 }

@@ -1,4 +1,3 @@
-```
 import React from 'react';
 import { ArrowUpRight, Calendar, Users, TrendingUp } from 'lucide-react';
 import qportLogo from '../assets/qport_logo.jpg';
@@ -112,200 +111,199 @@ const StartupExperience = () => {
             </div>
 
             <style jsx>{`
-    .header - content {
-    margin - bottom: 4rem;
-}
+                .header-content {
+                    margin-bottom: 4rem;
+                }
 
-                .section - title {
-    font - size: clamp(2.5rem, 5vw, 4rem);
-    font - weight: 700;
-    margin: 0;
-    letter - spacing: -0.02em;
-    color: #FFFFFF;
-}
-                .section - subtitle {
-    font - size: 1.1rem;
-    color: var(--text - secondary);
-    margin: 0;
-    max - width: 600px;
-}
+                .section-title {
+                    font-size: clamp(2.5rem, 5vw, 4rem);
+                    font-weight: 700;
+                    margin: 0;
+                    letter-spacing: -0.02em;
+                    color: #FFFFFF;
+                }
+                .section-subtitle {
+                    font-size: 1.1rem;
+                    color: var(--text-secondary);
+                    margin: 0;
+                    max-width: 600px;
+                }
 
-                .experience - grid {
-    display: grid;
-    grid - template - columns: repeat(auto - fit, minmax(400px, 1fr));
-    gap: 2rem;
-}
+                .experience-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                    gap: 2rem;
+                }
 
-                .experience - card {
-    background: #1E293B; /* Deep Slate Blue/Grey */
-    border - radius: 24px;
-    padding: 3rem;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: transform 0.3s ease, box - shadow 0.3s ease, border - color 0.3s ease;
-    display: flex;
-    flex - direction: column;
-    height: 100 %;
-}
+                .experience-card {
+                    background: #1E293B; /* Deep Slate Blue/Grey */
+                    border-radius: 24px;
+                    padding: 3rem;
+                    border: 1px solid rgba(255, 255, 255, 0.05);
+                    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+                    display: flex;
+                    flex-direction: column;
+                    height: 100%;
+                }
 
-                .experience - card:hover {
-    transform: translateY(-6px);
-    box - shadow: 0 20px 40px - 10px rgba(0, 0, 0, 0.4);
-    border - color: rgba(34, 211, 238, 0.3); /* Cyan glow */
-}
+                .experience-card:hover {
+                    transform: translateY(-6px);
+                    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.4);
+                    border-color: rgba(34, 211, 238, 0.3); /* Cyan glow */
+                }
 
                 /* Header */
-                .card - header {
-    margin - bottom: 2.5rem;
-}
+                .card-header {
+                    margin-bottom: 2.5rem;
+                }
 
-                .brand - row {
-    display: flex;
-    align - items: center;
-    gap: 1.25rem;
-}
+                .brand-row {
+                    display: flex;
+                    align-items: center;
+                    gap: 1.25rem;
+                }
 
-                .logo - wrapper {
-    width: 64px;
-    height: 64px;
-    background: #fff;
-    border - radius: 16px;
-    padding: 4px;
-    flex - shrink: 0;
-}
+                .logo-wrapper {
+                    width: 64px;
+                    height: 64px;
+                    background: #fff;
+                    border-radius: 16px;
+                    padding: 4px;
+                    flex-shrink: 0;
+                }
 
-                .logo - wrapper img {
-    width: 100 %;
-    height: 100 %;
-    object - fit: cover;
-    border - radius: 12px;
-}
+                .logo-wrapper img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 12px;
+                }
 
-                .brand - info {
-    flex - grow: 1;
-}
+                .brand-info {
+                    flex-grow: 1;
+                }
 
-                .brand - info h3 {
-    font - size: 1.75rem;
-    font - weight: 700;
-    color: #FFFFFF;
-    margin: 0 0 0.25rem 0;
-    letter - spacing: -0.01em;
-}
+                .brand-info h3 {
+                    font-size: 1.75rem;
+                    font-weight: 700;
+                    color: #FFFFFF;
+                    margin: 0 0 0.25rem 0;
+                    letter-spacing: -0.01em;
+                }
 
-                .role - text {
-    font - size: 0.95rem;
-    color: #22d3ee; /* Cyan/Teal Accent */
-    font - weight: 500;
-}
+                .role-text {
+                    font-size: 0.95rem;
+                    color: #22d3ee; /* Cyan/Teal Accent */
+                    font-weight: 500;
+                }
 
-                .arrow - link {
-    color: var(--text - tertiary);
-    transition: color 0.2s ease, transform 0.2s ease;
-    padding: 0.5rem;
-}
+                .arrow-link {
+                    color: var(--text-tertiary);
+                    transition: color 0.2s ease, transform 0.2s ease;
+                    padding: 0.5rem;
+                }
 
-                .experience - card: hover.arrow - link {
-    color: #FFFFFF;
-    transform: translate(2px, -2px);
-}
+                .experience-card:hover .arrow-link {
+                    color: #FFFFFF;
+                    transform: translate(2px, -2px);
+                }
 
                 /* Body */
-                .card - body {
-    flex - grow: 1;
-    display: flex;
-    flex - direction: column;
-    gap: 2.5rem;
-    margin - bottom: 3rem;
-}
+                .card-body {
+                    flex-grow: 1;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2.5rem;
+                    margin-bottom: 3rem;
+                }
 
-                .section - block {
-    display: flex;
-    flex - direction: column;
-    gap: 0.75rem;
-}
+                .section-block {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.75rem;
+                }
 
                 .label {
-    font - size: 0.75rem;
-    text - transform: uppercase;
-    letter - spacing: 0.1em;
-    color: var(--text - tertiary);
-    font - weight: 600;
-}
+                    font-size: 0.75rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.1em;
+                    color: var(--text-tertiary);
+                    font-weight: 600;
+                }
 
-                .mission - text {
-    font - size: 1.1rem;
-    line - height: 1.6;
-    color: var(--text - secondary);
-    margin: 0;
-}
+                .mission-text {
+                    font-size: 1.1rem;
+                    line-height: 1.6;
+                    color: var(--text-secondary);
+                    margin: 0;
+                }
 
-                .impact - list {
-    list - style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex - direction: column;
-    gap: 0.75rem;
-}
+                .impact-list {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.75rem;
+                }
 
-                .impact - list li { /* Bullet point style */
-    position: relative;
-    padding - left: 1.25rem;
-    color: var(--text - secondary);
-    font - size: 1rem;
-    line - height: 1.5;
-}
+                .impact-list li { /* Bullet point style */
+                    position: relative;
+                    padding-left: 1.25rem;
+                    color: var(--text-secondary);
+                    font-size: 1rem;
+                    line-height: 1.5;
+                }
 
-                .impact - list li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: #22d3ee; /* Cyan Accent */
-    font - size: 1.2rem;
-    line - height: 1.5;
-}
+                .impact-list li::before {
+                    content: '•';
+                    position: absolute;
+                    left: 0;
+                    color: #22d3ee; /* Cyan Accent */
+                    font-size: 1.2rem;
+                    line-height: 1.5;
+                }
 
                 /* Footer */
-                .card - footer {
-    padding - top: 1.5rem;
-    border - top: 1px solid rgba(255, 255, 255, 0.1);
-    display: flex;
-    gap: 2rem;
-    color: var(--text - tertiary);
-    font - size: 0.9rem;
-    font - weight: 500;
-}
+                .card-footer {
+                    padding-top: 1.5rem;
+                    border-top: 1px solid rgba(255, 255, 255, 0.1);
+                    display: flex;
+                    gap: 2rem;
+                    color: var(--text-tertiary);
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                }
 
-                .meta - item {
-    display: flex;
-    align - items: center;
-    gap: 0.5rem;
-}
+                .meta-item {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                }
 
-@media(max - width: 768px) {
-                    .header - content {
-        display: flex;
-        flex - direction: column;
-        gap: 1rem;
-        margin - bottom: 4rem;
-    }
+                @media(max-width: 768px) {
+                    .header-content {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1rem;
+                        margin-bottom: 4rem;
+                    }
                     
-                    .section - subtitle {
-        text - align: left;
-    }
+                    .section-subtitle {
+                        text-align: left;
+                    }
 
-                    .experience - grid {
-        grid - template - columns: 1fr;
-    }
+                    .experience-grid {
+                        grid-template-columns: 1fr;
+                    }
 
-                    .experience - card {
-        padding: 2rem;
-    }
-}
-`}</style>
+                    .experience-card {
+                        padding: 2rem;
+                    }
+                }
+            `}</style>
         </section>
     );
 };
 
 export default StartupExperience;
-```

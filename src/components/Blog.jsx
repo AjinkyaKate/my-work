@@ -112,20 +112,20 @@ const Blog = () => {
 
                 .blog-card {
                     display: block;
-                    background: #2D3748; /* Darker slate/grey to match MyStory */
-                    border-radius: 24px;
+                    background: var(--bg-secondary);
+                    border-radius: var(--radius-lg); /* 32px */
                     padding: 2.5rem;
                     text-decoration: none;
                     color: inherit;
-                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    border: 1px solid var(--border-primary);
                     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+                    box-shadow: var(--shadow-md);
                 }
 
                 .blog-card:hover {
                     transform: translateY(-8px);
-                    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
-                    border-color: var(--primary-indigo);
+                    box-shadow: var(--shadow-lg);
+                    border-color: var(--accent-primary);
                 }
 
                 .card-content h4 {
@@ -133,7 +133,7 @@ const Blog = () => {
                     margin: 0 0 1rem 0;
                     line-height: 1.4;
                     font-weight: 600;
-                    color: #FFFFFF;
+                    color: var(--text-primary);
                 }
 
                 .card-content p {

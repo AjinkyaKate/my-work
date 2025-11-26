@@ -79,22 +79,21 @@ const Skills = () => {
                 }
 
                 .section-header h2 {
-                    font-size: 2rem;
-                    font-weight: 500;
+                    /* Inherits global h2 styles now */
                     color: var(--text-primary);
-                    margin-bottom: 0.5rem;
-                    letter-spacing: -0.02em;
+                    margin-bottom: 1rem;
                 }
 
                 .section-header p {
                     font-size: 1.1rem;
                     color: var(--text-secondary);
+                    max-width: 500px;
                 }
 
                 .skills-grid {
                     display: grid;
                     grid-template-columns: 1fr;
-                    gap: 1.5rem;
+                    gap: 1rem; /* Further reduced for compact layout */
                 }
 
                 @media (min-width: 968px) {
@@ -109,20 +108,18 @@ const Skills = () => {
 
                 .skill-card {
                     position: relative;
-                    background: rgba(255, 255, 255, 0.03);
-                    border: 1px solid rgba(255, 255, 255, 0.05);
-                    border-radius: 24px;
+                    background: var(--bg-secondary); /* Consistent background */
+                    border: 1px solid var(--border-primary);
+                    border-radius: var(--radius-lg); /* 32px */
                     overflow: hidden;
                     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                    backdrop-filter: blur(10px);
-                    -webkit-backdrop-filter: blur(10px);
+                    /* Removed backdrop-filter as we are using solid bg for consistency with Hero/Startup */
                 }
 
                 .skill-card:hover {
-                    transform: translateY(-4px);
+                    transform: translateY(-6px); /* Consistent hover lift */
                     border-color: var(--accent-color);
-                    background: rgba(255, 255, 255, 0.05);
-                    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+                    box-shadow: var(--shadow-xl); /* Deeper shadow */
                 }
 
                 .card-bg-glow {
@@ -144,7 +141,7 @@ const Skills = () => {
 
                 .card-content {
                     position: relative;
-                    padding: 2rem;
+                    padding: 2.5rem; /* Increased padding */
                     z-index: 1;
                     height: 100%;
                     display: flex;
@@ -155,37 +152,40 @@ const Skills = () => {
                     display: flex;
                     align-items: center;
                     gap: 1rem;
-                    margin-bottom: 1rem;
+                    margin-bottom: 1.5rem;
                 }
 
                 .icon-box {
-                    width: 48px;
-                    height: 48px;
-                    border-radius: 12px;
-                    background: rgba(255, 255, 255, 0.05);
+                    width: 56px; /* Slightly larger */
+                    height: 56px;
+                    border-radius: 16px; /* Larger radius */
+                    background: var(--bg-tertiary);
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     color: var(--text-primary);
                     transition: all 0.3s ease;
+                    border: 1px solid var(--border-primary);
                 }
 
                 .skill-card:hover .icon-box {
                     background: var(--accent-color);
                     color: #fff;
+                    border-color: var(--accent-color);
                 }
 
                 .group-title {
-                    font-size: 1.25rem;
-                    font-weight: 600;
+                    font-size: 1.5rem; /* Larger title */
+                    font-weight: 700;
                     color: var(--text-primary);
                     margin: 0;
+                    letter-spacing: -0.01em;
                 }
 
                 .group-description {
-                    font-size: 0.95rem;
+                    font-size: 1rem;
                     color: var(--text-secondary);
-                    margin-bottom: 2rem;
+                    margin-bottom: 2.5rem;
                     line-height: 1.6;
                     flex-grow: 1;
                 }
@@ -197,24 +197,24 @@ const Skills = () => {
                 }
 
                 .skill-pill {
-                    font-size: 0.85rem;
-                    padding: 0.5rem 1rem;
+                    font-size: 0.9rem;
+                    padding: 0.6rem 1.2rem;
                     border-radius: 100px;
-                    background: rgba(255, 255, 255, 0.05);
+                    background: var(--bg-tertiary);
                     color: var(--text-secondary);
-                    border: 1px solid transparent;
+                    border: 1px solid var(--border-primary);
                     transition: all 0.3s ease;
                     font-weight: 500;
                 }
 
                 .skill-card:hover .skill-pill {
-                    background: rgba(255, 255, 255, 0.1);
+                    background: rgba(255, 255, 255, 0.05);
                     color: var(--text-primary);
                 }
 
                 .skill-pill:hover {
                     border-color: var(--accent-color);
-                    transform: scale(1.05);
+                    transform: translateY(-2px);
                 }
 
                 @media (max-width: 768px) {
@@ -222,8 +222,8 @@ const Skills = () => {
                         grid-template-columns: 1fr;
                     }
                     
-                    .section-header h2 {
-                        font-size: 1.75rem;
+                    .skill-card {
+                        padding: 2rem;
                     }
                 }
             `}</style>

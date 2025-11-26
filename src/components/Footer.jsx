@@ -3,12 +3,7 @@ import { Linkedin, Mail, Twitter } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer style={{
-            padding: '6rem 0 3rem 0',
-            background: 'var(--bg-primary)',
-            borderTop: '1px solid var(--border-primary)',
-            textAlign: 'center'
-        }}>
+        <footer className="footer">
             <div className="container">
 
                 {/* Main CTA Section */}
@@ -39,6 +34,13 @@ const Footer = () => {
             </div>
 
             <style jsx>{`
+                .footer {
+                    padding: 6rem 0 3rem 0;
+                    background: var(--bg-primary);
+                    border-top: 1px solid var(--border-primary);
+                    text-align: center;
+                }
+
                 .footer-cta {
                     margin-bottom: 6rem;
                     display: flex;
@@ -47,11 +49,9 @@ const Footer = () => {
                 }
 
                 .footer-title {
-                    font-size: clamp(2.5rem, 5vw, 3.5rem);
-                    font-weight: 600;
+                    /* Inherits global h2 styles */
                     color: var(--text-primary);
                     margin-bottom: 1rem;
-                    letter-spacing: -0.02em;
                 }
 
                 .footer-subtitle {
@@ -79,7 +79,7 @@ const Footer = () => {
                 }
                 
                 .email-btn:hover {
-                    background: var(--primary-indigo); /* Or a slightly different shade if available, but reusing accent is fine with opacity or transform */
+                    background: var(--primary-indigo);
                     opacity: 0.9;
                     transform: translateY(-2px);
                     box-shadow: 0 4px 12px rgba(0, 173, 181, 0.3);

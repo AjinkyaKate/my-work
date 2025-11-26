@@ -31,7 +31,8 @@ const CaseStudies = () => {
         <section className="section" id="case-studies">
             <div className="container">
                 <div className="section-header animate-fade-up">
-                    <h2>Selected Work</h2>
+                    <h2>Projects That Made an Impact</h2>
+                    <p>Real-world solutions built from the ground up</p>
                 </div>
 
                 <div className="case-list">
@@ -64,10 +65,9 @@ const CaseStudies = () => {
                 }
 
                 .section-header h2 {
-                    font-size: 1.5rem;
-                    font-weight: 500;
+                    /* Inherit global h2 styles */
                     color: var(--text-primary);
-                    letter-spacing: -0.02em;
+                    margin-bottom: 1rem;
                 }
 
                 .case-list {
