@@ -6,7 +6,7 @@ const DennerCaseStudy = () => {
         'Role': 'Product & Analytics Contributor (Part-time)',
         'Timeline': 'Mar 2024 – Dec 2024',
         'Context': 'Early-stage housing/roommate startup in Pune, working directly with founders and devs.',
-        'Team': 'Founders, engineering team, me as product/analytics support',
+        'Team': 'Founders, engineering team, me as product/analytics contributor',
         'Tools': 'Mixpanel, Google Sheets / Docs, Slack'
     };
 

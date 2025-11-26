@@ -1,226 +1,176 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, PlayCircle, BarChart, Rocket, FileText, Target, Zap } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 const CaseStudies = () => {
     const cases = [
         {
             title: 'Hotstar UX for 55+ Users',
-            icon: <PlayCircle size={24} />,
-            tags: ['UX Research', 'Prototyping'],
-            role: 'UX Researcher',
-            problem: 'Older users struggled with navigation and finding content due to complex UI patterns.',
-            impact: 'Clearer navigation, less confusion, 2nd place in Decathlon challenge.',
+            category: 'UX Research & Prototyping',
+            description: 'Redesigning the streaming experience for older adults to improve accessibility and content discovery.',
             link: '/case-studies/hotstar-55-plus',
-            pdfLink: 'https://drive.google.com/file/d/1d02iy0TpTz6r0JhBQ5J7PKp5v5_AixgQ/view?usp=share_link',
-            color: 'var(--primary-indigo)'
+            year: '2024'
         },
         {
             title: 'Denner Analytics Setup',
-            icon: <BarChart size={24} />,
-            tags: ['Data Analytics', 'Mixpanel'],
-            role: 'Analytics Partner',
-            problem: 'Founders had no clear view of onboarding performance or drop-offs.',
-            impact: 'Identified key drop-off screens and prioritised data-backed UX changes.',
+            category: 'Data Analytics',
+            description: 'Implementing comprehensive product analytics to track user onboarding and retention metrics.',
             link: '/case-studies/denner-onboarding-analytics',
-            color: '#F28B82'
+            year: '2023'
         },
         {
             title: 'Qport 0→1 Build',
-            icon: <Rocket size={24} />,
-            tags: ['Product Management', '0 to 1'],
-            role: 'Product Owner',
-            problem: 'Client PRD was long, unstructured, and unclear from a user perspective.',
-            impact: 'Delivered v1 on time, with shared understanding across dev and business.',
+            category: 'Product Management',
+            description: 'Leading the end-to-end development of a logistics platform from concept to first release.',
             link: '/case-studies/qport-0-to-1',
-            color: 'var(--secondary-emerald)'
+            year: '2023'
         }
     ];
 
     return (
         <section className="section" id="case-studies">
             <div className="container">
-                <div className="animate-fade-up" style={{ marginBottom: '3rem' }}>
-                    <h2 style={{ marginBottom: '0.5rem' }}>Selected Work</h2>
-                    <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', maxWidth: '600px' }}>
-                        Solving real problems with data and design.
-                    </p>
+                <div className="section-header animate-fade-up">
+                    <h2>Selected Work</h2>
                 </div>
 
-                <div className="case-study-grid">
+                <div className="case-list">
                     {cases.map((study, index) => (
-                        <div key={index} className={`case-card animate-fade-up delay-${(index + 1) * 100}`}>
-                            <div className="card-main">
-                                <div className="card-header">
-                                    <div className="icon-box" style={{ color: study.color, borderColor: study.color }}>
-                                        {study.icon}
-                                    </div>
-                                    <div className="header-text">
-                                        <h3>{study.title}</h3>
-                                        <span className="role-badge">{study.role}</span>
-                                    </div>
-                                    {study.pdfLink && (
-                                        <a href={study.pdfLink} target="_blank" rel="noopener noreferrer" className="pdf-link" title="View PDF">
-                                            <FileText size={18} />
-                                        </a>
-                                    )}
+                        <Link
+                            to={study.link}
+                            key={index}
+                            className={`case-item animate-fade-up delay-${(index + 1) * 100}`}
+                        >
+                            <div className="case-content">
+                                <div className="case-meta">
+                                    <span className="case-year">{study.year}</span>
+                                    <span className="case-category">{study.category}</span>
                                 </div>
-
-                                <div className="card-body">
-                                    <div className="info-block">
-                                        <span className="label"><Target size={12} /> Challenge</span>
-                                        <p>{study.problem}</p>
-                                    </div>
-
-                                    <div className="info-block impact">
-                                        <span className="label"><Zap size={12} className="text-emerald" /> Impact</span>
-                                        <p>{study.impact}</p>
-                                    </div>
-                                </div>
+                                <h3 className="case-title">{study.title}</h3>
+                                <p className="case-description">{study.description}</p>
                             </div>
-
-                            <div className="card-footer">
-                                <Link to={study.link} className="view-link">
-                                    View Case Study <ArrowUpRight size={14} />
-                                </Link>
+                            <div className="case-action">
+                                <span className="view-text">View Case Study</span>
+                                <ArrowUpRight size={20} className="arrow-icon" />
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>
 
             <style jsx>{`
-                .case-study-grid {
-                    display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-                    gap: 2rem;
+                .section-header {
+                    margin-bottom: 4rem;
                 }
 
-                .case-card {
-                    background: var(--bg-secondary);
-                    border: 1px solid var(--border-primary);
-                    border-radius: var(--radius-md);
-                    overflow: hidden;
-                    display: flex;
-                    flex-direction: column;
-                    transition: all 0.3s ease;
-                    height: 100%;
-                }
-
-                .case-card:hover {
-                    transform: translateY(-4px);
-                    box-shadow: var(--shadow-md);
-                    border-color: var(--border-focus);
-                }
-
-                .card-main {
-                    padding: 1.5rem;
-                    flex-grow: 1;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1.5rem;
-                }
-
-                .card-header {
-                    display: flex;
-                    align-items: flex-start;
-                    gap: 1rem;
-                }
-
-                .icon-box {
-                    width: 48px;
-                    height: 48px;
-                    border-radius: 12px;
-                    background: var(--bg-tertiary);
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border: 1px solid;
-                    flex-shrink: 0;
-                }
-
-                .header-text {
-                    flex-grow: 1;
-                }
-
-                .header-text h3 {
-                    font-size: 1.1rem;
-                    font-weight: 600;
-                    margin: 0 0 0.25rem 0;
-                    color: var(--text-primary);
-                }
-
-                .role-badge {
-                    font-size: 0.8rem;
-                    color: var(--text-secondary);
-                    font-family: monospace;
-                    background: var(--bg-tertiary);
-                    padding: 0.1rem 0.5rem;
-                    border-radius: 4px;
-                }
-
-                .pdf-link {
-                    color: var(--text-tertiary);
-                    transition: color 0.2s;
-                }
-
-                .pdf-link:hover {
-                    color: var(--text-primary);
-                }
-
-                .card-body {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1rem;
-                }
-
-                .info-block {
-                    font-size: 0.95rem;
-                    color: var(--text-secondary);
-                    line-height: 1.5;
-                }
-
-                .info-block.impact {
-                    color: var(--text-primary);
-                }
-
-                .label {
-                    display: flex;
-                    align-items: center;
-                    gap: 0.4rem;
-                    font-size: 0.75rem;
-                    text-transform: uppercase;
-                    letter-spacing: 0.05em;
-                    color: var(--text-tertiary);
-                    margin-bottom: 0.25rem;
-                    font-weight: 600;
-                }
-
-                .card-footer {
-                    padding: 1rem 1.5rem;
-                    border-top: 1px solid var(--border-primary);
-                    background: var(--bg-tertiary);
-                    display: flex;
-                    justify-content: flex-end;
-                }
-
-                .view-link {
-                    display: flex;
-                    align-items: center;
-                    gap: 0.4rem;
-                    font-size: 0.85rem;
+                .section-header h2 {
+                    font-size: 1.5rem;
                     font-weight: 500;
                     color: var(--text-primary);
-                    transition: color 0.2s;
+                    letter-spacing: -0.02em;
                 }
 
-                .view-link:hover {
+                .case-list {
+                    display: flex;
+                    flex-direction: column;
+                    border-top: 1px solid var(--border-secondary);
+                }
+
+                .case-item {
+                    display: grid;
+                    grid-template-columns: 1fr auto;
+                    gap: 2rem;
+                    padding: 3rem 0;
+                    border-bottom: 1px solid var(--border-secondary);
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+                    group: hover;
+                }
+
+                .case-item:hover .case-title {
                     color: var(--primary-indigo);
                 }
 
+                .case-item:hover .arrow-icon {
+                    transform: translate(2px, -2px);
+                    color: var(--primary-indigo);
+                }
+
+                .case-content {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    max-width: 800px;
+                }
+
+                .case-meta {
+                    display: flex;
+                    gap: 1rem;
+                    font-size: 0.875rem;
+                    color: var(--text-tertiary);
+                    font-family: var(--font-sans);
+                    text-transform: uppercase;
+                    letter-spacing: 0.05em;
+                }
+
+                .case-title {
+                    font-size: 2.5rem;
+                    font-weight: 500;
+                    color: var(--text-primary);
+                    letter-spacing: -0.02em;
+                    transition: color 0.2s ease;
+                    margin: 0.5rem 0;
+                }
+
+                .case-description {
+                    font-size: 1.125rem;
+                    color: var(--text-secondary);
+                    line-height: 1.6;
+                    max-width: 600px;
+                }
+
+                .case-action {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 0.5rem;
+                    padding-top: 0.5rem;
+                    opacity: 0;
+                    transform: translateX(-10px);
+                    transition: all 0.3s ease;
+                }
+
+                .case-item:hover .case-action {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+
+                .view-text {
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                    color: var(--text-primary);
+                }
+
+                .arrow-icon {
+                    color: var(--text-primary);
+                    transition: transform 0.2s ease, color 0.2s ease;
+                }
+
                 @media (max-width: 768px) {
-                    .case-study-grid {
+                    .case-item {
                         grid-template-columns: 1fr;
+                        gap: 1.5rem;
+                        padding: 2rem 0;
+                    }
+
+                    .case-title {
+                        font-size: 1.75rem;
+                    }
+
+                    .case-action {
+                        opacity: 1;
+                        transform: none;
+                        padding-top: 0;
                     }
                 }
             `}</style>

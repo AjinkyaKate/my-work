@@ -1,250 +1,230 @@
 import React from 'react';
-import {
-    Layout,
-    Database,
-    BarChart2,
-    Users,
-    Zap,
-    CheckCircle2,
-    Globe,
-    Figma,
-    Slack,
-    Cpu,
-    Search,
-    Terminal
-} from 'lucide-react';
+import { Zap, Users, BarChart2, Terminal, ArrowUpRight } from 'lucide-react';
 
 const Skills = () => {
+    const skillGroups = [
+        {
+            title: 'Product Strategy',
+            icon: <Zap size={24} />,
+            description: 'Turning ambiguity into clear, actionable roadmaps.',
+            skills: ['Agile / Scrum (CSPO®)', 'Product Discovery', 'Roadmap Planning', 'Stakeholder Management', 'GTM Strategy'],
+            color: 'var(--primary-indigo)',
+            colSpan: 'span 2'
+        },
+        {
+            title: 'Research & UX',
+            icon: <Users size={24} />,
+            description: 'Deeply understanding user needs and behaviors.',
+            skills: ['User Interviews', 'Persona Building', 'Wireframing', 'Usability Testing', 'JTBD Framework'],
+            color: 'var(--secondary-emerald)',
+            colSpan: 'span 1'
+        },
+        {
+            title: 'Data & Analytics',
+            icon: <BarChart2 size={24} />,
+            description: 'Making informed decisions with quantitative insights.',
+            skills: ['Mixpanel', 'Google Analytics', 'Amplitude', 'SQL Basics', 'Cohort Analysis'],
+            color: '#F28B82',
+            colSpan: 'span 1'
+        },
+        {
+            title: 'Tools & Stack',
+            icon: <Terminal size={24} />,
+            description: 'The technical toolkit for modern product delivery.',
+            skills: ['Jira', 'Notion', 'Figma', 'Slack', 'Postman', 'Linear'],
+            color: '#C58AF9',
+            colSpan: 'span 2'
+        }
+    ];
+
     return (
         <section className="section" id="skills">
             <div className="container">
-                <div className="animate-fade-up" style={{ marginBottom: '4rem' }}>
-                    <h2 style={{ marginBottom: '0.5rem' }}>Skills & Expertise</h2>
-                    <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)' }}>
-                        A comprehensive toolkit for building and scaling digital products.
-                    </p>
+                <div className="section-header animate-fade-up">
+                    <h2>Skills & Expertise</h2>
+                    <p>A comprehensive toolkit for building and scaling digital products.</p>
                 </div>
 
-                <div className="bento-grid">
-                    {/* Product Strategy & Management */}
-                    <div className="bento-card animate-fade-up delay-100" style={{ gridColumn: 'span 2' }}>
-                        <div className="card-header">
-                            <div className="icon-badge indigo">
-                                <Zap size={20} />
-                            </div>
-                            <h3>Product Strategy</h3>
-                        </div>
-                        <div className="checklist-grid">
-                            {[
-                                'Agile / Scrum (CSPO®)',
-                                'Product Discovery',
-                                'Roadmap Planning',
-                                'Stakeholder Management',
-                                'User Story Mapping',
-                                'GTM Strategy'
-                            ].map((item, i) => (
-                                <div key={i} className="checklist-item">
-                                    <CheckCircle2 size={16} className="check-icon text-emerald" />
-                                    <span>{item}</span>
+                <div className="skills-grid">
+                    {skillGroups.map((group, index) => (
+                        <div
+                            key={index}
+                            className={`skill-card animate-fade-up delay-${(index + 1) * 100} ${group.colSpan === 'span 2' ? 'col-span-2' : ''}`}
+                            style={{ '--accent-color': group.color }}
+                        >
+                            <div className="card-bg-glow"></div>
+                            <div className="card-content">
+                                <div className="card-header">
+                                    <div className="icon-box">
+                                        {group.icon}
+                                    </div>
+                                    <h3 className="group-title">{group.title}</h3>
                                 </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Research & UX */}
-                    <div className="bento-card animate-fade-up delay-200">
-                        <div className="card-header">
-                            <div className="icon-badge emerald">
-                                <Users size={20} />
-                            </div>
-                            <h3>Research & UX</h3>
-                        </div>
-                        <div className="tags-container">
-                            {['User Interviews', 'Persona Building', 'Wireframing', 'Usability Testing', 'JTBD Framework'].map((tag, i) => (
-                                <span key={i} className="skill-tag">{tag}</span>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Data & Analytics */}
-                    <div className="bento-card animate-fade-up delay-300">
-                        <div className="card-header">
-                            <div className="icon-badge orange">
-                                <BarChart2 size={20} />
-                            </div>
-                            <h3>Data & Analytics</h3>
-                        </div>
-                        <div className="tags-container">
-                            {['Mixpanel', 'Google Analytics', 'Amplitude', 'SQL Basics', 'Cohort Analysis', 'Funnel Optimization'].map((tag, i) => (
-                                <span key={i} className="skill-tag">{tag}</span>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Technical & Tools */}
-                    <div className="bento-card animate-fade-up delay-400" style={{ gridColumn: 'span 2' }}>
-                        <div className="card-header">
-                            <div className="icon-badge purple">
-                                <Terminal size={20} />
-                            </div>
-                            <h3>Tools & Stack</h3>
-                        </div>
-                        <div className="tools-grid">
-                            {[
-                                { name: 'Jira', icon: <Layout size={18} /> },
-                                { name: 'Notion', icon: <Database size={18} /> },
-                                { name: 'Figma', icon: <Figma size={18} /> },
-                                { name: 'Slack', icon: <Slack size={18} /> },
-                                { name: 'Postman', icon: <Globe size={18} /> },
-                                { name: 'Linear', icon: <Cpu size={18} /> }
-                            ].map((tool, i) => (
-                                <div key={i} className="tool-item">
-                                    <div className="tool-icon">{tool.icon}</div>
-                                    <span>{tool.name}</span>
+                                <p className="group-description">{group.description}</p>
+                                <div className="skills-list">
+                                    {group.skills.map((skill, i) => (
+                                        <span key={i} className="skill-pill">{skill}</span>
+                                    ))}
                                 </div>
-                            ))}
+                            </div>
                         </div>
-                    </div>
+                    ))}
                 </div>
             </div>
 
             <style jsx>{`
-                .bento-grid {
+                .section-header {
+                    margin-bottom: 4rem;
+                    max-width: 600px;
+                }
+
+                .section-header h2 {
+                    font-size: 2rem;
+                    font-weight: 500;
+                    color: var(--text-primary);
+                    margin-bottom: 0.5rem;
+                    letter-spacing: -0.02em;
+                }
+
+                .section-header p {
+                    font-size: 1.1rem;
+                    color: var(--text-secondary);
+                }
+
+                .skills-grid {
                     display: grid;
                     grid-template-columns: 1fr;
                     gap: 1.5rem;
                 }
 
-                @media (min-width: 768px) {
-                    .bento-grid {
+                @media (min-width: 968px) {
+                    .skills-grid {
                         grid-template-columns: repeat(3, 1fr);
+                    }
+                    
+                    .col-span-2 {
+                        grid-column: span 2;
                     }
                 }
 
-                .bento-card {
-                    background: var(--bg-secondary);
-                    border: 1px solid var(--border-primary);
-                    border-radius: var(--radius-md);
-                    padding: 2rem;
-                    display: flex;
-                    flex-direction: column;
-                    transition: var(--transition);
+                .skill-card {
+                    position: relative;
+                    background: rgba(255, 255, 255, 0.03);
+                    border: 1px solid rgba(255, 255, 255, 0.05);
+                    border-radius: 24px;
+                    overflow: hidden;
+                    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                    backdrop-filter: blur(10px);
+                    -webkit-backdrop-filter: blur(10px);
                 }
 
-                .bento-card:hover {
-                    border-color: var(--primary-indigo);
+                .skill-card:hover {
                     transform: translateY(-4px);
-                    box-shadow: var(--shadow-md);
+                    border-color: var(--accent-color);
+                    background: rgba(255, 255, 255, 0.05);
+                    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+                }
+
+                .card-bg-glow {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 200px;
+                    height: 200px;
+                    background: radial-gradient(circle at top right, var(--accent-color), transparent 70%);
+                    opacity: 0;
+                    transition: opacity 0.4s ease;
+                    pointer-events: none;
+                    filter: blur(40px);
+                }
+
+                .skill-card:hover .card-bg-glow {
+                    opacity: 0.15;
+                }
+
+                .card-content {
+                    position: relative;
+                    padding: 2rem;
+                    z-index: 1;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
                 }
 
                 .card-header {
                     display: flex;
                     align-items: center;
                     gap: 1rem;
-                    margin-bottom: 1.5rem;
+                    margin-bottom: 1rem;
                 }
 
-                .card-header h3 {
-                    font-size: 1.25rem;
-                    font-weight: 600;
-                    margin: 0;
-                    color: var(--text-primary);
-                }
-
-                .icon-badge {
-                    width: 40px;
-                    height: 40px;
-                    border-radius: 10px;
+                .icon-box {
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 12px;
+                    background: rgba(255, 255, 255, 0.05);
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    color: var(--text-primary);
+                    transition: all 0.3s ease;
                 }
 
-                .icon-badge.indigo { background: rgba(79, 70, 229, 0.1); color: var(--primary-indigo); }
-                .icon-badge.emerald { background: rgba(16, 185, 129, 0.1); color: var(--secondary-emerald); }
-                .icon-badge.orange { background: rgba(252, 173, 112, 0.1); color: #FCAD70; }
-                .icon-badge.purple { background: rgba(197, 138, 249, 0.1); color: #C58AF9; }
-
-                /* Checklist Grid */
-                .checklist-grid {
-                    display: grid;
-                    grid-template-columns: 1fr;
-                    gap: 1rem;
-                }
-                @media (min-width: 640px) {
-                    .checklist-grid {
-                        grid-template-columns: 1fr 1fr;
-                    }
+                .skill-card:hover .icon-box {
+                    background: var(--accent-color);
+                    color: #fff;
                 }
 
-                .checklist-item {
-                    display: flex;
-                    align-items: center;
-                    gap: 0.75rem;
-                    color: var(--text-secondary);
+                .group-title {
+                    font-size: 1.25rem;
+                    font-weight: 600;
+                    color: var(--text-primary);
+                    margin: 0;
+                }
+
+                .group-description {
                     font-size: 0.95rem;
+                    color: var(--text-secondary);
+                    margin-bottom: 2rem;
+                    line-height: 1.6;
+                    flex-grow: 1;
                 }
 
-                .check-icon {
-                    color: var(--secondary-emerald);
-                    flex-shrink: 0;
-                }
-
-                /* Tags */
-                .tags-container {
+                .skills-list {
                     display: flex;
                     flex-wrap: wrap;
                     gap: 0.75rem;
                 }
 
-                .skill-tag {
+                .skill-pill {
                     font-size: 0.85rem;
-                    padding: 0.4rem 1rem;
-                    background: var(--bg-tertiary);
+                    padding: 0.5rem 1rem;
+                    border-radius: 100px;
+                    background: rgba(255, 255, 255, 0.05);
                     color: var(--text-secondary);
-                    border-radius: 999px;
-                    font-weight: 500;
-                    transition: var(--transition);
-                }
-
-                .skill-tag:hover {
-                    color: var(--text-primary);
-                    background: var(--border-primary);
-                }
-
-                /* Tools Grid */
-                .tools-grid {
-                    display: grid;
-                    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-                    gap: 1rem;
-                }
-
-                .tool-item {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 0.75rem;
-                    padding: 1rem;
-                    background: var(--bg-tertiary);
-                    border-radius: 12px;
-                    transition: var(--transition);
                     border: 1px solid transparent;
+                    transition: all 0.3s ease;
+                    font-weight: 500;
                 }
 
-                .tool-item:hover {
-                    background: var(--bg-secondary);
-                    border-color: var(--primary-indigo);
-                    transform: translateY(-2px);
-                }
-
-                .tool-icon {
+                .skill-card:hover .skill-pill {
+                    background: rgba(255, 255, 255, 0.1);
                     color: var(--text-primary);
                 }
 
-                .tool-item span {
-                    font-size: 0.85rem;
-                    color: var(--text-secondary);
-                    font-weight: 500;
+                .skill-pill:hover {
+                    border-color: var(--accent-color);
+                    transform: scale(1.05);
+                }
+
+                @media (max-width: 768px) {
+                    .skills-grid {
+                        grid-template-columns: 1fr;
+                    }
+                    
+                    .section-header h2 {
+                        font-size: 1.75rem;
+                    }
                 }
             `}</style>
         </section>

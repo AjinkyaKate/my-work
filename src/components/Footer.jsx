@@ -70,8 +70,8 @@ const Footer = () => {
                 }
 
                 .email-btn {
-                    background: #a8c7fa; /* Light Blue from screenshot */
-                    color: #000;
+                    background: var(--text-accent);
+                    color: var(--bg-primary);
                     border: none;
                     padding: 0.8rem 1.8rem;
                     font-weight: 600;
@@ -79,9 +79,10 @@ const Footer = () => {
                 }
                 
                 .email-btn:hover {
-                    background: #8ab4f8;
+                    background: var(--primary-indigo); /* Or a slightly different shade if available, but reusing accent is fine with opacity or transform */
+                    opacity: 0.9;
                     transform: translateY(-2px);
-                    box-shadow: 0 4px 12px rgba(168, 199, 250, 0.3);
+                    box-shadow: 0 4px 12px rgba(0, 173, 181, 0.3);
                 }
 
                 .social-btn {

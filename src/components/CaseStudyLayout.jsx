@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const CaseStudyLayout = ({ title, oneLiner, sidebar, children, keyLearnings }) => {
     return (
-        <div style={{ paddingTop: '8rem', background: 'var(--bg-primary)' }}>
+        <div style={{ paddingTop: 'calc(var(--header-height) + 2rem)', background: 'var(--bg-primary)' }} className="case-study-wrapper">
             {/* Back Button */}
             <div className="container" style={{ marginBottom: '3rem' }}>
                 <Link
@@ -25,7 +25,7 @@ const CaseStudyLayout = ({ title, oneLiner, sidebar, children, keyLearnings }) =
             </div>
 
             {/* Hero Section */}
-            <section className="container" style={{ marginBottom: '5rem' }}>
+            <section className="container" style={{ marginBottom: 'clamp(3rem, 5vw, 5rem)' }}>
                 <div className="animate-fade-up">
                     <h1 style={{
                         marginBottom: '1.5rem',
@@ -148,13 +148,16 @@ const CaseStudyLayout = ({ title, oneLiner, sidebar, children, keyLearnings }) =
 
             <style>{`
                 @media (max-width: 968px) {
+                    .case-study-wrapper {
+                        padding-top: calc(var(--header-height) + 1rem) !important;
+                    }
                     .case-study-grid {
                         grid-template-columns: 1fr !important;
-                        gap: 4rem !important;
+                        gap: 3rem !important;
                     }
                     .case-study-grid > div:last-child {
                         order: -1;
-                        margin-bottom: 2rem;
+                        margin-bottom: 1rem;
                     }
                 }
                 .hover\\:text-primary:hover {

@@ -10,7 +10,7 @@ const MyStory = () => {
                     {/* Left: Narrative Column */}
                     <div className="narrative-column">
                         <div className="animate-fade-up">
-                            <h2 style={{ marginBottom: '2rem' }}>My Story</h2>
+                            <h2 style={{ marginBottom: '3rem', fontSize: '2.5rem' }}>My Story</h2>
 
                             {/* AI Summary Box */}
                             <div className="ai-summary-box">
@@ -19,27 +19,18 @@ const MyStory = () => {
                                     <span>Journey Summary</span>
                                 </div>
                                 <p>
-                                    From handling support tickets to leading product teams. A journey defined by bridging the gap between user pain points and engineering solutions.
+                                    A journey defined by bridging the gap between user pain points and engineering solutions.
                                 </p>
                             </div>
 
                             <div className="narrative-content">
-                                <p className="lead-paragraph">
-                                    I started my career in <strong>Support & Marketing</strong> at <span className="highlight">D·engage</span>, helping customers get real value out of a complex B2B marketing automation platform.
-                                </p>
-                                <p>
-                                    I wasn’t just answering tickets – I was seeing, daily, where the product helped and where it hurt. That frontline exposure to user pain points, edge cases, and <em>“this doesn’t work for my real workflow”</em> became my foundation for product work.
-                                </p>
-                                <p>
-                                    I learned to translate vague complaints into clear problems and product opportunities.
-                                </p>
                                 <p>
                                     In 2024–25, I moved into Product. I took on a <strong>0→1 Product Owner role</strong> for <span className="highlight">Qport</span>, helping a logistics startup shape an MVP from a messy PRD. At D·engage, I’ve since stepped into a Scrum Product Owner role (CSPO®), working with cross-functional teams.
                                 </p>
                             </div>
 
                             <div className="quote-box">
-                                <Quote size={24} className="quote-icon" />
+                                <Quote size={48} className="quote-icon-large" />
                                 <p>
                                     "I use AI tools daily – to explore ideas faster, structure requirements, and iterate on documents – but the core is always the same: ship things that solve real problems."
                                 </p>
@@ -97,19 +88,6 @@ const MyStory = () => {
                                 </div>
                             </div>
 
-                            {/* Card 4 */}
-                            <div className="source-card">
-                                <div className="card-meta">
-                                    <span className="source-number">04</span>
-                                    <span className="source-date">2022 - 2024</span>
-                                </div>
-                                <h4>Support & Marketing</h4>
-                                <p className="source-context">D·engage • MarTech</p>
-                                <div className="card-link">
-                                    <span>View Context</span>
-                                    <ArrowUpRight size={14} />
-                                </div>
-                            </div>
                         </div>
                     </div>
 
@@ -130,23 +108,23 @@ const MyStory = () => {
                 }
 
                 .ai-summary-box {
-                    background: var(--bg-secondary);
-                    border: 1px solid var(--border-primary);
-                    border-radius: var(--radius-md);
-                    padding: 1.5rem;
-                    margin-bottom: 2.5rem;
-                    backdrop-filter: blur(10px);
+                    background: #2D3748; /* Darker slate/grey */
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    border-radius: 24px;
+                    padding: 2.5rem;
+                    margin-bottom: 3rem;
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
                 }
 
                 .summary-header {
                     display: flex;
                     align-items: center;
-                    gap: 0.5rem;
+                    gap: 0.75rem;
                     font-size: 0.85rem;
                     text-transform: uppercase;
-                    letter-spacing: 0.05em;
-                    color: var(--text-tertiary);
-                    margin-bottom: 0.75rem;
+                    letter-spacing: 0.1em;
+                    color: rgba(255, 255, 255, 0.6);
+                    margin-bottom: 1.5rem;
                 }
 
                 .text-accent {
@@ -155,10 +133,10 @@ const MyStory = () => {
 
                 .ai-summary-box p {
                     margin: 0;
-                    font-size: 1.05rem;
-                    color: var(--text-primary);
+                    font-size: 1.25rem;
+                    color: #FFFFFF;
                     font-weight: 500;
-                    line-height: 1.5;
+                    line-height: 1.6;
                 }
 
                 .narrative-content {
@@ -168,11 +146,7 @@ const MyStory = () => {
                     font-size: 1.15rem;
                     line-height: 1.8;
                     color: var(--text-secondary);
-                }
-
-                .lead-paragraph {
-                    font-size: 1.25rem;
-                    color: var(--text-primary);
+                    margin-bottom: 3rem;
                 }
 
                 .highlight {
@@ -183,26 +157,28 @@ const MyStory = () => {
                 }
 
                 .quote-box {
-                    margin-top: 3rem;
-                    padding: 2rem;
-                    background: var(--bg-secondary);
-                    border-left: 4px solid var(--primary-indigo);
-                    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+                    background: #2D3748; /* Darker slate/grey */
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    border-radius: 24px;
+                    padding: 3rem 2.5rem;
                     position: relative;
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+                    border-left: 4px solid var(--secondary-emerald); /* Accent line */
                 }
 
-                .quote-icon {
-                    color: var(--text-tertiary);
-                    margin-bottom: 1rem;
-                    opacity: 0.5;
+                .quote-icon-large {
+                    color: rgba(255, 255, 255, 0.1);
+                    margin-bottom: 1.5rem;
+                    display: block;
                 }
 
                 .quote-box p {
                     margin: 0;
-                    font-size: 1.1rem;
+                    font-size: 1.2rem;
                     font-style: italic;
-                    color: var(--text-primary);
-                    line-height: 1.6;
+                    color: #FFFFFF;
+                    line-height: 1.7;
+                    font-weight: 400;
                 }
 
                 /* Reference Rail */

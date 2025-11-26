@@ -3,36 +3,29 @@
 /* NotebookLM Dark Mode Tokens */
 
 :root {
-  /* Color Palette: Modern Slate (Premium Tech) */
-  --bg-primary: #0f172a;
-  /* Slate 900 */
-  --bg-secondary: #1e293b;
-  /* Slate 800 */
-  --bg-tertiary: #334155;
-  /* Slate 700 */
-  /* Slightly darker than primary for depth */
+  /* Color Palette: Dark Teal (ColorHunt) */
+  --bg-primary: #222831;
+  --bg-secondary: #393e46;
+  --bg-tertiary: #2d333b;
+  /* Derived for depth */
 
   /* Brand Colors */
-  --primary-indigo: #818cf8;
-  /* Indigo 400 - Brighter for dark mode */
-  --secondary-emerald: #34d399;
-  /* Emerald 400 - Brighter for dark mode */
+  --primary-indigo: #00adb5;
+  /* Mapped to Teal Accent */
+  --secondary-emerald: #00adb5;
+  /* Mapped to Teal Accent */
 
   /* Text */
-  --text-primary: #f8fafc;
-  /* Slate 50 */
-  --text-secondary: #cbd5e1;
-  /* Slate 300 */
-  --text-tertiary: #94a3b8;
-  /* Slate 400 */
+  --text-primary: #eeeeee;
+  --text-secondary: rgba(238, 238, 238, 0.7);
+  --text-tertiary: rgba(238, 238, 238, 0.5);
   --text-accent: var(--primary-indigo);
-  /* Primary Brand Color */
   --text-success: var(--secondary-emerald);
 
   /* Borders */
-  --border-primary: rgba(148, 163, 184, 0.15);
-  --border-secondary: rgba(148, 163, 184, 0.1);
-  --border-focus: rgba(79, 70, 229, 0.4);
+  --border-primary: rgba(238, 238, 238, 0.15);
+  --border-secondary: rgba(238, 238, 238, 0.1);
+  --border-focus: rgba(0, 173, 181, 0.4);
 
   /* Typography */
   --font-sans: 'Google Sans',
@@ -134,6 +127,12 @@ a {
   margin: 0 auto;
   padding: 0 var(--spacing-md);
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
 }
 
 .section {

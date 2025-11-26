@@ -80,33 +80,6 @@ const ProfessionalExperience = () => {
                             </div>
                         </div>
 
-                        {/* Connector Line */}
-                        <div className="role-connector"></div>
-
-                        {/* Role 2: Marketing & Support */}
-                        <div className="role-card">
-                            <div className="role-header">
-                                <div className="role-main">
-                                    <div className="icon-box">
-                                        <Megaphone size={20} className="text-accent" />
-                                    </div>
-                                    <div>
-                                        <h4>Marketing & Support</h4>
-                                        <span className="role-period">May 2022 - Dec 2024</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <p className="role-description">
-                                Managed customer relationships and support across multiple regions. I drove product discovery through direct user feedback and executed targeted marketing campaigns to increase adoption.
-                            </p>
-
-                            <div className="tags-container">
-                                {['Customer Support', 'Product Discovery', 'Marketing Automation', 'User Feedback Analysis', 'Campaign Management'].map((skill, index) => (
-                                    <span key={index} className="tech-tag">{skill}</span>
-                                ))}
-                            </div>
-                        </div>
 
                     </div>
                 </div>
@@ -342,11 +315,12 @@ const ProfessionalExperience = () => {
                 @media (max-width: 968px) {
                     .profile-layout {
                         grid-template-columns: 1fr;
-                        gap: 3rem;
+                        gap: 2rem;
                     }
 
                     .company-profile {
                         position: static;
+                        margin-bottom: 1rem;
                     }
 
                     .desktop-connector {
@@ -355,10 +329,20 @@ const ProfessionalExperience = () => {
 
                     .role-connector {
                         margin-left: 2rem;
+                        height: 1.5rem;
                     }
                     
                     .role-card {
                         padding: 1.5rem;
+                    }
+
+                    .role-header {
+                        flex-direction: column;
+                        gap: 0.5rem;
+                    }
+
+                    .status-pill {
+                        align-self: flex-start;
                     }
                 }
             `}</style>

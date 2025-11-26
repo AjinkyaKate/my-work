@@ -42,15 +42,15 @@ const DocumentViewerModal = ({ isOpen, onClose, documentUrl, documentTitle = "Do
             <div
                 className="viewer-header"
                 style={{
-                    background: 'rgba(17, 17, 17, 0.8)',
+                    background: 'rgba(34, 40, 49, 0.9)', // Based on bg-primary #222831
                     backdropFilter: 'blur(24px)',
-                    borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
+                    borderBottom: '1px solid var(--border-primary)',
                     padding: '1rem 2rem',
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center'
                 }}>
-                <h3 className="viewer-title" style={{ margin: 0, fontSize: '1.125rem', fontWeight: 600, color: '#FFFFFF' }}>
+                <h3 className="viewer-title" style={{ margin: 0, fontSize: '1.125rem', fontWeight: 600, color: 'var(--text-primary)' }}>
                     {documentTitle}
                 </h3>
 
@@ -59,11 +59,11 @@ const DocumentViewerModal = ({ isOpen, onClose, documentUrl, documentTitle = "Do
                     <button
                         onClick={handleOpenNew}
                         style={{
-                            background: 'rgba(255, 255, 255, 0.05)',
-                            border: '1px solid rgba(255, 255, 255, 0.1)',
+                            background: 'rgba(238, 238, 238, 0.05)',
+                            border: '1px solid var(--border-primary)',
                             borderRadius: '8px',
                             padding: '0.5rem 1rem',
-                            color: '#FFFFFF',
+                            color: 'var(--text-primary)',
                             cursor: 'pointer',
                             display: 'flex',
                             alignItems: 'center',
@@ -83,11 +83,11 @@ const DocumentViewerModal = ({ isOpen, onClose, documentUrl, documentTitle = "Do
                     <button
                         onClick={handleDownload}
                         style={{
-                            background: 'rgba(255, 255, 255, 0.05)',
-                            border: '1px solid rgba(255, 255, 255, 0.1)',
+                            background: 'rgba(238, 238, 238, 0.05)',
+                            border: '1px solid var(--border-primary)',
                             borderRadius: '8px',
                             padding: '0.5rem 1rem',
-                            color: '#FFFFFF',
+                            color: 'var(--text-primary)',
                             cursor: 'pointer',
                             display: 'flex',
                             alignItems: 'center',
@@ -103,17 +103,17 @@ const DocumentViewerModal = ({ isOpen, onClose, documentUrl, documentTitle = "Do
                         <span className="viewer-btn-text">Download</span>
                     </button>
 
-                    <div style={{ width: '1px', height: '24px', background: 'rgba(255, 255, 255, 0.1)', margin: '0 0.5rem' }} />
+                    <div style={{ width: '1px', height: '24px', background: 'var(--border-primary)', margin: '0 0.5rem' }} />
 
                     {/* Close Button */}
                     <button
                         onClick={onClose}
                         style={{
-                            background: 'rgba(255, 255, 255, 0.05)',
-                            border: '1px solid rgba(255, 255, 255, 0.1)',
+                            background: 'rgba(238, 238, 238, 0.05)',
+                            border: '1px solid var(--border-primary)',
                             borderRadius: '8px',
                             padding: '0.5rem',
-                            color: '#FFFFFF',
+                            color: 'var(--text-primary)',
                             cursor: 'pointer',
                             transition: 'all 0.2s'
                         }}
@@ -133,7 +133,7 @@ const DocumentViewerModal = ({ isOpen, onClose, documentUrl, documentTitle = "Do
                 justifyContent: 'center',
                 alignItems: 'center',
                 padding: '1rem',
-                backgroundColor: '#050505'
+                backgroundColor: 'var(--bg-primary)'
             }}>
                 <iframe
                     src={`${documentUrl}#view=FitH`}
