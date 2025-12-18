@@ -180,7 +180,7 @@ const MyStory = () => {
                 .sparkle-icon {
                     width: 32px;
                     height: 32px;
-                    background: rgba(79, 70, 229, 0.1);
+                    background: rgba(251, 191, 36, 0.15);
                     border-radius: 8px;
                     display: flex;
                     align-items: center;
@@ -237,7 +237,7 @@ const MyStory = () => {
 
                 .highlight {
                     color: var(--text-primary);
-                    background: rgba(79, 70, 229, 0.1);
+                    background: rgba(251, 191, 36, 0.15);
                     padding: 0.1rem 0.4rem;
                     border-radius: 4px;
                     font-weight: 600;
@@ -372,7 +372,7 @@ const MyStory = () => {
 
                 .source-card:hover .timeline-dot {
                     transform: scale(1.3);
-                    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.2);
+                    box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.2);
                 }
 
                 .card-meta {
@@ -388,7 +388,7 @@ const MyStory = () => {
                     font-family: monospace;
                     font-weight: 700;
                     color: var(--accent-primary);
-                    background: rgba(79, 70, 229, 0.1);
+                    background: rgba(251, 191, 36, 0.15);
                     padding: 0.2rem 0.5rem;
                     border-radius: 4px;
                 }

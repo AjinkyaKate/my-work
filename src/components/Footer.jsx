@@ -197,7 +197,7 @@ const Footer = () => {
                     color: white;
                     border-color: var(--accent-primary);
                     transform: translateY(-4px);
-                    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+                    box-shadow: 0 8px 20px rgba(251, 191, 36, 0.3);
                 }
 
                 /* Footer Columns */
@@ -262,9 +262,9 @@ const Footer = () => {
                 }
 
                 .footer-cta-btn:hover {
-                    background: #6366f1;
+                    background: #fcd34d;
                     transform: translateY(-2px);
-                    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.4);
+                    box-shadow: 0 8px 20px rgba(251, 191, 36, 0.4);
                 }
 
                 /* Bottom Bar */
@@ -320,7 +320,7 @@ const Footer = () => {
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 20px rgba(79, 70, 229, 0.4);
+                    box-shadow: 0 4px 20px rgba(251, 191, 36, 0.4);
                     transition: all 0.3s ease;
                     z-index: 100;
                     animation: fadeInUp 0.3s ease;
@@ -328,8 +328,8 @@ const Footer = () => {
 
                 .scroll-top-btn:hover {
                     transform: translateY(-4px);
-                    box-shadow: 0 8px 30px rgba(79, 70, 229, 0.6);
-                    background: #6366f1;
+                    box-shadow: 0 8px 30px rgba(251, 191, 36, 0.6);
+                    background: #fcd34d;
                 }
 
                 @keyframes fadeInUp {

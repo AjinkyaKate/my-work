@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Hero from './components/Hero';
 import MyStory from './components/MyStory';
+import Achievements from './components/Achievements';
 import StartupExperience from './components/StartupExperience';
 import ProfessionalExperience from './components/ProfessionalExperience';
 import CaseStudies from './components/CaseStudies';
@@ -18,6 +19,7 @@ function HomePage() {
     <>
       <Hero />
       <MyStory />
+      <Achievements />
       <ProfessionalExperience />
       <StartupExperience />
       <CaseStudies />

@@ -25,10 +25,10 @@ const StartupExperience = () => {
                                     <h3>Qport</h3>
                                     <div className="recent-badge-compact">
                                         <Sparkles size={10} />
-                                        <span>Recent</span>
+                                        <span>Current</span>
                                     </div>
                                 </div>
-                                <span className="role-text-compact">Product Manager • 0-1 Build</span>
+                                <span className="role-text-compact">Founding Product Manager • Part-time</span>
                             </div>
                             <a href="#" className="arrow-link-compact" aria-label="Visit Qport">
                                 <ArrowUpRight size={18} />
@@ -37,23 +37,24 @@ const StartupExperience = () => {
 
                         <div className="card-body-compact">
                             <p className="mission-text-compact">
-                                Turn a fragmented, manual logistics environment into a seamless digital product.
+                                Built Shipment Tracking & Route Management platform from zero to pilot deployment with wind energy clients. Architected shift from mobile GPS to low-cost hardware tracking for heavy-cargo logistics.
                             </p>
                             <div className="impact-tags">
-                                <span>Launched MVP in ~3mo</span>
-                                <span>-40% Turnaround Time</span>
-                                <span>Agile Processes</span>
+                                <span>0→1 Product Build</span>
+                                <span>Real-time GPS Tracking</span>
+                                <span>Mapbox Integration</span>
+                                <span>AI Query Interface</span>
                             </div>
                         </div>
 
                         <div className="card-footer-compact">
                             <div className="meta-item-compact">
                                 <Calendar size={14} />
-                                <span>Aug 2025 - Present</span>
+                                <span>Aug 2024 - Present</span>
                             </div>
                             <div className="meta-item-compact">
                                 <Users size={14} />
-                                <span>10-50 Employees</span>
+                                <span>Logistics-Tech Startup</span>
                             </div>
                         </div>
                     </div>
@@ -66,7 +67,7 @@ const StartupExperience = () => {
                             </div>
                             <div className="brand-info-compact">
                                 <h3>Denner</h3>
-                                <span className="role-text-compact">Analytics Consultant • Growth</span>
+                                <span className="role-text-compact">Product & Analytics Contributor • Part-time</span>
                             </div>
                             <a href="http://denner.in" target="_blank" rel="noopener noreferrer" className="arrow-link-compact" aria-label="Visit Denner">
                                 <ArrowUpRight size={18} />
@@ -75,12 +76,13 @@ const StartupExperience = () => {
 
                         <div className="card-body-compact">
                             <p className="mission-text-compact">
-                                Move the founding team from gut-feel to data-driven decisions.
+                                Implemented Mixpanel event tracking on mobile app to capture user actions and drop-offs. Built onboarding funnels and recommended UX improvements to increase activation and retention.
                             </p>
                             <div className="impact-tags">
-                                <span>Mixpanel Tracking</span>
-                                <span>Drop-off Analysis</span>
-                                <span>Data Culture</span>
+                                <span>Mixpanel Analytics</span>
+                                <span>User Funnels</span>
+                                <span>Retention Analysis</span>
+                                <span>UX Optimization</span>
                             </div>
                         </div>
 
@@ -91,7 +93,7 @@ const StartupExperience = () => {
                             </div>
                             <div className="meta-item-compact">
                                 <TrendingUp size={14} />
-                                <span>Growth Stage</span>
+                                <span>Housing Startup</span>
                             </div>
                         </div>
                     </div>
@@ -226,7 +228,7 @@ const StartupExperience = () => {
                     align-items: center;
                     gap: 0.25rem;
                     padding: 0.2rem 0.5rem;
-                    background: rgba(79, 70, 229, 0.1);
+                    background: rgba(251, 191, 36, 0.15);
                     border: 1px solid var(--accent-primary);
                     border-radius: 100px;
                     font-size: 0.7rem;
@@ -236,7 +238,7 @@ const StartupExperience = () => {
 
                 .role-text-compact {
                     font-size: 0.9rem;
-                    color: #22d3ee;
+                    color: #fb923c;
                     font-weight: 500;
                 }
 
@@ -249,7 +251,7 @@ const StartupExperience = () => {
 
                 .experience-card:hover .arrow-link-compact {
                     color: var(--accent-primary);
-                    background: rgba(79, 70, 229, 0.1);
+                    background: rgba(251, 191, 36, 0.15);
                 }
 
                 .card-body-compact {

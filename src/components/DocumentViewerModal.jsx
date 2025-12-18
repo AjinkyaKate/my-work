@@ -1,7 +1,9 @@
-import React from 'react';
-import { X, Download, ExternalLink } from 'lucide-react';
+import React, { useState } from 'react';
+import { X, Download, ExternalLink, Share2, Check } from 'lucide-react';
 
 const DocumentViewerModal = ({ isOpen, onClose, documentUrl, documentTitle = "Document" }) => {
+    const [copied, setCopied] = useState(false);
+
     const handleDownload = () => {
         const link = document.createElement('a');
         link.href = documentUrl;
@@ -11,6 +13,32 @@ const DocumentViewerModal = ({ isOpen, onClose, documentUrl, documentTitle = "Do
 
     const handleOpenNew = () => {
         window.open(documentUrl, '_blank');
+    };
+
+    const handleShare = async () => {
+        const shareUrl = window.location.origin + documentUrl;
+
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: documentTitle,
+                    url: shareUrl
+                });
+            } catch (err) {
+                if (err.name !== 'AbortError') {
+                    copyToClipboard(shareUrl);
+                }
+            }
+        } else {
+            copyToClipboard(shareUrl);
+        }
+    };
+
+    const copyToClipboard = (text) => {
+        navigator.clipboard.writeText(text).then(() => {
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000);
+        });
     };
 
     const handleOverlayClick = (e) => {
@@ -55,6 +83,30 @@ const DocumentViewerModal = ({ isOpen, onClose, documentUrl, documentTitle = "Do
                 </h3>
 
                 <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                    {/* Share Button */}
+                    <button
+                        onClick={handleShare}
+                        style={{
+                            background: copied ? 'rgba(16, 185, 129, 0.15)' : 'rgba(238, 238, 238, 0.05)',
+                            border: `1px solid ${copied ? 'var(--secondary-emerald)' : 'var(--border-primary)'}`,
+                            borderRadius: '8px',
+                            padding: '0.5rem 1rem',
+                            color: copied ? 'var(--secondary-emerald)' : 'var(--text-primary)',
+                            cursor: 'pointer',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '0.5rem',
+                            fontSize: '0.9rem',
+                            fontWeight: 500,
+                            transition: 'all 0.2s'
+                        }}
+                        className="viewer-btn"
+                        title={copied ? "Link Copied!" : "Share Resume"}
+                    >
+                        {copied ? <Check size={18} /> : <Share2 size={18} />}
+                        <span className="viewer-btn-text">{copied ? 'Copied!' : 'Share'}</span>
+                    </button>
+
                     {/* Open in New Tab Button */}
                     <button
                         onClick={handleOpenNew}

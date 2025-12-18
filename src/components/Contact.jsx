@@ -1,191 +1,202 @@
 import React from 'react';
-import { Mail, Linkedin, Twitter, Send, Sparkles } from 'lucide-react';
+import { Mail, Linkedin, Send, Sparkles, MessageCircle, ArrowRight } from 'lucide-react';
 
 const Contact = () => {
     return (
-        <section className="section" id="contact" style={{ paddingBottom: '4rem', position: 'relative', overflow: 'hidden' }}>
-            {/* Animated Background Elements */}
-            <div className="bg-orbs">
-                <div className="orb orb-1"></div>
-                <div className="orb orb-2"></div>
-                <div className="orb orb-3"></div>
+        <section className="section contact-section" id="contact">
+            {/* Animated Background */}
+            <div className="contact-bg">
+                <div className="bg-gradient gradient-1"></div>
+                <div className="bg-gradient gradient-2"></div>
+                <div className="bg-grid"></div>
             </div>
 
-            {/* Gradient Background for Section */}
-            <div className="section-gradient" />
-
             <div className="container">
-                <div className="glass-panel animate-fade-up">
-                    <div className="sparkle-accent">
-                        <Sparkles size={20} />
+                <div className="contact-panel">
+                    {/* Icon Badge */}
+                    <div className="contact-icon-badge">
+                        <Sparkles className="sparkle-icon" size={32} />
                     </div>
 
-                    <h2>Let's build something great.</h2>
-                    <p>
-                        I'm always open to discussing product roles, collaborations, or startup opportunities. Feel free to reach out.
+                    {/* Title with Gradient */}
+                    <h2 className="contact-title">
+                        Let's <span className="gradient-text">Connect</span>
+                    </h2>
+
+                    <p className="contact-description">
+                        Looking for a Product Owner who can turn ideas into impactful products? Let's talk about your next project.
                     </p>
 
+                    {/* Action Buttons */}
                     <div className="actions">
-                        <a href="mailto:ajinkyakate2001@gmail.com?subject=Product%20Opportunity%20%2F%20Collaboration&body=Hi%20Ajinkya%2C%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect%20regarding..." className="btn btn-primary pulse-btn">
+                        <a href="mailto:ajinkyakate2001@gmail.com?subject=Product%20Opportunity&body=Hi%20Ajinkya%2C%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect." className="btn btn-primary">
                             <Mail size={20} />
-                            <span>Email Me</span>
-                            <div className="btn-shine"></div>
+                            <span>Send Email</span>
+                            <ArrowRight size={18} className="btn-arrow" />
                         </a>
-                        <a href="https://www.linkedin.com/in/ajinkya-kate/" target="_blank" rel="noopener noreferrer" className="btn btn-outline social-btn">
+                        <a href="https://www.linkedin.com/in/ajinkya-kate/" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
                             <Linkedin size={20} />
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="https://x.com/Ajinkya_Kate_" target="_blank" rel="noopener noreferrer" className="btn btn-outline social-btn">
-                            <Twitter size={20} />
-                            <span>Twitter</span>
+                            <span>Connect on LinkedIn</span>
                         </a>
                     </div>
 
-                    <div className="divider"></div>
-
-                    <div className="quick-stats">
-                        <div className="stat-item">
-                            <div className="stat-value">2+</div>
-                            <div className="stat-label">Years Experience</div>
+                    {/* Quick Contact Info */}
+                    <div className="contact-info">
+                        <div className="info-item">
+                            <Mail size={18} className="info-icon" />
+                            <span>ajinkyakate2001@gmail.com</span>
                         </div>
-                        <div className="stat-item">
-                            <div className="stat-value">5+</div>
-                            <div className="stat-label">Products Shipped</div>
-                        </div>
-                        <div className="stat-item">
-                            <div className="stat-value">100%</div>
-                            <div className="stat-label">Committed</div>
+                        <div className="info-divider"></div>
+                        <div className="info-item">
+                            <MessageCircle size={18} className="info-icon" />
+                            <span>Available for opportunities</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <style jsx>{`
-                /* Animated Background Orbs */
-                .bg-orbs {
+                .contact-section {
+                    position: relative;
+                    background: var(--bg-secondary);
+                    overflow: hidden;
+                }
+
+                /* Animated Background */
+                .contact-bg {
                     position: absolute;
                     top: 0;
                     left: 0;
                     right: 0;
                     bottom: 0;
-                    overflow: hidden;
                     z-index: 0;
+                    pointer-events: none;
                 }
 
-                .orb {
+                .bg-gradient {
                     position: absolute;
                     border-radius: 50%;
-                    filter: blur(80px);
-                    opacity: 0.3;
-                    animation: float 20s infinite ease-in-out;
+                    filter: blur(100px);
+                    opacity: 0.06;
+                    animation: float-gradient 25s ease-in-out infinite;
                 }
 
-                .orb-1 {
-                    width: 400px;
-                    height: 400px;
-                    background: var(--accent-primary);
+                .gradient-1 {
+                    width: 500px;
+                    height: 500px;
+                    background: radial-gradient(circle, var(--accent-primary), transparent 70%);
                     top: -200px;
-                    left: -100px;
+                    left: -150px;
                     animation-delay: 0s;
                 }
 
-                .orb-2 {
-                    width: 350px;
-                    height: 350px;
-                    background: var(--secondary-emerald);
-                    bottom: -100px;
+                .gradient-2 {
+                    width: 450px;
+                    height: 450px;
+                    background: radial-gradient(circle, var(--accent-primary), transparent 70%);
+                    bottom: -150px;
                     right: -100px;
-                    animation-delay: 7s;
+                    animation-delay: 12s;
                 }
 
-                .orb-3 {
-                    width: 300px;
-                    height: 300px;
-                    background: #F28B82;
-                    top: 50%;
-                    right: 20%;
-                    animation-delay: 14s;
-                }
-
-                @keyframes float {
+                @keyframes float-gradient {
                     0%, 100% {
                         transform: translate(0, 0) scale(1);
                     }
-                    33% {
-                        transform: translate(30px, -50px) scale(1.1);
-                    }
-                    66% {
-                        transform: translate(-20px, 20px) scale(0.9);
+                    50% {
+                        transform: translate(40px, -40px) scale(1.15);
                     }
                 }
 
-                .section-gradient {
+                .bg-grid {
                     position: absolute;
-                    bottom: 0;
+                    top: 0;
                     left: 0;
                     right: 0;
-                    height: 100%;
-                    background: linear-gradient(180deg, transparent 0%, var(--bg-primary) 100%);
-                    z-index: 0;
+                    bottom: 0;
+                    background-image:
+                        linear-gradient(var(--border-light) 1px, transparent 1px),
+                        linear-gradient(90deg, var(--border-light) 1px, transparent 1px);
+                    background-size: 60px 60px;
+                    opacity: 0.04;
+                    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
                 }
 
-                .glass-panel {
+                .container {
                     position: relative;
-                    text-align: center;
-                    background: rgba(30, 41, 59, 0.6);
-                    backdrop-filter: blur(20px);
-                    -webkit-backdrop-filter: blur(20px);
-                    border: 1px solid rgba(255, 255, 255, 0.1);
-                    border-radius: var(--radius-lg);
-                    padding: 5rem 3rem;
-                    max-width: 900px;
-                    margin: 0 auto;
-                    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
-                                inset 0 1px 0 rgba(255, 255, 255, 0.1);
                     z-index: 1;
                 }
 
-                .sparkle-accent {
-                    width: 48px;
-                    height: 48px;
-                    background: linear-gradient(135deg, var(--accent-primary), var(--secondary-emerald));
-                    border-radius: 12px;
+                .contact-panel {
+                    text-align: center;
+                    max-width: 900px;
+                    margin: 0 auto;
+                    background: rgba(255, 255, 255, 0.7);
+                    backdrop-filter: blur(10px);
+                    -webkit-backdrop-filter: blur(10px);
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    border-radius: 32px;
+                    padding: 5rem 3rem;
+                    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+                    position: relative;
+                }
+
+                [data-theme="dark"] .contact-panel {
+                    background: rgba(20, 20, 20, 0.7);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                }
+
+                .contact-panel::before {
+                    display: none;
+                }
+
+                /* Icon Badge */
+                .contact-icon-badge {
+                    width: 80px;
+                    height: 80px;
+                    margin: 0 auto 2.5rem;
+                    background: rgba(59, 130, 246, 0.1);
+                    border-radius: 24px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    color: white;
-                    margin: 0 auto 2rem;
-                    animation: sparkle-bounce 2s infinite;
+                    color: var(--accent-primary);
+                    transition: transform 0.3s ease;
                 }
 
-                @keyframes sparkle-bounce {
-                    0%, 100% {
-                        transform: translateY(0) rotate(0deg);
-                    }
-                    25% {
-                        transform: translateY(-8px) rotate(-5deg);
-                    }
-                    75% {
-                        transform: translateY(-4px) rotate(5deg);
-                    }
+                .contact-icon-badge:hover {
+                    transform: scale(1.05);
+                    background: rgba(59, 130, 246, 0.15);
                 }
 
-                .glass-panel h2 {
-                    font-size: clamp(2rem, 5vw, 3rem);
+                .sparkle-icon {
+                    /* No animation */
+                }
+
+                /* Title Styling */
+                .contact-title {
+                    font-size: clamp(2.5rem, 5vw, 3.5rem);
+                    font-weight: 900;
                     margin: 0 0 1.5rem 0;
                     color: var(--text-primary);
-                    font-weight: 700;
-                    letter-spacing: -0.02em;
+                    letter-spacing: -0.03em;
                 }
 
-                .glass-panel p {
-                    font-size: 1.15rem;
+                .gradient-text {
+                    color: var(--accent-primary);
+                }
+
+                .contact-description {
+                    font-size: 1.25rem;
                     color: var(--text-secondary);
-                    max-width: 600px;
-                    margin: 0 auto 3rem;
-                    line-height: 1.7;
+                    margin-bottom: 3rem;
+                    line-height: 1.8;
+                    max-width: 700px;
+                    margin-left: auto;
+                    margin-right: auto;
                 }
 
+                /* Action Buttons */
                 .actions {
                     display: flex;
                     justify-content: center;
@@ -195,64 +206,39 @@ const Contact = () => {
                 }
 
                 .btn {
-                    position: relative;
                     display: inline-flex;
                     align-items: center;
-                    justify-content: center;
                     gap: 0.75rem;
-                    min-width: 160px;
                     padding: 1rem 2rem;
-                    border-radius: 12px;
+                    border-radius: 16px;
                     font-weight: 600;
                     font-size: 1rem;
                     text-decoration: none;
-                    transition: all 0.3s ease;
+                    transition: all 0.3s var(--ease-smooth);
+                    position: relative;
                     overflow: hidden;
                 }
 
                 .btn-primary {
-                    background: linear-gradient(135deg, var(--accent-primary), #6366f1);
-                    color: white;
+                    background: var(--accent-primary);
+                    color: #ffffff;
                     border: none;
-                    box-shadow: 0 4px 20px rgba(79, 70, 229, 0.4);
+                    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
                 }
 
                 .btn-primary:hover {
-                    transform: translateY(-4px);
-                    box-shadow: 0 8px 30px rgba(79, 70, 229, 0.6);
+                    transform: translateY(-3px);
+                    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
+                    background: var(--accent-primary);
+                    filter: brightness(1.1);
                 }
 
-                /* Button Shine Effect */
-                .btn-shine {
-                    position: absolute;
-                    top: 0;
-                    left: -100%;
-                    width: 100%;
-                    height: 100%;
-                    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+                .btn-arrow {
+                    transition: transform 0.3s ease;
                 }
 
-                .btn-primary:hover .btn-shine {
-                    animation: shine 0.8s;
-                }
-
-                @keyframes shine {
-                    to {
-                        left: 100%;
-                    }
-                }
-
-                .pulse-btn {
-                    animation: pulse-border 2s infinite;
-                }
-
-                @keyframes pulse-border {
-                    0%, 100% {
-                        box-shadow: 0 4px 20px rgba(79, 70, 229, 0.4);
-                    }
-                    50% {
-                        box-shadow: 0 4px 30px rgba(79, 70, 229, 0.7);
-                    }
+                .btn-primary:hover .btn-arrow {
+                    transform: translateX(4px);
                 }
 
                 .btn-outline {
@@ -264,74 +250,101 @@ const Contact = () => {
                 .btn-outline:hover {
                     background: var(--bg-tertiary);
                     border-color: var(--accent-primary);
-                    transform: translateY(-2px);
                     color: var(--accent-primary);
+                    transform: translateY(-3px);
                 }
 
-                .social-btn {
-                    min-width: 140px;
-                }
-
-                /* Divider */
-                .divider {
-                    height: 1px;
-                    background: linear-gradient(90deg, transparent, var(--border-primary), transparent);
-                    margin: 3rem 0;
-                }
-
-                /* Quick Stats */
-                .quick-stats {
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
+                /* Contact Info */
+                .contact-info {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                     gap: 2rem;
-                    max-width: 600px;
+                    padding: 2rem;
+                    background: rgba(255, 255, 255, 0.5);
+                    backdrop-filter: blur(10px);
+                    -webkit-backdrop-filter: blur(10px);
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    border-radius: 20px;
+                    max-width: 700px;
                     margin: 0 auto;
                 }
 
-                .stat-item {
-                    text-align: center;
+                [data-theme="dark"] .contact-info {
+                    background: rgba(20, 20, 20, 0.5);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
                 }
 
-                .stat-value {
-                    font-size: 2.5rem;
-                    font-weight: 700;
-                    background: linear-gradient(135deg, var(--accent-primary), var(--secondary-emerald));
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    background-clip: text;
-                    margin-bottom: 0.5rem;
+                .info-item {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.75rem;
+                    font-size: 0.95rem;
+                    color: var(--text-secondary);
+                    font-weight: 500;
                 }
 
-                .stat-label {
-                    font-size: 0.9rem;
-                    color: var(--text-tertiary);
-                    text-transform: uppercase;
-                    letter-spacing: 0.05em;
+                .info-icon {
+                    color: var(--accent-primary);
+                    flex-shrink: 0;
                 }
 
+                .info-divider {
+                    width: 1px;
+                    height: 40px;
+                    background: linear-gradient(180deg, transparent, var(--border-primary), transparent);
+                }
+
+                /* Responsive */
                 @media (max-width: 768px) {
-                    .glass-panel {
+                    .contact-panel {
                         padding: 3rem 1.5rem;
+                        border-radius: 24px;
+                    }
+
+                    .contact-icon-badge {
+                        width: 64px;
+                        height: 64px;
+                        margin-bottom: 2rem;
+                    }
+
+                    .sparkle-icon {
+                        width: 28px;
+                        height: 28px;
+                    }
+
+                    .contact-description {
+                        font-size: 1.125rem;
+                        margin-bottom: 2rem;
                     }
 
                     .actions {
                         flex-direction: column;
                         align-items: stretch;
+                        margin-bottom: 2rem;
                     }
 
-                    .btn {
+                    .actions .btn {
                         width: 100%;
+                        justify-content: center;
                     }
 
-                    .quick-stats {
-                        grid-template-columns: 1fr;
+                    .contact-info {
+                        flex-direction: column;
                         gap: 1.5rem;
+                        padding: 1.5rem;
                     }
 
-                    .stat-value {
-                        font-size: 2rem;
+                    .info-divider {
+                        display: none;
+                    }
+
+                    .info-item {
+                        width: 100%;
+                        justify-content: center;
                     }
                 }
+
             `}</style>
         </section>
     );
